@@ -9,4 +9,4 @@ VFEdit handles sound file formats for Dialogic, NMS, Intervoice and other CTI vo
 
 These CTI sound file formats are used for audiotex or voice-mail, IVR and Call Center applications on cards by Dialogic, NMS, hardware from Nortel or Intervoice, IBM Directalk and Bicom, by Newvoice and Elan, Rockwell, even OKI. The Philips, the Voicetek generations, the Microlog intela call centers, the phoneblaster or Apex and Parity tools are supported.
 
-This repository contains code and materials that I had previously produced for my wholly owned corporation (Vector Information Systems, Inc) and for which I retain the copyrights. 
+This repository contains code and materials that Andrew Michalik had previously produced for his wholly owned corporation (Vector Information Systems, Inc) and for which he has retained copyrights. 
