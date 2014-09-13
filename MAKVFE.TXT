@@ -1,0 +1,25 @@
+                        VFEdit Build Instructions
+
+
+INSDEV\RESDEV
+    nmake vfecif.mak
+
+VFECIF
+    SetVer
+    MakRel
+
+Windows:
+    Build VB VFEdit.Exe    
+    VB Modify AccKey.Bas, Set to "00000000", Make VFE_D.Exe, Don't save!
+    
+VFEDev
+    Set_Jr
+    SetDat
+    MakSDK
+
+InsDev
+    CopDev DLG
+    MakDsk
+    CopDev NWV
+    MakDsk
+

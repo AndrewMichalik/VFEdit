@@ -1,0 +1,846 @@
+Stack Allocation = 5120 bytes
+
+ Start  Stop   Length Name                   Class
+ 00000H 00A35H 00A36H ADD_TEXT               CODE
+ 00A36H 00CFCH 002C7H CODE_TEXT              CODE
+ 00CFEH 01040H 00343H DEBUG_TEXT             CODE
+ 01042H 01341H 00300H DECODE_TEXT            CODE
+ 01342H 0139FH 0005EH GSM_CREA_TEXT          CODE
+ 013A0H 01C2FH 00890H GSM_DECO_TEXT          CODE
+ 01C30H 01C6AH 0003BH GSM_DEST_TEXT          CODE
+ 01C6CH 022F6H 0068BH GSM_ENCO_TEXT          CODE
+ 022F8H 02CCFH 009D8H GSM_EXPL_TEXT          CODE
+ 02CD0H 03482H 007B3H GSM_IMPL_TEXT          CODE
+ 03484H 0351DH 0009AH GSM_OPTI_TEXT          CODE
+ 0351EH 03F26H 00A09H GSM_PRIN_TEXT          CODE
+ 03F28H 0549FH 01578H LONG_TER_TEXT          CODE
+ 054A0H 06FA2H 01B03H LPC_TEXT               CODE
+ 06FA4H 07391H 003EEH PREPROCE_TEXT          CODE
+ 07392H 0872EH 0139DH RPE_TEXT               CODE
+ 08730H 09FE2H 018B3H SHORT_TE_TEXT          CODE
+ 09FE4H 09FE4H 00000H TABLE_TEXT             CODE
+ 09FE4H 0A2ECH 00309H TESTJMS_TEXT           CODE
+ 0A2EEH 0A325H 00038H GSM_INIT_TEXT          CODE
+ 0A326H 0C794H 0246FH _TEXT                  CODE
+ 0C7A0H 0C7A1H 00002H EMULATOR_TEXT          CODE
+ 0C7A2H 0C7A2H 00000H C_ETEXT                ENDCODE
+ 0C7B0H 0C7B0H 00000H EMULATOR_DATA          FAR_DATA
+ 0C7B0H 0C7F1H 00042H NULL                   BEGDATA
+ 0C7F2H 0D6A5H 00EB4H _DATA                  DATA
+ 0D6A6H 0D6A7H 00002H XIQC                   DATA
+ 0D6A8H 0D6B3H 0000CH DBDATA                 DATA
+ 0D6B4H 0D6C1H 0000EH CDATA                  DATA
+ 0D6C2H 0D6C2H 00000H XIFB                   DATA
+ 0D6C2H 0D6C2H 00000H XIF                    DATA
+ 0D6C2H 0D6C2H 00000H XIFE                   DATA
+ 0D6C2H 0D6C2H 00000H XIB                    DATA
+ 0D6C2H 0D6C2H 00000H XI                     DATA
+ 0D6C2H 0D6C2H 00000H XIE                    DATA
+ 0D6C2H 0D6C2H 00000H XPB                    DATA
+ 0D6C2H 0D6C5H 00004H XP                     DATA
+ 0D6C6H 0D6C6H 00000H XPE                    DATA
+ 0D6C6H 0D6C6H 00000H XCB                    DATA
+ 0D6C6H 0D6C6H 00000H XC                     DATA
+ 0D6C6H 0D6C6H 00000H XCE                    DATA
+ 0D6C6H 0D6C6H 00000H XCFB                   DATA
+ 0D6C6H 0D6C6H 00000H XCFCRT                 DATA
+ 0D6C6H 0D6C6H 00000H XCF                    DATA
+ 0D6C6H 0D6C6H 00000H XCFE                   DATA
+ 0D6C6H 0D6C6H 00000H XIFCB                  DATA
+ 0D6C6H 0D6C6H 00000H XIFU                   DATA
+ 0D6C6H 0D6C6H 00000H XIFL                   DATA
+ 0D6C6H 0D6C6H 00000H XIFM                   DATA
+ 0D6C6H 0D6C6H 00000H XIFCE                  DATA
+ 0D6C6H 0D6C6H 00000H CONST                  CONST
+ 0D6C6H 0D6CDH 00008H HDR                    MSG
+ 0D6CEH 0D7C6H 000F9H MSG                    MSG
+ 0D7C7H 0D7DBH 00015H PAD                    MSG
+ 0D7DCH 0D7DCH 00001H EPAD                   MSG
+ 0D7DEH 0D7DEH 00000H _BSS                   BSS
+ 0D7DEH 0D7DEH 00000H XOB                    BSS
+ 0D7DEH 0D7DEH 00000H XO                     BSS
+ 0D7DEH 0D7DEH 00000H XOE                    BSS
+ 0D7DEH 0D7DEH 00000H XOFB                   BSS
+ 0D7DEH 0D7DEH 00000H XOF                    BSS
+ 0D7DEH 0D7DEH 00000H XOFE                   BSS
+ 0D7E0H 0EBDFH 01400H STACK                  STACK
+
+ Origin   Group
+ 0C7B:0   DGROUP
+
+  Address         Publics by Name
+
+ 0A32:1CAC       _abort
+ 0C7B:102E       _edata
+ 0C7B:1030       _end
+ 0C7B:0BBE       _errno
+ 0A32:01F1       _exit
+ 09FE:0004       _fail
+ 09FE:0046       _fail2
+ 0A32:063C       _fclose
+ 0A32:0F10       _fflush
+ 0A32:073E       _fopen
+ 0A32:075A       _fprintf
+ 0A32:079A       _fread
+ 0A32:090E       _fwrite
+ 0C7B:0A58       _gsm_A
+ 0000:01DC       _gsm_abs
+ 0000:0000       _gsm_add
+ 0000:08A0       _gsm_asl
+ 0000:0734       _gsm_asr
+ 0C7B:0A68       _gsm_B
+ 00A3:0006       _Gsm_Coder
+ 0134:0002       _gsm_create
+ 00CF:02D6       _gsm_debug_longword
+ 00CF:0170       _gsm_debug_longwords
+ 00CF:0314       _gsm_debug_word
+ 00CF:000E       _gsm_debug_words
+ 013A:0000       _gsm_decode
+ 0104:0162       _Gsm_Decoder
+ 01C3:0000       _gsm_destroy
+ 0000:094A       _gsm_div
+ 0C7B:0AA8       _gsm_DLB
+ 01C6:000C       _gsm_encode
+ 022F:0008       _gsm_explode
+ 0C7B:0ADE       _gsm_FAC
+ 0C7B:0AB8       _gsm_H
+ 02CD:0000       _gsm_implode
+ 0A2E:000E       _gsm_init
+ 0C7B:0A98       _gsm_INVA
+ 03F2:11B0       _Gsm_Long_Term_Predictor
+ 03F2:133E       _Gsm_Long_Term_Synthesis_Filtering
+ 054A:1AA2       _Gsm_LPC_Analysis
+ 0000:02A6       _gsm_L_add
+ 0000:07D8       _gsm_L_asl
+ 0000:0672       _gsm_L_asr
+ 0000:0228       _gsm_L_mult
+ 0000:03D4       _gsm_L_sub
+ 0C7B:0A88       _gsm_MAC
+ 0C7B:0A78       _gsm_MIC
+ 0000:00E8       _gsm_mult
+ 0000:0150       _gsm_mult_r
+ 0000:0508       _gsm_norm
+ 0C7B:0ACE       _gsm_NRFAC
+ 0348:0004       _gsm_option
+ 06FA:0004       _Gsm_Preprocess
+ 0351:000E       _gsm_print
+ 0C7B:0AB0       _gsm_QLB
+ 0739:1338       _Gsm_RPE_Decoding
+ 0739:1288       _Gsm_RPE_Encoding
+ 0873:152A       _Gsm_Short_Term_Analysis_Filter
+ 0873:16D8       _Gsm_Short_Term_Synthesis_Filter
+ 0000:0074       _gsm_sub
+ 09FE:010E       _main
+ 0A32:1EA6       _memcpy
+ 09FE:008E       _mustOpen
+ 0A32:0AA6       _printf
+ 0A32:1CF2       _puts
+ 0A32:1F74       _raise
+ 0A32:2466       _remove
+ 0A32:1D7C       _setvbuf
+ 0A32:2008       _signal
+ 0C7B:0C04       _STKHQQ
+ 0A32:1BE6       _strcat
+ 0A32:1C3A       _strcpy
+ 0A32:1C76       _strlen
+ 0C7B:0C00       __aaltstkovr
+ 0C7B:0BA2       __acfinfo
+ 0000:9876  Abs  __acrtmsg
+ 0000:9876  Abs  __acrtused
+ 0000:D6D6  Abs  __aDBdoswp
+ 0C7B:0BFC       __adbgmsg
+ 0C7B:0B84       __aexit_rtn
+ 0A32:02CC       __aFchkstk
+ 0A32:2202       __aFlmul
+ 0A32:2234       __aFlshl
+ 0A32:2240       __aFlshr
+ 0A32:2202       __aFulmul
+ 0000:1000  Abs  __AHINCR
+ 0000:000C  Abs  __AHSHIFT
+ 0C7B:0BB0       __aintdiv
+ 0C7B:0E8E       __amblksiz
+ 0A32:00FA       __amsg_exit
+ 0C7B:0042       __anullsize
+ 0C7B:0B9C       __aseghi
+ 0C7B:0B9E       __aseglo
+ 0C7B:0B86       __asizds
+ 0C7B:0EB0       __asizeC
+ 0C7B:0EB1       __asizeD
+ 0A32:2196       __assert
+ 0A32:0016       __astart
+ 0C7B:0B82       __atopsp
+ 0A32:0200       __cexit
+ 0C7B:0E90       __cfltcvt_tab
+ 0C7B:0C22       __cflush
+ 0C7B:0BF3       __child
+ 0A32:02CC       __chkstk
+ 0A32:0128       __cinit
+ 0A32:00EB       __cintDIV
+ 0A32:15A4       __close
+ 0A32:1F04       __cltoasub
+ 0A32:1E4C       __commit
+ 0C7B:0E78       __commode
+ 0C7B:0BCB       __cpumode
+ 0C7B:0EB2       __csigtab0
+ 0A32:0278       __ctermsub
+ 0A32:1801       __cXENIXtoDOSmode
+ 0A32:1F11       __cxtoa
+ 0A32:020A       __c_exit
+ 0A32:0126       __dataseg
+ 0C7B:0BCC       __doserrno
+ 0A32:05E4       __dosret0
+ 0A32:05F9       __dosretax
+ 0A32:05EC       __dosreturn
+ 0A32:21F4       __dos_commit
+ 0C7B:102E       __edata
+ 0C7A:0000       __EmDataSeg
+ 0C7B:1030       __end
+ 0A32:0AEA       __endstdio
+ 0C7B:0BEA       __environ
+ 0A32:01F8       __exit
+ 0C7B:0BFB       __exitflag
+ 0C7B:0BB4       __fac
+ 0A32:063A       __farstub
+ 0A32:1CCC       __fcloseall
+ 0C7B:0BA0       __fDosExt
+ 0A32:1910       __ffree
+ 0A32:02A4       __FF_MSGBANNER
+ 0C7B:0E80       __fheap
+ 0A32:0B00       __filbuf
+ 0A32:1B82       __findlast
+ 0A32:0B9C       __flsbuf
+ 0A32:0F68       __flush
+ 0A32:0FE8       __flushall
+ 0A32:1923       __fmalloc
+ 0A32:224C       __fmemcpy
+ 0A32:22AA       __fmemset
+ 0C7B:0E76       __fmode
+ 0C7B:0F06       __fpinit
+ 0A32:02C6       __fptrap
+ 0A32:0C88       __freebuf
+ 0A32:070A       __fsopen
+ 0A32:0EC9       __ftbuf
+ 0A32:0CC0       __getbuf
+ 0A32:1556       __getstream
+ 0A32:1AA2       __growseg
+ 0A32:1B31       __incseg
+ 0A32:19BC       __initseg
+ 0C7B:0BF6       __intno
+ 0C7B:0C24       __iob
+ 0C7B:0D14       __iob2
+ 0C7B:0E76       __iomode
+ 0A32:1C90       __itoa
+ 0C7B:0E04       __lastiob
+ 0A32:19F0       __linkseg
+ 0A32:15C4       __lseek
+ 0C7B:0E7A       __lseekchk
+ 0A32:0606       __maperror
+ 0A32:05BE       __myalloc
+ 0A32:1BA2       __newseg
+ 0C7B:0BCE       __nfile
+ 0C7B:0B88       __nheap_desc
+ 0A32:055C       __NMSG_TEXT
+ 0A32:0587       __NMSG_WRITE
+ 0A32:02F0       __nullcheck
+ 0A32:1660       __open
+ 0A32:0D0C       __openfile
+ 0C7B:0BCC       __oserr
+ 0C7B:0BD0       __osfile
+ 0C7B:0BC7       __osmajor
+ 0C7B:0BC6       __osminor
+ 0C7B:0BCA       __osmode
+ 0C7B:0BC6       __osver
+ 0C7B:0BC8       __osversion
+ 0A32:106C       __output
+ 0C7B:0BF5       __ovlflag
+ 0C7B:0BF7       __ovlvec
+ 0C7B:0BEE       __pgmptr
+ 0C7B:0E7C       __pnhFarHeap
+ 0C7B:0BC4       __psp
+ 0C7B:0BC2       __pspadr
+ 0A32:1812       __read
+ 0A32:1A26       __searchseg
+ 0A32:0314       __setargv
+ 0A32:04BC       __setenvp
+ 0A32:20B6       __sigentry
+ 0C7B:0EAE       __sigintoff
+ 0C7B:0EAC       __sigintseg
+ 0A32:1646       __sopen
+ 0A32:2452       __stackavail
+ 0A32:0E48       __stbuf
+ 0C7B:0BC0       __umaskval
+ 0A32:2466       __unlink
+ 0A32:22F2       __write
+ 0C7B:0EFE       ___aDBexit
+ 0C7B:0EFC       ___aDBrterr
+ 0C7B:0EFA       ___aDBswpchk
+ 0C7B:0EF8       ___aDBswpflg
+ 0C7B:0BE4       ___argc
+ 0C7B:0BE6       ___argv
+ 0C7B:0EF6       ___qczrinit
+
+  Address         Publics by Value
+
+ 0000:0000       _gsm_add
+ 0000:000C  Abs  __AHSHIFT
+ 0000:0074       _gsm_sub
+ 0000:00E8       _gsm_mult
+ 0000:0150       _gsm_mult_r
+ 0000:01DC       _gsm_abs
+ 0000:0228       _gsm_L_mult
+ 0000:02A6       _gsm_L_add
+ 0000:03D4       _gsm_L_sub
+ 0000:0508       _gsm_norm
+ 0000:0672       _gsm_L_asr
+ 0000:0734       _gsm_asr
+ 0000:07D8       _gsm_L_asl
+ 0000:08A0       _gsm_asl
+ 0000:094A       _gsm_div
+ 00A3:0006       _Gsm_Coder
+ 00CF:000E       _gsm_debug_words
+ 00CF:0170       _gsm_debug_longwords
+ 00CF:02D6       _gsm_debug_longword
+ 0000:1000  Abs  __AHINCR
+ 00CF:0314       _gsm_debug_word
+ 0104:0162       _Gsm_Decoder
+ 0134:0002       _gsm_create
+ 013A:0000       _gsm_decode
+ 01C3:0000       _gsm_destroy
+ 01C6:000C       _gsm_encode
+ 022F:0008       _gsm_explode
+ 02CD:0000       _gsm_implode
+ 0348:0004       _gsm_option
+ 0351:000E       _gsm_print
+ 03F2:11B0       _Gsm_Long_Term_Predictor
+ 03F2:133E       _Gsm_Long_Term_Synthesis_Filtering
+ 054A:1AA2       _Gsm_LPC_Analysis
+ 06FA:0004       _Gsm_Preprocess
+ 0739:1288       _Gsm_RPE_Encoding
+ 0739:1338       _Gsm_RPE_Decoding
+ 0000:9876  Abs  __acrtmsg
+ 0000:9876  Abs  __acrtused
+ 0873:152A       _Gsm_Short_Term_Analysis_Filter
+ 0873:16D8       _Gsm_Short_Term_Synthesis_Filter
+ 09FE:0004       _fail
+ 09FE:0046       _fail2
+ 09FE:008E       _mustOpen
+ 09FE:010E       _main
+ 0A2E:000E       _gsm_init
+ 0A32:0016       __astart
+ 0A32:00EB       __cintDIV
+ 0A32:00FA       __amsg_exit
+ 0A32:0126       __dataseg
+ 0A32:0128       __cinit
+ 0A32:01F1       _exit
+ 0A32:01F8       __exit
+ 0A32:0200       __cexit
+ 0A32:020A       __c_exit
+ 0A32:0278       __ctermsub
+ 0A32:02A4       __FF_MSGBANNER
+ 0A32:02C6       __fptrap
+ 0A32:02CC       __aFchkstk
+ 0A32:02CC       __chkstk
+ 0A32:02F0       __nullcheck
+ 0A32:0314       __setargv
+ 0A32:04BC       __setenvp
+ 0A32:055C       __NMSG_TEXT
+ 0A32:0587       __NMSG_WRITE
+ 0A32:05BE       __myalloc
+ 0A32:05E4       __dosret0
+ 0A32:05EC       __dosreturn
+ 0A32:05F9       __dosretax
+ 0A32:0606       __maperror
+ 0A32:063A       __farstub
+ 0A32:063C       _fclose
+ 0A32:070A       __fsopen
+ 0A32:073E       _fopen
+ 0A32:075A       _fprintf
+ 0A32:079A       _fread
+ 0A32:090E       _fwrite
+ 0A32:0AA6       _printf
+ 0A32:0AEA       __endstdio
+ 0A32:0B00       __filbuf
+ 0A32:0B9C       __flsbuf
+ 0A32:0C88       __freebuf
+ 0A32:0CC0       __getbuf
+ 0A32:0D0C       __openfile
+ 0A32:0E48       __stbuf
+ 0A32:0EC9       __ftbuf
+ 0A32:0F10       _fflush
+ 0A32:0F68       __flush
+ 0A32:0FE8       __flushall
+ 0A32:106C       __output
+ 0A32:1556       __getstream
+ 0A32:15A4       __close
+ 0A32:15C4       __lseek
+ 0A32:1646       __sopen
+ 0A32:1660       __open
+ 0A32:1801       __cXENIXtoDOSmode
+ 0A32:1812       __read
+ 0A32:1910       __ffree
+ 0A32:1923       __fmalloc
+ 0A32:19BC       __initseg
+ 0A32:19F0       __linkseg
+ 0A32:1A26       __searchseg
+ 0A32:1AA2       __growseg
+ 0A32:1B31       __incseg
+ 0A32:1B82       __findlast
+ 0A32:1BA2       __newseg
+ 0A32:1BE6       _strcat
+ 0A32:1C3A       _strcpy
+ 0A32:1C76       _strlen
+ 0A32:1C90       __itoa
+ 0A32:1CAC       _abort
+ 0A32:1CCC       __fcloseall
+ 0A32:1CF2       _puts
+ 0A32:1D7C       _setvbuf
+ 0A32:1E4C       __commit
+ 0A32:1EA6       _memcpy
+ 0A32:1F04       __cltoasub
+ 0A32:1F11       __cxtoa
+ 0A32:1F74       _raise
+ 0A32:2008       _signal
+ 0A32:20B6       __sigentry
+ 0A32:2196       __assert
+ 0A32:21F4       __dos_commit
+ 0A32:2202       __aFulmul
+ 0A32:2202       __aFlmul
+ 0A32:2234       __aFlshl
+ 0A32:2240       __aFlshr
+ 0A32:224C       __fmemcpy
+ 0A32:22AA       __fmemset
+ 0A32:22F2       __write
+ 0A32:2452       __stackavail
+ 0A32:2466       _remove
+ 0A32:2466       __unlink
+ 0C7A:0000       __EmDataSeg
+ 0C7B:0042       __anullsize
+ 0C7B:0A58       _gsm_A
+ 0C7B:0A68       _gsm_B
+ 0C7B:0A78       _gsm_MIC
+ 0C7B:0A88       _gsm_MAC
+ 0C7B:0A98       _gsm_INVA
+ 0C7B:0AA8       _gsm_DLB
+ 0C7B:0AB0       _gsm_QLB
+ 0C7B:0AB8       _gsm_H
+ 0C7B:0ACE       _gsm_NRFAC
+ 0C7B:0ADE       _gsm_FAC
+ 0C7B:0B82       __atopsp
+ 0C7B:0B84       __aexit_rtn
+ 0C7B:0B86       __asizds
+ 0C7B:0B88       __nheap_desc
+ 0C7B:0B9C       __aseghi
+ 0C7B:0B9E       __aseglo
+ 0C7B:0BA0       __fDosExt
+ 0C7B:0BA2       __acfinfo
+ 0C7B:0BB0       __aintdiv
+ 0C7B:0BB4       __fac
+ 0C7B:0BBE       _errno
+ 0C7B:0BC0       __umaskval
+ 0C7B:0BC2       __pspadr
+ 0C7B:0BC4       __psp
+ 0C7B:0BC6       __osminor
+ 0C7B:0BC6       __osver
+ 0C7B:0BC7       __osmajor
+ 0C7B:0BC8       __osversion
+ 0C7B:0BCA       __osmode
+ 0C7B:0BCB       __cpumode
+ 0C7B:0BCC       __oserr
+ 0C7B:0BCC       __doserrno
+ 0C7B:0BCE       __nfile
+ 0C7B:0BD0       __osfile
+ 0C7B:0BE4       ___argc
+ 0C7B:0BE6       ___argv
+ 0C7B:0BEA       __environ
+ 0C7B:0BEE       __pgmptr
+ 0C7B:0BF3       __child
+ 0C7B:0BF5       __ovlflag
+ 0C7B:0BF6       __intno
+ 0C7B:0BF7       __ovlvec
+ 0C7B:0BFB       __exitflag
+ 0C7B:0BFC       __adbgmsg
+ 0C7B:0C00       __aaltstkovr
+ 0C7B:0C04       _STKHQQ
+ 0C7B:0C22       __cflush
+ 0C7B:0C24       __iob
+ 0C7B:0D14       __iob2
+ 0C7B:0E04       __lastiob
+ 0C7B:0E76       __fmode
+ 0C7B:0E76       __iomode
+ 0C7B:0E78       __commode
+ 0C7B:0E7A       __lseekchk
+ 0C7B:0E7C       __pnhFarHeap
+ 0C7B:0E80       __fheap
+ 0C7B:0E8E       __amblksiz
+ 0C7B:0E90       __cfltcvt_tab
+ 0C7B:0EAC       __sigintseg
+ 0C7B:0EAE       __sigintoff
+ 0C7B:0EB0       __asizeC
+ 0C7B:0EB1       __asizeD
+ 0C7B:0EB2       __csigtab0
+ 0C7B:0EF6       ___qczrinit
+ 0C7B:0EF8       ___aDBswpflg
+ 0C7B:0EFA       ___aDBswpchk
+ 0C7B:0EFC       ___aDBrterr
+ 0C7B:0EFE       ___aDBexit
+ 0C7B:0F06       __fpinit
+ 0000:D6D6  Abs  __aDBdoswp
+ 0C7B:102E       __edata
+ 0C7B:102E       _edata
+ 0C7B:1030       _end
+ 0C7B:1030       __end
+
+Line numbers for ADD.OBJ(e:\alpdev\gsmdev\add.c) segment ADD_TEXT
+
+    24 0000:0000    25 0000:0013    26 0000:0020    27 0000:006b
+     0 0000:0072    30 0000:0074    31 0000:0087    32 0000:0094
+    33 0000:00df     0 0000:00e6    36 0000:00e8    37 0000:00fb
+    38 0000:0129    39 0000:0148     0 0000:014f    42 0000:0150
+    43 0000:0163    44 0000:0191    45 0000:0194    46 0000:01b1
+    47 0000:01c5    49 0000:01d4     0 0000:01db    52 0000:01dc
+    53 0000:01ef    54 0000:0220     0 0000:0227    57 0000:0228
+    58 0000:023b    59 0000:0281    60 0000:029d     0 0000:02a4
+    63 0000:02a6    64 0000:02b9    65 0000:02d0    66 0000:02f6
+    67 0000:02f9    68 0000:0329    71 0000:0360    72 0000:0389
+    73 0000:038c    74 0000:03a2    76 0000:03cc     0 0000:03d3
+    79 0000:03d4    80 0000:03e7    81 0000:03fe    82 0000:0424
+    85 0000:0427    86 0000:044a    89 0000:047a    90 0000:04a3
+    93 0000:04a6    94 0000:04c9    96 0000:0500     0 0000:0507
+   136 0000:0508   137 0000:051b   139 0000:054c   140 0000:0563
+   141 0000:0581   150 0000:0591   151 0000:066a     0 0000:0671
+   154 0000:0672   155 0000:0685   156 0000:06c2   157 0000:06e2
+   160 0000:0716   165 0000:072c     0 0000:0733   168 0000:0734
+   169 0000:0747   170 0000:0775   171 0000:0792   174 0000:07c0
+   179 0000:07d0     0 0000:07d7   182 0000:07d8   183 0000:07eb
+   184 0000:080b   185 0000:0848   186 0000:0881   187 0000:0897
+     0 0000:089e   190 0000:08a0   191 0000:08b3   192 0000:08d0
+   193 0000:08fe   194 0000:0932   195 0000:0942     0 0000:0949
+   207 0000:094a   208 0000:095d   209 0000:0967   210 0000:0971
+   211 0000:0976   220 0000:0980   221 0000:09b3   222 0000:09bc
+   224 0000:09c2   225 0000:09e0   226 0000:09e6   228 0000:09fa
+   229 0000:0a15   230 0000:0a21   232 0000:0a25   234 0000:0a28
+   235 0000:0a2e     0 0000:0a35
+
+Line numbers for CODE.OBJ(e:\alpdev\gsmdev\code.c) segment CODE_TEXT
+
+    56 00a3:0006    58 00a3:0019    59 00a3:002a    62 00a3:0038
+    66 00a3:004b    67 00a3:0067    68 00a3:0083    69 00a3:009f
+    77 00a3:00e3    81 00a3:0151    89 00a3:0190    90 00a3:019f
+    92 00a3:029b    93 00a3:029f    95 00a3:02a4    96 00a3:02a7
+    97 00a3:02c5     0 00a3:02cc
+
+Line numbers for DEBUG.OBJ(e:\alpdev\gsmdev\debug.c) segment DEBUG_TEXT
+
+    26 00cf:000e    27 00cf:0021    29 00cf:002b    30 00cf:0053
+    31 00cf:0056    32 00cf:0087    33 00cf:008f    34 00cf:00b2
+    35 00cf:00bc    37 00cf:0112    38 00cf:012d    39 00cf:0168
+     0 00cf:016f    46 00cf:0170    47 00cf:0183    49 00cf:018d
+    50 00cf:01b5    52 00cf:01b8    53 00cf:01ed    54 00cf:01f5
+    55 00cf:0218    56 00cf:0222    58 00cf:0278    59 00cf:0293
+    60 00cf:02ce     0 00cf:02d5    65 00cf:02d6    66 00cf:02e9
+    67 00cf:030b     0 00cf:0312    72 00cf:0314    73 00cf:0327
+    74 00cf:0349     0 00cf:0350
+
+Line numbers for DECODE.OBJ(e:\alpdev\gsmdev\decode.c) segment DECODE_TEXT
+
+    22 0104:0002    24 0104:0015    28 0104:001d    29 0104:004c
+    30 0104:006e    32 0104:00dc    33 0104:014e    34 0104:0151
+    35 0104:0159     0 0104:0160    49 0104:0162    52 0104:0175
+    54 0104:0188    56 0104:01f4    57 0104:021c    59 0104:0246
+    60 0104:02c1    62 0104:02c4    63 0104:02e6    64 0104:02fa
+     0 0104:0301
+
+Line numbers for GSM_CREA.OBJ(e:\alpdev\gsmdev\gsm_crea.c) segment GSM_CREA_TEXT
+
+    24 0134:0002    37 0134:0015    38 0134:0026    40 0134:0041
+    42 0134:004f    43 0134:0058     0 0134:005f
+
+Line numbers for GSM_DECO.OBJ(e:\alpdev\gsmdev\gsm_deco.c) segment GSM_DECO_TEXT
+
+    15 013a:0000    20 013a:0013    22 013a:0038    23 013a:0052
+    24 013a:0064    25 013a:007a    26 013a:008f    27 013a:00a9
+    28 013a:00bb    29 013a:00ce    30 013a:00e8    31 013a:00fa
+    32 013a:010f    33 013a:0125    34 013a:0136    35 013a:014e
+    36 013a:0160    37 013a:0172    38 013a:018a    39 013a:019c
+    40 013a:01b4    41 013a:01c6    42 013a:01e1    43 013a:01f4
+    44 013a:020a    45 013a:0221    46 013a:0234    47 013a:0248
+    48 013a:0261    49 013a:0274    50 013a:028c    51 013a:029e
+    52 013a:02b9    53 013a:02cc    54 013a:02e2    55 013a:02f9
+    56 013a:030a    57 013a:0322    58 013a:0334    59 013a:0346
+    60 013a:035e    61 013a:0370    62 013a:0388    63 013a:039a
+    64 013a:03b4    65 013a:03c6    66 013a:03db    67 013a:03f1
+    68 013a:0403    69 013a:0416    70 013a:042e    71 013a:0440
+    72 013a:0457    73 013a:0468    74 013a:0482    75 013a:0494
+    76 013a:04a9    77 013a:04bf    78 013a:04d0    79 013a:04e8
+    80 013a:04fa    81 013a:050c    82 013a:0524    83 013a:0536
+    84 013a:054d    85 013a:055e    86 013a:0578    87 013a:058a
+    88 013a:059f    89 013a:05b5    90 013a:05c7    91 013a:05da
+    92 013a:05f2    93 013a:0604    94 013a:061b    95 013a:062c
+    96 013a:0646    97 013a:0658    98 013a:066d    99 013a:0683
+   100 013a:0694   101 013a:06ac   102 013a:06be   103 013a:06d0
+   104 013a:06e8   105 013a:06fa   106 013a:0711   107 013a:0722
+   108 013a:073c   109 013a:074e   110 013a:0763   111 013a:0779
+   112 013a:078b   113 013a:079e   114 013a:07b6   115 013a:07c8
+   116 013a:07df   117 013a:07f0   118 013a:080a   119 013a:081c
+   120 013a:0831   122 013a:0840   124 013a:087f   125 013a:0888
+     0 013a:088f
+
+Line numbers for GSM_DEST.OBJ(e:\alpdev\gsmdev\gsm_dest.c) segment GSM_DEST_TEXT
+
+    15 01c3:0000    16 01c3:0013    17 01c3:0033     0 01c3:003a
+
+Line numbers for GSM_ENCO.OBJ(e:\alpdev\gsmdev\gsm_enco.c) segment GSM_ENCO_TEXT
+
+    14 01c6:000c    17 01c6:001f   108 01c6:005e   110 01c6:0078
+   112 01c6:0096   115 01c6:00bb   118 01c6:00e9   120 01c6:0115
+   123 01c6:0134   127 01c6:015f   130 01c6:01a8   133 01c6:01d7
+   137 01c6:0206   140 01c6:0250   142 01c6:027f   145 01c6:029e
+   149 01c6:02c9   152 01c6:0311   155 01c6:033d   159 01c6:0369
+   162 01c6:03af   164 01c6:03db   167 01c6:03fa   171 01c6:0425
+   174 01c6:046b   177 01c6:0497   181 01c6:04c3   184 01c6:0509
+   186 01c6:0535   189 01c6:0554   193 01c6:057f   196 01c6:05c5
+   199 01c6:05f1   203 01c6:061d   206 01c6:0663   207 01c6:068f
+     0 01c6:0696
+
+Line numbers for GSM_EXPL.OBJ(e:\alpdev\gsmdev\gsm_expl.c) segment GSM_EXPL_TEXT
+
+    14 022f:0008    17 022f:001b    21 022f:0040    22 022f:005d
+    23 022f:0072    24 022f:008c    25 022f:00a5    26 022f:00c3
+    27 022f:00d9    28 022f:00f0    29 022f:010e    30 022f:0124
+    31 022f:013d    35 022f:0157    39 022f:016c    40 022f:0188
+    44 022f:019e    48 022f:01b4    49 022f:01d0    53 022f:01e6
+    54 022f:0201    55 022f:0216    56 022f:0234    57 022f:024a
+    58 022f:0263    59 022f:027d    60 022f:0293    61 022f:02aa
+    62 022f:02c6    63 022f:02dc    64 022f:02f7    65 022f:030c
+    66 022f:032a    67 022f:0340    68 022f:0359    73 022f:0373
+    78 022f:0388    79 022f:03a4    84 022f:03ba    89 022f:03d0
+    90 022f:03ec    95 022f:0402    96 022f:041d    97 022f:0432
+    98 022f:0450    99 022f:0466   100 022f:047f   101 022f:0499
+   102 022f:04af   103 022f:04c6   104 022f:04e2   105 022f:04f8
+   106 022f:0513   107 022f:0528   108 022f:0546   109 022f:055c
+   110 022f:0575   115 022f:058f   120 022f:05a4   121 022f:05c0
+   126 022f:05d6   131 022f:05ec   132 022f:0608   137 022f:061e
+   138 022f:0639   139 022f:064e   140 022f:066c   141 022f:0682
+   142 022f:069b   143 022f:06b5   144 022f:06cb   145 022f:06e2
+   146 022f:06fe   147 022f:0714   148 022f:072f   149 022f:0744
+   150 022f:0762   151 022f:0778   152 022f:0791   157 022f:07ab
+   162 022f:07c0   163 022f:07dc   168 022f:07f2   173 022f:0808
+   174 022f:0824   179 022f:083a   180 022f:0855   181 022f:086b
+   182 022f:088a   183 022f:08a1   184 022f:08bb   185 022f:08d6
+   186 022f:08ed   187 022f:0905   188 022f:0922   189 022f:0939
+   190 022f:0955   191 022f:096b   192 022f:098a   193 022f:09a1
+   194 022f:09bb   196 022f:09cf   197 022f:09d8     0 022f:09df
+
+Line numbers for GSM_IMPL.OBJ(e:\alpdev\gsmdev\gsm_impl.c) segment GSM_IMPL_TEXT
+
+    16 02cd:0000   107 02cd:0013   109 02cd:0030   111 02cd:0055
+   114 02cd:0082   117 02cd:00bc   125 02cd:00f4   134 02cd:011b
+   141 02cd:0152   144 02cd:01a4   147 02cd:01dc   151 02cd:0214
+   154 02cd:0266   164 02cd:029e   175 02cd:02c5   183 02cd:02fc
+   186 02cd:034e   189 02cd:0386   193 02cd:03be   196 02cd:0410
+   206 02cd:0448   217 02cd:046f   225 02cd:04a6   228 02cd:04f8
+   231 02cd:0530   235 02cd:0568   238 02cd:05ba   248 02cd:05f2
+   259 02cd:0619   267 02cd:0650   270 02cd:06a4   273 02cd:06df
+   277 02cd:071a   280 02cd:0770   281 02cd:07ab     0 02cd:07b2
+
+Line numbers for GSM_OPTI.OBJ(e:\alpdev\gsmdev\gsm_opti.c) segment GSM_OPTI_TEXT
+
+    15 0348:0004    16 0348:0017    18 0348:0021    21 0348:002a
+    22 0348:003a    24 0348:005e    32 0348:0061    35 0348:0064
+    36 0348:0067    37 0348:008d    38 0348:0096     0 0348:009d
+
+Line numbers for GSM_PRIN.OBJ(e:\alpdev\gsmdev\gsm_prin.c) segment GSM_PRIN_TEXT
+
+    20 0351:000e    25 0351:0021    27 0351:0046    28 0351:0061
+    29 0351:0074    30 0351:008b    31 0351:00a1    32 0351:00bc
+    33 0351:00cf    34 0351:00e3    35 0351:00fe    36 0351:0111
+    37 0351:0127    40 0351:013d    41 0351:014e    42 0351:0167
+    43 0351:017a    44 0351:018c    45 0351:01a5    46 0351:01b8
+    47 0351:01cf    48 0351:01e0    49 0351:01fa    50 0351:020c
+    51 0351:0221    52 0351:0237    53 0351:0249    54 0351:025c
+    55 0351:0274    56 0351:0286    57 0351:029d    58 0351:02ae
+    59 0351:02c8    60 0351:02da    61 0351:02ef    63 0351:0305
+    64 0351:0316    65 0351:032f    66 0351:0342    67 0351:0354
+    68 0351:036d    69 0351:0380    70 0351:0397    71 0351:03a8
+    72 0351:03c2    73 0351:03d4    74 0351:03e9    75 0351:03ff
+    76 0351:0411    77 0351:0424    78 0351:043c    79 0351:044e
+    80 0351:0465    81 0351:0476    82 0351:0490    83 0351:04a2
+    84 0351:04b7    87 0351:04cd    88 0351:04de    89 0351:04f7
+    90 0351:050a    91 0351:051c    92 0351:0535    93 0351:0548
+    94 0351:055f    95 0351:0570    96 0351:058a    97 0351:059c
+    98 0351:05b1    99 0351:05c7   100 0351:05d9   101 0351:05ec
+   102 0351:0604   103 0351:0616   104 0351:062d   105 0351:063e
+   106 0351:0658   107 0351:066a   108 0351:067f   110 0351:0695
+   111 0351:06a6   112 0351:06bf   113 0351:06d2   114 0351:06e4
+   115 0351:06fd   117 0351:0710   118 0351:0727   119 0351:0738
+   120 0351:0752   121 0351:0764   122 0351:0779   123 0351:078f
+   124 0351:07a1   125 0351:07b4   126 0351:07cc   127 0351:07de
+   128 0351:07f5   129 0351:0806   130 0351:0820   131 0351:0832
+   132 0351:0847   136 0351:0856   139 0351:088a   143 0351:08ad
+   146 0351:08e9   151 0351:090c   154 0351:0948   159 0351:096b
+   162 0351:09a7   167 0351:09ca   169 0351:0a06   170 0351:0a0f
+     0 0351:0a16
+
+Line numbers for LONG_TER.OBJ(e:\alpdev\gsmdev\long_ter.c) segment LONG_TER_TEXT
+
+    79 03f2:0008    92 03f2:001b    94 03f2:0020    95 03f2:002d
+    96 03f2:0048    97 03f2:0074    98 03f2:007f   100 03f2:009e
+   101 03f2:00a1   102 03f2:00af   103 03f2:00b2   104 03f2:00d9
+   107 03f2:00f1   108 03f2:00fe   110 03f2:0109   115 03f2:0130
+   119 03f2:0198   120 03f2:01a2   122 03f2:01a7   133 03f2:01b4
+   134 03f2:021e   135 03f2:0288   136 03f2:02f2   137 03f2:035c
+   138 03f2:03c6   139 03f2:0430   140 03f2:049a   141 03f2:0504
+   142 03f2:056e   143 03f2:05d8   144 03f2:0642   145 03f2:06ac
+   146 03f2:0716   147 03f2:0780   148 03f2:07ea   149 03f2:0854
+   150 03f2:08be   151 03f2:0928   152 03f2:0992   154 03f2:09fc
+   156 03f2:0a17   157 03f2:0a20   159 03f2:0a2c   161 03f2:0a4b
+   163 03f2:0a54   167 03f2:0a68   168 03f2:0a99   170 03f2:0ab0
+   175 03f2:0ae1   176 03f2:0aeb   180 03f2:0af8   181 03f2:0b2c
+   182 03f2:0b43   183 03f2:0b62   188 03f2:0b76   189 03f2:0b8d
+   190 03f2:0b95   192 03f2:0b98   193 03f2:0bb3   194 03f2:0bbb
+   197 03f2:0bbe   199 03f2:0bce   200 03f2:0be6   208 03f2:0bfe
+   209 03f2:0c25   210 03f2:0c3b     0 03f2:0c42   519 03f2:0c44
+   540 03f2:0c57   541 03f2:0c5d   542 03f2:0da6   543 03f2:0eef
+   544 03f2:1038   545 03f2:1181   546 03f2:11a7     0 03f2:11ae
+   560 03f2:11b0   561 03f2:11c3   562 03f2:1256   569 03f2:12e9
+   571 03f2:1309   572 03f2:1335     0 03f2:133c   588 03f2:133e
+   595 03f2:1351   596 03f2:1374   597 03f2:137f   601 03f2:13b0
+   606 03f2:13bc   608 03f2:13ef   609 03f2:13fc   610 03f2:1442
+   611 03f2:14e3   618 03f2:1502   619 03f2:1578     0 03f2:157f
+
+Line numbers for LPC.OBJ(e:\alpdev\gsmdev\lpc.c) segment LPC_TEXT
+
+    33 054a:0000    49 054a:0013    50 054a:0018    51 054a:0025
+    52 054a:00b6    53 054a:00c7    57 054a:00e7    58 054a:00f5
+    59 054a:00f8    60 054a:011f    66 054a:013d    81 054a:0146
+    82 054a:014c    83 054a:01cf    84 054a:0252    85 054a:02d5
+    86 054a:0358   100 054a:037e   101 054a:038a   108 054a:0393
+   110 054a:03e4   111 054a:0402   112 054a:040f   113 054a:044d
+   114 054a:045a   115 054a:04b8   116 054a:04c5   117 054a:0543
+   118 054a:0550   119 054a:05ee   120 054a:05fb   121 054a:06b9
+   122 054a:06c6   123 054a:07a4   124 054a:07b1   126 054a:08af
+   128 054a:08bc   130 054a:08c9   131 054a:08e7   132 054a:0967
+   133 054a:09e7   135 054a:0a07   140 054a:0a87   141 054a:0a90
+   142 054a:0ab8   144 054a:0af6     0 054a:0afd   180 054a:0afe
+   191 054a:0b11   192 054a:0b27   193 054a:0b64   196 054a:0b67
+   197 054a:0b9c   199 054a:0bb0   202 054a:0bdf   207 054a:0c55
+   208 054a:0cb3   212 054a:0d11   214 054a:0d4f   215 054a:0d52
+   216 054a:0d7e   217 054a:0d86   218 054a:0dc3   221 054a:0dc6
+   223 054a:0dd8   224 054a:0e03   225 054a:0e1a   226 054a:0e50
+   230 054a:0e65   231 054a:0e89   233 054a:0ef3   234 054a:0f29
+   235 054a:0f60   237 054a:1000   238 054a:103d   239 054a:10d3
+   240 054a:10d6   241 054a:10d9     0 054a:10e0   255 054a:10e2
+   262 054a:10f5   264 054a:1133   265 054a:1139   266 054a:1165
+   268 054a:118c   269 054a:1195   270 054a:119a   271 054a:11a6
+   272 054a:11ce   273 054a:11d2   274 054a:11d5   275 054a:11fd
+   276 054a:1201   279 054a:1206   280 054a:1221   281 054a:1257
+   282 054a:125a     0 054a:1261   289 054a:1262   313 054a:1275
+   314 054a:1375   315 054a:1475   316 054a:157b   318 054a:1681
+   319 054a:1787   320 054a:188d   321 054a:1993   324 054a:1a99
+     0 054a:1aa0   330 054a:1aa2   337 054a:1ab5   338 054a:1aca
+   339 054a:1adf   340 054a:1aed   341 054a:1afb     0 054a:1b02
+
+Line numbers for PREPROCE.OBJ(e:\alpdev\gsmdev\preproce.c) segment PREPROCE_TEXT
+
+    38 06fa:0004    40 06fa:0017    41 06fa:0022    42 06fa:0035
+    55 06fa:0045    57 06fa:004f    61 06fa:006d    62 06fa:0080
+    64 06fa:0084    65 06fa:00ac    78 06fa:00d4    79 06fa:00dd
+    81 06fa:00e3    85 06fa:0115    86 06fa:011f    91 06fa:0133
+    92 06fa:0144    94 06fa:0161    95 06fa:0189    96 06fa:01a2
+   100 06fa:02ab   105 06fa:030e   106 06fa:0332   107 06fa:0343
+   108 06fa:03b8   110 06fa:03bb   111 06fa:03c6   112 06fa:03d9
+   113 06fa:03ea     0 06fa:03f1
+
+Line numbers for RPE.OBJ(e:\alpdev\gsmdev\rpe.c) segment RPE_TEXT
+
+    32 0739:0002    48 0739:0015    52 0739:0019    54 0739:0026
+    95 0739:0030   108 0739:027e   110 0739:0292   111 0739:02fb
+   112 0739:031a     0 0739:0321   125 0739:0322   138 0739:0335
+   139 0739:033f   168 0739:0344   169 0739:034e   170 0739:03f2
+   171 0739:0496   172 0739:053a   176 0739:0546   177 0739:056e
+   178 0739:0582   182 0739:058e   183 0739:0598   184 0739:05c1
+   185 0739:0665   186 0739:0709   187 0739:07ad   188 0739:07c1
+   189 0739:07dc   190 0739:07e1   195 0739:07ed   196 0739:07f7
+   197 0739:0820   198 0739:08c4   199 0739:0968   200 0739:0a0c
+   201 0739:0a20   202 0739:0a3b   203 0739:0a40   208 0739:0a4c
+   209 0739:0a58   210 0739:0a81   211 0739:0a95   212 0739:0ab0
+   213 0739:0ab5   221 0739:0ac1   222 0739:0b4a   223 0739:0b53
+     0 0739:0b5a   231 0739:0b5c   237 0739:0b6f   238 0739:0b74
+   239 0739:0b8c   241 0739:0b9d   242 0739:0ba6   243 0739:0bab
+   245 0739:0bb0   246 0739:0bb3   247 0739:0bb6   248 0739:0bc1
+   249 0739:0bc5   250 0739:0bce   253 0739:0bd2   254 0739:0c03
+   256 0739:0c34   257 0739:0c3d   258 0739:0c46     0 0739:0c4d
+   268 0739:0c4e   281 0739:0c61   282 0739:0c66   283 0739:0c73
+   284 0739:0c91   285 0739:0cc2   286 0739:0cd3   291 0739:0cf2
+   292 0739:0cf7   293 0739:0d00   295 0739:0d0a   297 0739:0d17
+   298 0739:0d31   300 0739:0d39   301 0739:0d61   302 0739:0d77
+   304 0739:0d96   305 0739:0dc7   307 0739:0dd0   308 0739:0e01
+   314 0739:0e1f   330 0739:0e38   331 0739:0e6b   333 0739:0e9c
+   334 0739:0ea5   336 0739:0eb1   338 0739:0ebe   340 0739:0eef
+   341 0739:0f12   342 0739:0f2e   343 0739:0f37   344 0739:0f5e
+   349 0739:0f7d   350 0739:0f86   351 0739:0f8f   352 0739:0f98
+     0 0739:0f9f   366 0739:0fa0   371 0739:0fb3   373 0739:0fe4
+   374 0739:0ff0   375 0739:1000   377 0739:101d   379 0739:1045
+   382 0739:107c   383 0739:1091   385 0739:10c2   386 0739:10c8
+   387 0739:10ea   388 0739:1155   389 0739:1173   390 0739:1176
+     0 0739:117d   406 0739:117e   407 0739:1191   409 0739:119b
+   411 0739:11ce   412 0739:11d4   414 0739:11e3   415 0739:11f2
+   416 0739:1201   417 0739:121b   418 0739:1239   419 0739:125f
+   429 0739:1280     0 0739:1287   464 0739:1288   469 0739:129b
+   470 0739:12b0   472 0739:12cd   473 0739:12f8   475 0739:1314
+   477 0739:132f     0 0739:1336   487 0739:1338   491 0739:134b
+   492 0739:1364   493 0739:137f   495 0739:1397     0 0739:139e
+
+Line numbers for SHORT_TE.OBJ(e:\alpdev\gsmdev\short_te.c) segment SHORT_TE_TEXT
+
+    26 0873:0000    67 0873:0013    68 0873:0166    69 0873:02b9
+    70 0873:0412    72 0873:056b    73 0873:06c4    74 0873:081d
+    75 0873:0976    80 0873:0acf     0 0873:0ad6   102 0873:0ad8
+   106 0873:0aeb   107 0873:0b41   108 0873:0bbf   109 0873:0c37
+   110 0873:0c3a     0 0873:0c41   116 0873:0c42   119 0873:0c55
+   120 0873:0cab   121 0873:0d25   122 0873:0d28     0 0873:0d2f
+   128 0873:0d30   132 0873:0d43   133 0873:0d99   134 0873:0e17
+   135 0873:0e8f   136 0873:0e92     0 0873:0e99   142 0873:0e9a
+   145 0873:0ead   146 0873:0ef7   147 0873:0f06     0 0873:0f0d
+   158 0873:0f0e   163 0873:0f21   174 0873:0f5f   175 0873:0f6b
+   178 0873:0f92   179 0873:1017   180 0873:101a   183 0873:1020
+   185 0873:10a3   186 0873:10a6     0 0873:10ad   206 0873:10ae
+   207 0873:10c1   212 0873:10d2   214 0873:10f7   216 0873:1102
+   218 0873:110f   219 0873:112d   220 0873:114b   222 0873:1169
+   223 0873:1189   225 0873:11f3   226 0873:1214   227 0873:127c
+   229 0873:129b   230 0873:12a1   231 0873:12a4     0 0873:12ab
+   279 0873:12ac   280 0873:12bf   285 0873:12d0   286 0873:12ee
+   287 0873:12fb   291 0873:1323   292 0873:133e   296 0873:135c
+   298 0873:13ad   305 0873:1411   307 0873:145f   308 0873:1507
+   309 0873:150a   310 0873:151f   311 0873:1522     0 0873:1529
+   360 0873:152a   361 0873:153d   362 0873:1560   376 0873:1589
+   378 0873:159d   379 0873:15b8   380 0873:15c7   382 0873:15e6
+   383 0873:1601   384 0873:1610   386 0873:1636   387 0873:1651
+   388 0873:1660   390 0873:1686   391 0873:169b   392 0873:16aa
+   393 0873:16d0     0 0873:16d7   403 0873:16d8   404 0873:16eb
+   405 0873:170e   419 0873:1737   421 0873:174b   422 0873:1766
+   423 0873:1775   425 0873:179a   426 0873:17b5   427 0873:17c4
+   429 0873:17f7   430 0873:1812   431 0873:1821   433 0873:1854
+   434 0873:1869   435 0873:1878   436 0873:18ab     0 0873:18b2
+
+Line numbers for TESTJMS.OBJ(e:\alpdev\gsmdev\testjms.c) segment TESTJMS_TEXT
+
+    12 09fe:0004    13 09fe:0017    14 09fe:0033    15 09fe:003d
+     0 09fe:0044    17 09fe:0046    18 09fe:0059    19 09fe:007b
+    20 09fe:0085     0 09fe:008c    22 09fe:008e    23 09fe:00a1
+    24 09fe:00bb    25 09fe:00d6    26 09fe:00e8    27 09fe:00fd
+    28 09fe:0106     0 09fe:010d    31 09fe:010e    43 09fe:0121
+    44 09fe:012a    45 09fe:0139    46 09fe:014c    47 09fe:016b
+    48 09fe:017e    49 09fe:019d    50 09fe:01ae    51 09fe:01cb
+    52 09fe:01d6    53 09fe:01e8    55 09fe:01f7    56 09fe:021c
+    57 09fe:0233    58 09fe:0242    60 09fe:0248    61 09fe:0266
+    62 09fe:0282    63 09fe:02a0    64 09fe:02bd    66 09fe:02c0
+    67 09fe:02d0    68 09fe:02e0    69 09fe:02f0    70 09fe:02ff
+    71 09fe:0305     0 09fe:030c
+
+Line numbers for GSM_INIT.OBJ(e:\alpdev\gsmdev\gsm_init.c) segment GSM_INIT_TEXT
+
+    11 0a2e:000e    12 0a2e:0021    13 0a2e:0034    14 0a2e:003e
+     0 0a2e:0045
+
+Program entry point at 0A32:0016

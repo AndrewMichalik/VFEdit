@@ -1,0 +1,143 @@
+
+PKUNZIP (R)    FAST!    Extract Utility    Version 2.04g  02-01-93
+Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Shareware Version
+PKUNZIP Reg. U.S. Pat. and Tm. Off.
+
+þ 80486 CPU detected.
+þ EMS version 4.00 detected.
+þ XMS version 2.00 detected.
+þ DPMI version 0.90 detected.
+
+Searching ZIP: GSMDEV.ZIP
+
+ Length  Method   Size  Ratio   Date    Time    CRC-32  Attr  Name
+ ------  ------   ----- -----   ----    ----   -------- ----  ----
+      0  Stored       0   0%  01-21-96  13:33  00000000 --wD  INC/
+      0  Stored       0   0%  02-07-96  19:37  00000000 --wD  ORIG/
+      0  Stored       0   0%  02-28-96  19:48  00000000 --wD  TEST/
+     90  DeflatN     80  12%  06-06-96  19:29  7d3ca9a1 --w-  TESTJMS.VCW
+    694  DeflatN    395  44%  08-21-95  15:27  4c8b134d --w-  COPYRITE
+   1721  DeflatN    926  47%  08-21-95  15:27  2ee76d20 --w-  README
+     43  DeflatN     40   7%  03-06-96  18:05  d7c4b3a4 --w-  TEST.BAT
+  43663  DeflatN  16031  64%  01-21-96  13:39  dd3d8295 --w-  GSM.BSC
+ 101749  DeflatN  36521  65%  03-20-96  20:10  11041abf --w-  TESTGSM.BSC
+  48461  DeflatN  17968  63%  06-06-96  19:28  1468c97f --w-  TESTJMS.BSC
+   6058  DeflatN   1866  70%  05-29-96  19:04  58fea064 --w-  ADD.C
+   3251  DeflatN   1408  57%  05-29-96  19:27  980ca7d8 --w-  CODE.C
+   1819  DeflatN    686  63%  05-29-96  19:07  8a6ad571 --w-  DEBUG.C
+   1789  DeflatN    911  50%  05-29-96  19:07  4fad66c4 --w-  DECODE.C
+    886  DeflatN    532  40%  05-29-96  19:08  58bbdeae --w-  GSM_CREA.C
+   3795  DeflatN   1004  74%  05-29-96  19:08  86b14e3f --w-  GSM_DECO.C
+    513  DeflatN    358  31%  04-25-96  17:02  c75f1323 --w-  GSM_DEST.C
+   5174  DeflatN   1214  77%  05-01-96  16:37  7168c691 --w-  GSM_ENCO.C
+   4566  DeflatN   1134  76%  05-29-96  19:09  092350ef --w-  GSM_EXPL.C
+   6253  DeflatN   1533  76%  05-01-96  16:38  065e8e0f --w-  GSM_IMPL.C
+    255  DeflatN    186  28%  04-25-96  17:01  f06c0e0a --w-  GSM_INIT.C
+    827  DeflatN    504  40%  05-29-96  19:10  43c9dc52 --w-  GSM_OPTI.C
+   5493  DeflatN   1372  76%  05-29-96  19:22  fb585b56 --w-  GSM_PRIN.C
+  17793  DeflatN   4219  77%  05-29-96  19:12  9e28736e --w-  LONG_TER.C
+   7954  DeflatN   2728  66%  05-29-96  19:12  ea1a5ac3 --w-  LPC.C
+   2757  DeflatN   1346  52%  05-29-96  19:13  d72c163b --w-  PREPROCE.C
+  12159  DeflatN   4118  67%  05-29-96  19:14  fb18badc --w-  RPE.C
+  11919  DeflatN   3414  72%  05-29-96  19:15  2fdefddd --w-  SHORT_TE.C
+   2098  DeflatN   1013  52%  05-03-97  19:20  ff9351a9 --w-  TABLE.C
+   1752  DeflatN    729  59%  05-29-96  19:27  4b112222 --w-  TESTJMS.C
+    254  DeflatN    131  49%  06-06-96  19:29  ba85d0a8 --w-  TESTJMS.WSP
+  33939  DeflatN  12474  64%  01-21-96  13:39  dd1973e9 --w-  GSM.LIB
+   3434  DeflatN   1027  71%  01-21-96  13:37  7234800b --w-  GSM.MAK
+   4063  DeflatN   1228  70%  05-10-97  18:41  7686b4f3 --w-  TESTGSM.MAK
+     67  DeflatN     63   6%  05-08-96  18:08  3f60b9c7 --w-  T.BAT
+   4148  DeflatN   1245  70%  06-06-96  17:59  9bad9b12 --w-  TESTJMS.MAK
+  97216  DeflatN  37584  62%  06-06-96  19:28  a974ae4d --w-  TESTJMS.EXE
+   6810  DeflatN   3148  54%  06-06-96  19:26  5fefca76 --w-  ADD.OBJ
+   1968  DeflatN   1374  31%  06-06-96  19:26  f649be10 --w-  CODE.OBJ
+   2719  DeflatN   1393  49%  06-06-96  19:26  ca38fdd9 --w-  DEBUG.OBJ
+   2200  DeflatN   1470  34%  06-06-96  19:26  fc3e24b7 --w-  DECODE.OBJ
+   1059  DeflatN    779  27%  06-06-96  19:26  ce854ef6 --w-  GSM_CREA.OBJ
+   3529  DeflatN   1565  56%  06-06-96  19:26  1292cc37 --w-  GSM_DECO.OBJ
+    847  DeflatN    614  28%  06-06-96  19:27  6952bcd4 --w-  GSM_DEST.OBJ
+   2719  DeflatN   1331  52%  06-06-96  19:27  f4c2fa0a --w-  GSM_ENCO.OBJ
+   3762  DeflatN   1474  61%  06-06-96  19:27  c7c66646 --w-  GSM_EXPL.OBJ
+   2926  DeflatN   1222  59%  06-06-96  19:27  eff34aeb --w-  GSM_IMPL.OBJ
+   1035  DeflatN    752  28%  06-06-96  19:27  e87548b4 --w-  GSM_OPTI.OBJ
+   4584  DeflatN   1939  58%  06-06-96  19:27  690bff02 --w-  GSM_PRIN.OBJ
+   9701  DeflatN   4069  59%  06-06-96  19:27  0aef339a --w-  LONG_TER.OBJ
+  11447  DeflatN   4463  62%  06-06-96  19:27  fa4fef23 --w-  LPC.OBJ
+   2529  DeflatN   1622  36%  06-06-96  19:27  43c3e14c --w-  PREPROCE.OBJ
+   9837  DeflatN   4489  55%  06-06-96  19:27  d710e540 --w-  RPE.OBJ
+   1463  DeflatN   1201  18%  05-10-97  19:08  bf8708cf --w-  TESTGSM.OBJ
+  11347  DeflatN   4262  63%  06-06-96  19:27  3d693d2a --w-  SHORT_TE.OBJ
+     64  DeflatN     60   7%  03-06-96  18:06  ce71a5ef --w-  MSVC.PDB
+   4134  DeflatN   1779  57%  06-06-96  19:27  f05d9071 --w-  TESTJMS.PDB
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  ADD.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  CODE.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  DEBUG.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  DECODE.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_CREA.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_DECO.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_DEST.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_ENCO.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_EXPL.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_IMPL.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_INIT.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_OPTI.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  GSM_PRIN.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  LONG_TER.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  LPC.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  PREPROCE.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  RPE.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  SHORT_TE.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  TABLE.SBR
+      0  Stored       0   0%  03-20-96  20:10  00000000 --w-  TESTGSM.SBR
+      0  Stored       0   0%  06-06-96  19:28  00000000 --w-  TESTJMS.SBR
+     90  DeflatN     80  12%  05-03-97  18:22  7d3ca9a1 --w-  GSM.VCW
+     90  DeflatN     80  12%  03-20-96  20:11  7d3ca9a1 --w-  TESTGSM.VCW
+   1063  DeflatN    737  31%  06-06-96  19:27  c3a365f3 --w-  TABLE.OBJ
+    358  DeflatN    191  47%  05-03-97  18:22  567de287 --w-  GSM.WSP
+    254  DeflatN    129  50%  03-20-96  20:11  9ffe3d72 --w-  TESTGSM.WSP
+  22050  DeflatN  21741   2%  09-07-95  19:26  2abedf07 --w-  TEST.WAV
+    124  DeflatN    108  13%  04-25-96  17:16  1767f9c6 --w-  MYOPT.LNT
+     71  DeflatN     64  10%  04-25-96  17:14  c5d5e0e8 --w-  MYLIN.BAT
+      0  Stored       0   0%  04-25-96  17:15  00000000 --wD  LINT/
+      0  Stored       0   0%  05-29-96  19:23  00000000 --w-  SIO.SBR
+   2788  DeflatN   1730  38%  06-06-96  19:27  49e6d99e --w-  TESTJMS.OBJ
+    843  DeflatN    615  28%  06-06-96  19:27  4015df26 --w-  GSM_INIT.OBJ
+  35936  DeflatN   9854  73%  06-06-96  19:28  40a9fc86 --w-  TESTJMS.MAP
+    610  DeflatN    254  59%  04-25-96  18:00  45e14f8c --w-  TESTJMS.LOG
+   3320  DeflatN   1858  45%  05-29-96  19:23  72071652 --w-  SIO.OBJ
+      0  Stored       0   0%  02-07-96  18:55  00000000 --wD  INC/ORIG/
+   1969  DeflatN    732  63%  06-06-96  19:17  04bd4fab --w-  INC/CONFIG.H
+   2711  DeflatN   1165  58%  05-29-96  19:00  a0912826 --w-  INC/GSM.H
+   1736  DeflatN    690  61%  05-29-96  18:41  c094ca7a --w-  INC/GSMSTRU.H
+   8588  DeflatN   2231  75%  05-29-96  19:19  cf849030 --w-  INC/PRIVATE.H
+   2010  DeflatN    603  70%  08-06-95  01:01  7ff6a241 --w-  INC/PROTO.H
+    514  DeflatN    319  38%  08-04-95  23:26  98185e15 --w-  INC/UNPROTO.H
+  10128  DeflatN   2511  76%  08-06-95  18:07  0c0f714c --w-  INC/ORIG/PRIVATE.H
+   5961  DeflatN   1840  70%  08-06-95  01:05  c31e6274 --w-  ORIG/ADD.C
+   2818  DeflatN   1398  51%  08-06-95  01:25  325ca10f --w-  ORIG/CODE.C
+   1767  DeflatN    664  63%  08-04-95  23:27  ab8a6f50 --w-  ORIG/DEBUG.C
+   1745  DeflatN    890  49%  08-06-95  00:52  bd520d1a --w-  ORIG/DECODE.C
+    900  DeflatN    548  40%  08-04-95  23:27  a53723c7 --w-  ORIG/GSM_CREA.C
+  17720  DeflatN   4170  77%  08-06-95  21:10  12c66189 --w-  ORIG/LONG_TER.C
+   2038  DeflatN   1007  51%  08-04-95  23:27  0db8ba2b --w-  ORIG/TABLE.C
+   2244  DeflatN   2075   8%  06-06-96  19:28  f8536a53 --w-  TEST/ANSR001.CMP
+  11121  DeflatN  10916   2%  06-06-96  19:29  4936f24e --w-  TEST/ANSR002.CMP
+  21760  DeflatN  17771  19%  06-06-96  19:28  15cc5dd4 --w-  TEST/ANSR001.WAV
+ 107840  DeflatN  76049  30%  06-06-96  19:29  c2b51030 --w-  TEST/ANSR002.WAV
+ ------          ------  ---                                  -------
+ 792500          358014  55%                                      112
+
+Searching ZIP: GSMXLT.ZIP
+
+ Length  Method   Size  Ratio   Date    Time    CRC-32  Attr  Name
+ ------  ------   ----- -----   ----    ----   -------- ----  ----
+      0  Stored       0   0%  03-20-96  18:26  00000000 --wD  OBJECT/
+   5118  DeflatN   1276  76%  06-06-96  18:17  37b38544 --w-  GSMXLT.C
+    257  DeflatN     86  67%  03-27-96  19:54  f7cf1788 --w-  GSMXLT.H
+   3885  DeflatN    851  79%  01-01-96  12:00  ce5dcb1d --w-  VISDEF.H
+   1063  DeflatN    308  72%  04-17-96  17:15  7dc9c59b --w-  A.TXT
+    744  DeflatN    466  38%  06-06-96  18:23  066e835b --w-  MSVC.PDB
+   3874  DeflatN   1144  71%  06-06-96  18:23  a3abe572 --w-  MAKEFILE
+   2422  DeflatN   1535  37%  06-06-96  18:23  5700a77a --w-  OBJECT/GSMXLT.OBJ
+ ------          ------  ---                                  -------
+  17363            5666  68%                                        8

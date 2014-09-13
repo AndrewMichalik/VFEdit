@@ -1,0 +1,10 @@
+                        ProLine/2V Controller Application
+                                    05/15/96
+
+Attached is an application that permits you to control the new Dialogic 
+ProLine/2V from the VFEdit Professional Prompt Editor environment.
+
+Simply run this application after starting VFEdit. Use VFEdit to select 
+line 2 for the ProLine/2V audio jack, and use this application to control 
+the audio source.
+

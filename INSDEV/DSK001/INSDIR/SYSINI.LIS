@@ -1,0 +1,11 @@
+ <B>The <R>shared memory segment base address<B> tells VFEdit how your
+    system is configured.
+ If you know the shared memory address range for your voice board,
+    enter it here. This number is typically from <R>D000<B> to <R>DFFF<B>,
+    depending upon the number of boards and their switch settings.
+ If you don't know your settings, leave the default of <R>D000-D200<B>. 
+    VFEdit will then tell Windows not to try to use this memory for 
+    other purposes. If you're unsure of these values, and Windows
+    starts behaving erratically, you can always change them in your
+    System.Ini file at a later time.
+

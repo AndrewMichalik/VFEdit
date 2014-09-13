@@ -1,0 +1,21 @@
+
+
+--------------------   06:00pm    04/25/96   ---------------------------
+
+04792 bytes of stack space available.
+02538 bytes of stack space used.
+113120 bytes was the initial program size.
+113904 bytes was the largest program size.
+00005 block(s) of memory NOT freed (Memory leakage).
+
+    Memory block allocated by __stbuf+0063 LEN 00512
+
+    Memory block allocated by e:\alpdev\gsmdev\gsm_crea.c Line # 00037 LEN 00742
+
+    Memory block allocated by __getbuf+0010 LEN 00512
+
+    Memory block allocated by __getbuf+0010 LEN 00512
+
+    Memory block allocated by __getbuf+0010 LEN 00512
+
+

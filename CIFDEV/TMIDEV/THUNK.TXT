@@ -1,0 +1,34 @@
+TI/F DLL functions used by VFEdit:
+
+    CLRCPB    
+    CLRDCB    
+    CLRRWB    
+*   DSKFILCLS  
+*   DSKFILCRE 
+*   DSKFILINP 
+*   DSKFILLEN  
+*   DSKFILOPN  
+*   DSKFILPOS 
+*   GETCSTAT  
+*   GETLINEVT  
+*   MEMGETREA  
+*   MEMRELREA  
+*   RECFILE   
+    SETCPARM  
+    SETCST     
+    SETHOOK    
+    SETXPARM   
+    STARTAMX  
+*   STARTSYS  
+    STOPAMX   
+*   STOPCH    
+*   STOPSYS   
+*   TIFLINGET 
+*   TIFLINREL 
+*   TIFSUPINI       
+*   TIFSUPTRM       
+*   TIFSUPVER       
+*   XPLAYF    
+
+Note: * indicate functions critical to play/record functions
+

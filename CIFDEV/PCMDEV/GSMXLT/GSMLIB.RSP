@@ -1,0 +1,20 @@
+-+object\gsmxlt.obj                             &
+-+object\add.obj                                &
+-+object\code.obj                               &
+-+object\decode.obj                             &
+-+object\gsm_crea.obj                           &
+-+object\gsm_deco.obj                           &
+-+object\gsm_dest.obj                           &
+-+object\gsm_enco.obj                           &
+-+object\gsm_expl.obj                           &
+-+object\gsm_impl.obj                           &
+-+object\gsm_init.obj                           &
+-+object\gsm_opti.obj                           &
+-+object\gsm_prin.obj                           &
+-+object\long_ter.obj                           &
+-+object\lpc.obj                                &
+-+object\preproce.obj                           &
+-+object\rpe.obj                                &
+-+object\short_te.obj                           &
+-+object\table.obj;
+

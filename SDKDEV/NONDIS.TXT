@@ -1,0 +1,116 @@
+                  NON-DISCLOSURE AGREEMENT
+                              
+This Agreement is entered into as of
+________date___________by VISI  and ______________name,
+address___________________
+
+Recipient agrees that information disclosed by the
+Disclosure directly relating to VISI's VFEdit Software
+Development Kit (VFEdit SDK), documentation and evaluation
+kit, shall only be used for the purpose of evaluation for a
+potential business relationship, to be returned to VISI upon
+written notice, and shall be considered proprietary or
+confidential information if such information is
+conspicuously designated as "Confidential" or "Proprietary"
+(i)  by stamp or legend if communicated in writing or other
+tangible form or (ii) orally at the time of disclosure with
+a written confirmation within thirty (30) days describing
+the confidential or proprietary information communicated
+orally.  All protections and restrictions as to use and
+disclosure shall apply during such thirty (30) day period.
+
+Notwithstanding that the term of this Agreement shall have
+expired, each party agrees to keep in confidence and prevent
+the use (except for purposes of this Agreement) or the
+disclosure to any person or persons outside the receiving
+party's organization, and limit the disclosure inside its
+organization to employees having a need-to-know, of all
+information received under this Agreement which is
+designated as Proprietary or Confidential.  The obligations
+of Confidentiality shall be satisfied by a party if such
+party uses the same standard of care to protect the other
+party's information from disclosure as such party uses to
+protect  its own information.
+
+The above restrictions on use and disclosure shall not apply
+to such information if the same (i) is in the public domain
+or in the possession of the recipient without restriction at
+the time of receipt under this Agreement,  (ii) is used or
+disclosed with prior written approval of the disclosure,
+(iii)  is used or disclosed after five (5) year (s) from the
+date of first receipt under this Agreement,  (iv)  is
+independently developed by the recipient,  (v)  becomes
+known to the recipient from a source other than the
+disclosure without breach of this third party on an
+unrestricted, non-confidential basis.
+
+The term of this Agreement, during which time information
+may be exchanged, shall be for a period of twelve (12)
+months from the date hereof.
+
+Each party warrants that the information it provides
+hereunder to the other party is the same in form and content
+as that used for its own purposes and that to the best of
+its knowledge and belief it has the right and power to
+disclose such information for the purposes stated above.
+Neither party warrants the information it discloses
+hereunder will meet the requirements of the other party or
+that such information when combined with other information
+or when used in a particular manner by recipient will be
+sufficient or suitable for the recipient's purposes.
+Neither party assumes any responsibility or liability
+whatever under this Agreement for any use of information by
+the recipient or its customers or agents.
+
+Nothing herein shall grant, either expressly of by
+implication, any ownership right of license to use (except
+for the purpose stated above) information disclosed
+hereunder.  No other obligations express or implied are
+created or assumed by either party except as stated herein.
+
+The recipient of information  under this Agreement
+acknowledges its obligations to control access to technical
+data under the U. S. Export Laws and Regulations with regard
+to any information received under this Agreement.  Recipient
+will not export outside the United States, if a United
+States company or citizen, or reexport, if a foreign company
+or citizen, except as permitted by the Laws and Regulations
+of the United States.
+
+This Agreement shall be governed by and interpreted in
+accordance with the laws of the State of California.
+
+All Notices or correspondence pertaining to this Agreement
+shall be addressed as follows:
+
+
+_____________________________      VISI (Voice Information
+Systems, Inc.)
+name                          2118 Wilshire Blvd., #973
+_____________________________      Santa Monica, CA 90403
+address                       Attn.: M. Morse
+
+
+
+Additional terms:
+
+
+
+                              VISI (Voice Information
+Systems, Inc.)
+
+
+
+by:                           by:
+_____________________________
+___________________________________
+
+Title                              Title:
+_____________________________
+___________________________________
+
+Date:                              Date:
+_____________________________
+___________________________________
+
+

@@ -1,0 +1,115 @@
+#
+# Standard compiler command line switches
+#	d       Redefined macros
+#	c       No link
+#	AM      Medium memory model
+#	Gsw     Stack probes & Windows
+#	G2      80286 Instruction Set
+#	Gh      C5.1 compatible object
+#	Ox      Max optimization (Note: C6.00a float op error for "ei")
+#	Od      No optimization
+#	W2      Intermediate warning level
+#	Zp      Structure packing
+#	Zd      Symbolic Debug
+#	Zi      CodeView Debug
+#	NT      Named text (code area) follows
+#	Alnw	Check for DS==SS
+#	V       Imbed version string
+#
+# Standard linker command line switches
+#   NOD     No default library
+#   A:x     Segment alignment (default = 512 bytes)
+#   SE:x    Set max number of segments
+
+# -----------------------------------------------------------------------
+# Compile and Link options (distribution & debug)
+# -----------------------------------------------------------------------
+!IFDEF deb
+# ---- DEBUG ----
+ap=masm/MX/V/ZI
+cp=cl -c -FoObject\ -D$(C_Defs) $(W_Defs) -V$(V_Note) -W3 -AM  -G2 -Gsw -Zp -FPa -Od -Zi
+cd=cl -c -FoObject\ -D$(C_Defs) $(W_Defs) -V$(V_Note) -W3 -AMw -G2 -Gsw -Zp -FPa -Od -Zi 
+lp=$(linker)/NOD/NOE/A:16/CO$(L_Defs)
+!ELSE
+# ---- Default: DISTRIBUTION ----
+ap=masm/MX/V
+cp=cl -c -FoObject\ -D$(C_Defs) $(W_Defs) -V$(V_Note) -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt  
+cd=cl -c -FoObject\ -D$(C_Defs) $(W_Defs) -V$(V_Note) -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt 
+lp=$(linker)/NOD/NOE/A:16$(L_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Version Control and Copyright Defs
+# -----------------------------------------------------------------------
+V_Note = "Copyright AJM, 800-234-VISI"
+
+# -----------------------------------------------------------------------
+# Hardware specific build paths
+# -----------------------------------------------------------------------
+!IFDEF dlg
+# ---- DIALOGIC ----
+C_Defs = DLG
+!ELSE
+!IFDEF tti
+# ---- TTI ----
+C_Defs = TTI
+!ELSE
+# ---- DEFAULT NEW VOICE ----
+C_Defs = NWV
+!ENDIF
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Windows version Library build paths & Copy Destination paths
+# -----------------------------------------------------------------------
+!IFDEF w30
+# ---- Windows 3.0 ----
+WinLib = libw+win87em+mlibcew
+DLLLib = libw+win87em+mdllcew
+W_Defs = -I\w30dev\include -D$(C_Defs)
+W_Stub =
+DstPth = \windows^\
+LibEnt = \w30dev\lib\libentry.obj
+DLLExt = dll
+linker = link
+rc = \w30dev\rc $(W_Defs)
+rd = \w30dev\rc $(W_Defs)
+!ELSE
+# ---- DEFAULT C8 & Win 3.1 ----
+WinLib = libw+mlibcew
+DLLLib = libw+mdllcew
+W_Defs = -I\w31dev\include -D$(C_Defs)
+W_Stub =
+DstPth = \w31ret^\
+LibEnt =
+DLLExt = dll
+linker = link
+rc = rc $(W_Defs)
+rd = rc $(W_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Standard inference rules
+# -----------------------------------------------------------------------
+.c{object\}.obj:
+    $(cp) $(@B).c
+
+# -----------------------------------------------------------------------
+# The Target File List
+# -----------------------------------------------------------------------
+nwvtst.exe: object\nwvtst.obj ..\nwvxlt.lib
+    $(lp)   object\nwvtst.obj, nwvtst, NUL, ..\nwvxlt.lib + \c151\lib\mlibce;
+
+..\nwvxlt.lib: object\nwvxl1.obj
+            lib ..\nwvxlt.lib -+object\nwvxl1.obj;
+            del ..\nwvxlt.bak
+
+# -----------------------------------------------------------------------
+# The C and assembly File List
+# -----------------------------------------------------------------------
+object\nwvtst.obj: nwvtst.c ..\genpcm.h
+object\xl1tab.obj: xl1tab.c xltsim.h    ..\genpcm.h
+object\nwvxl1.obj: nwvxl1.c ..\pcmsup.h ..\genpcm.h
+    $(cd) nwvxl1.c
+
+

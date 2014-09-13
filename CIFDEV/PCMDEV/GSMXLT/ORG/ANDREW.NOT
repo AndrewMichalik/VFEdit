@@ -1,0 +1,399 @@
+8:32PM  6/6/96
+
+I converted the GSM code to use __far pointers and I fixed the
+mysterious U4155 LIB bug.  As I said last week, the package is
+ready for testing although I have no real way of validating the
+glue code. You need these directories:
+	E:\ALPDEV\TBXDEV\PCMDEV\GSMXLT	-- The glue code
+	E:\ALPDEV\GSMDEV		-- GSM proper
+
+My GSMDEV makefile is TESTJMS.MAK.  It has a main program.
+Build using Visual C++.  My GSMXLT makefile is MAKEFILE.
+Build using NMAKE.
+
+The good news:  E:\ALPDEV\728DEV's ENCODE and DECODE now
+both compile with __far pointers.  The bad news:  ENCODE
+locks the machine.  I'll look into that next time.
+
+7:30PM  5/29/96
+
+Triumph!  E:\ALPDEV\GSMDEV is ready for your testing although I'm
+not sure about my VFEDIT interface routines.  BTW, I suggest you
+read E:\ALPDEV\DOC\GSMDEV.NOT, my notes describing the original,
+my changes and remaining problems.  Suggest you copy only the
+source files as I probably have some excess junk there.
+
+8:02PM  5/22/96
+
+Andrew, I'm trying your advice.  I'm converting old GSM to new,
+file by file.  E:\ALPDEV\DOC\GSMDEBUG.NOT will log my progress.
+
+6:55PM  5/8/96
+
+Still no answer, although I have narrowed the range of possible
+functions down.  The function call tree is deep, making it difficult
+to trace either via debug or printf.  Sigh ...
+
+5:48PM  5/1/96
+
+I changed FAR to WFAR everywhere to avoid conflicts w/ MS headers.
+Still fails.  The only good news is, it fails on the first pass.
+Maybe I can debug this.
+
+6:44PM  4/25/96
+
+The new GSMDEV compiles but doesn't work.  FAR vs. NEAR?  Something
+else?  We'll see.
+
+6:43PM  4/17/96
+
+All compiles except calls to memset, memcpy and free.  These still
+report near/far mismatches.  I take it that _fmemset and _fmemcpy replace
+the mem* routines.  True?  And what replaces "free"?
+
+8:17PM  3/27/96
+
+Mailed Kelvin the benchmark he requested.  Offered to send him our
+re-entrancy changes.  I'll tell you if he replies. ... Wrote
+gsmxlt.c.  Will test next session.
+
+8:14PM  3/20/96
+
+Writing XLT interface to GSM.  Will pattern others after it, once you've
+blessed and tested it.
+
+7:45PM  3/6/96
+
+* Fixed the testjms.c user interface.
+* Changed testjms.c from a QuickWin app. to DOS.
+* Created test scaffolding we can use for all future compression projects.
+See TEST.NOT.
+* Made ADPCM re-entrant.
+
+8:13PM  2/28/96
+
+Removed all non-const static and extern variables.  Created testjms.c,
+which reads one file and writes two (an encoded file and a decoded output
+file).  User interface is a little clunky -- see the code -- but it should
+do for testing.
+
+7:32PM  2/21/96
+
+I think I'm down to just two non-const static/extern variables.  I'm also out of
+time.  So, next week ...
+
+8:02PM  2/7/96
+
+C:\ALPDEV\DOC\GSM.NOT contains a running log of what I've learned about GSM.
+The authors apparently targeted a platform w/ 32-bit ints.  I have been correcting
+this (%d -> %ld, fix some typedefs, add "L" suffixes to various constants) as I
+go.  ... There are some extern variables.  Static?  Not sure yet.
+
+7:52PM  1/24/96
+
+I am reading the GSM code for understanding and noting non-ANSIisms as I go.
+Next I'll find all non-const extern/static variables.
+
+3:00PM  1/21/96
+
+AJM: Created \alpdev\gsmdev containing the (I think) latest GSM algorithm.
+     Need to test and convert to re-entrant calling sequence as in G.728
+
+6:25PM  1/17/96
+
+Aha!  I was right!  Changing that int loop counter to a long fixed
+the "lockup" bug.  (Are there any compiler options that trap all
+errors BEFORE they lock the PC?  I'd gladly sacrifice some execution
+speed for that.)
+
+I solved the problem with my debug code by eliminating it.  That
+was safe because I figured out why ALPDEV\728DEV and BETDEV\728DEV
+differed on one of my input files. BETDEV was wrong.  You had replaced
+a call to the DOTPROD macro with inline code because the original code
+exploited a compiler that allows a macro to return a value.  Your replacement
+was apparently wrong but I was able to reinstate the original since I had
+previously converted DOTPROD to an inline function.
+
+... All test files are now centralized in E:\TESTING\728DEV.  See that
+directory's TEST.BAT and README.TXT.  \ALPDEV\728DEV and \BETDEV\728DEV
+each have a TEST.BAT that references \TESTING\728DEV\TEST.BAT.
+
+... I think C728 is now ready for VIS prime time, or at least some heavier
+testing.  When you're satisfied with it, what say we email it to the original
+authors?
+
+7:20PM  1/10/96
+
+The status:
+	\betdev\728dev and \alpdev\728dev both crash on your file
+	Possible cause (just my wild guess):  int overflow
+
+	But first I want to see why the two compressors differ on one
+	of my files.  The really strange part:  ALPDEV (with my millions
+	of changes) beats BETDEV (with very few changes).
+
+	I have an error in my debug code, of all things.  I'll fix it
+	next week.
+
+8:21PM  1/3/96
+
+I removed all the unused common2p arguments I could find from C728.
+I thought I was ready to test but the new C728 locked the system on the
+file you created.  (I suspect the file is too long.)  A regression
+test reveals the original locks the system too.  I will track this bug and
+do further regression testing.  When we're done, I suggest we send our mods.
+to the original authors.  Maybe we can persuade them to maintain these.
+
+8:08PM  12/19/95
+
+728 is almost ready for release.  I want to make one last pass to eliminate
+unused arguments (that I may have added in an earlier pass), do other cleanup
+and document.  Running the code is now as simple as this:
+	#include "c728.h"	/* Read this */
+	/* ... */
+	int main () {
+		c728_handle c728Han;
+		c728Han = c728_new (/* ... */);
+		/* c728_encode encodes.  c728_decode decodes */
+		c728_delete (c728Han);
+	}
+
+c728_new's arguments are functions that you write.  (Or you can use the
+C728-supplied default functions for testing.)  These functions do all
+the i/o.  The rest is up to C728.
+
+7:57PM  12/13/95
+
+Renamed all extern functions to start with either "c728_" (if they
+are to be called from outside 728) or "C728_" (else).  Renamed all
+extern variables to "C728_*".  (The only remaining extern variables
+are consts, which, one hopes, will not prohibit re-entrancy.)
+Did some other miscellaneous cleanup.  When I'm done, you'll have
+a "c728.h" which declares:
+	Type c728_Something_or_other (I'll decide), a pointer to
+	a hidden struct
+	c728_new	/* Creates a *c728_... */
+	c728_delete	/* Frees a *c728_ ... */
+	c728_encode	/* Encodes */
+	c728_decode	/* Decodes */
+
+7:32PM  12/6/95
+
+I parameterized all the i/o functions, making them function pointers.
+I also created these c728_* functions:
+	c728_new	-- Initialize
+	c728_delete	-- Terminate
+I will be creating c728_encode and c728_decode.  I don't know whether
+calls to these can be intermixed w/o intervening initialization.
+
+Sample invocations of the code will be in cmain.c's and dmain.c's main
+programs.
+
+7:53PM  11/29/95
+
+The disk worked fine all day today.  Guess it was SMARTDRV after all.
+However, backups never hurt.
+
+Especially since I made good progress today.  Remember how I changed
+all the non-const globals and statics to struct fields and then malloc'ed
+the struct?  Well, today I modified all the functions to take a pointer
+to that struct as an argument.  I think we're reentrant now.
+
+My next step is to write those 728_xxx functions you wanted.
+
+7:29PM  11/15/95
+
+I fixed decode.  There was a bug in DMAIN.C's decode_vector.  Function
+get_index returns either the next short from the input file (if there
+is one), or else -1.  decode_vector doesn't test for -1.  Instead it
+accesses memory at an illegal address.  Kaboom!  After determining
+that DMAIN.C does nothing with this garbage data anyway, I modified
+decode_vector to return when ix<0.  See "JMS" comment.
+
+... Something weird happened:  It started when Visual C++ said it
+didn't have enough memory to start.  That was odd.  I had very little
+running.  Still, I killed everything but Prog. Mgr., WXServer and Clock,
+then retried.  Still no go so I quit to DOS.
+
+Half-remembering (and probably wrongly) that SMARTDRV had something to
+do w/ memory management, I uncommented the SMARTDRV statement from
+AUTOEXEC.BAT and did CTRL-ALT-DEL.
+
+That made 2 things worse:
+	1. PATH was wrong.
+	2. Typing WIN gave me the infamous "Abort,Retry,Fail,Ignore?"
+	   message.
+
+I fixed 1 by copying the PATH set to the bottom of AUTOEXEC.BAT.
+I tried to fix 2 by recommenting SMARTDRV and re-executing but I
+still got "A,R,F,I?".  I hit RESET.  Same message.  I cycled the
+power.  Same message.
+
+Somewhere along the line I SCANDISK-ed both C: and E:.  Both were
+good.  Later I surface-scanned C:, accidentally quitting after checking
+98% of the sectors instead of 100%.  All checked sectors were good.
+
+I finally "solved" the problem by turning the PC off and keeping it
+off for a good 30+ seconds.  But this is still fishy.  When's the
+last time you did a backup?
+
+9:32PM  11/8/95
+
+Encode now works.  Decode crashes but I have some clues:  It happens at EOF.
+It's one of those annoying bugs that locks the PC.  Sigh ...
+
+8:31PM  11/2/95
+
+Aha!  And oops!  We missed the obvious.  Allocating the struct as a static
+sets "all bits 0."  My global_init malloc'ed the struct -- "all
+bits random."  I changed malloc to calloc and now it runs!  Well, sort of.
+I had to CTRL-C before the run completed because all those prints slow it
+down.  I'll remove them next week.  Like they said in the 60s, now it's
+time to "declare victory and go home."
+
+8:02PM  10/25/95
+
+Well, I only made things worse.  I added fprintf's and now it freezes before the
+first message.  Cause unknown.  Maybe I goofed converting to large model.
+
+7:09PM  10/19/95
+
+I combined the two structs into one and dynamically allocated the struct:
+	struct COMMON {
+		/* Fields */
+	};
+	typedef struct COMMON COMMON;
+	struct COMMON2 {
+		COMMON cmn;
+		/* Fields */
+	};
+	typedef struct COMMON2 COMMON2;
+	extern COMMON2* common2p;
+	#define common2 (*common2p)     /* To support lots of code that uses common2 */
+
+Then I added to global.c:
+	COMMON2* common2p = 0;
+	/* Functions to allocate and free common2p */
+
+E:\ALPDEV\728DEV\ENCODE.EXE crashes.  Cause unknown.  My first guess was that the
+combined struct is too large but, nope, it's 18,000+ bytes and that's plenty
+small enough.
+
+Wanna try it yourself?  Ok, but be careful.
+	SET CMAIN=1
+	ENCODE TEST\AI.WAV TEST\AI.CMP
+Leave off the SET and you lock Windows.  Keep it in and you get a NULL pointer
+assignment.  Well, maybe.  Sometimes Windows locks even w/ the SET.  I dunno.
+
+6:59PM  10/12/95
+
+Milestone.  From 728DEV.NOT:
+
+I am in the process of removing all non-const static and extern variables
+from the 728 code, so as to make it reentrant.
+
+All non-const extern variables are gone except for two structs in common.h that I will
+remove later.  All the non-const static variables are gone, having been replaced by
+members of one of the two structs in common.h.  I will later:
+	* Convert the two structs to pointers
+	* Malloc the structs
+	* Pass the resulting pointers as arguments to each function that needs them
+Well, maybe I'll combine the two structs into one and pass just one pointer.
+
+Also, a former problem disappeared.  Used to be that ENCODE ran slower every time I
+executed it. I sometimes had to close applications or even restart WINDOWS.  That problem
+is gone.  Something flaky w/ the system, I guess.
+
+7:26PM  10/5/95
+
+Removed all statics through 1/2 of postfilter.c.  (Exception:  Will
+deal w/ io-sparc.c later.)
+
+7:19PM  9/28/95
+
+Removed all statics from adapters.c through filters.c.
+
+7:15PM  9/21/95
+
+vfedit works.  ...  I removed all statics from adapters.c and tested.
+Still works.  Next week, next file.
+
+7:50PM  9/14/95
+
+Something corrupted vfedit again.  README and one other icon (can't recall its name)
+disappeared from the vfedit window and things went wrong from there.  Any ideas?
+
+I removed some more externs.
+
+6:59PM  8/30/95
+
+WARNING:  I am in the middle of changing 728dev.  I converted all the extern
+variables in COMMON.H to struct members and #define'd macros for the original
+names.  This necessitated changes to COMMON.C and FILTERS.C.  The new 728
+compiles and links.  Does it run?  Who knows?
+
+7:32PM  8/24/95
+
+rfft preserves magnitude, as promised.  So I have to check the magnitudes
+of the various windows and look at unconvert.
+
+6:51PM  8/17/95
+
+* Well, here's a beaut.  The output file (of) was consistently shorter than the input
+file (if).  Also, binary junk got dumped to the screen at the end of the run.
+Huh!?  Aha!  I fflushed stdout before you dup2-ed it back to its original setting.
+That solves both problems.
+
+* A clue:  Overlapp-add with N=64, Nw=64/32 attenuates. N=64, Nw=16 doesn't.
+I don't know why yet.  Error in the scaling computations?  Or do we just want
+Nw>N?  (That makes makewindows scale differently.) 
+Nw=16 yields fuzzy output.  Probably not a bug.
+
+* Don't forget:  D>0 and I>0 on the vocode command line.
+
+* E:\ALPDEV\VOCODE\TEST.  (TEST renamed from CRASH -- it no longer crashes.)
+holds a library of test inputs.  Each input file is commented.  All looks ok
+except for the o'lap-add volume problem.  See VOCODE5.NOT.
+
+------------------------------------------------------
+
+1:34PM  8/5/95
+
+* hypot (7/29/95) was a red herring.
+* Added vocode\main.c option to read the args from a file:
+	vocode filename
+  filename must not start w/ a digit.  File should contain vocode's 8 parms.
+* Added imHere to vocode\main.c to track progress.  Will sprinkle imHere calls
+  throughout the code
+
+----------------------------------------------------
+1:47PM  7/29/95
+
+I spent most of today relearning PC-Lint by running it on some of my
+Util codes.  I think it paid off.  Remember that VOCODE (formerly VOCODE5)
+bug you mentioned?  Well, PC-Lint told me that function hypot is undeclared
+in convert.c.  (It also wrote scads of irrelevant messages.  Well, we can always
+turn those off later.) So C assumes it returns an int.  Oops!  I will declare hypot
+and test next visit.  
+
+----------------------------------------------------
+6:56PM  8/7/95
+
+Program crashes first time through loop.  To run:
+	e:
+	cd \alpdev\vocode
+	vocode aa.txt
+Debug -> stderr, which the program reopens to pv.out.
+Fails in overlapadd reverse-fft (I think).
+
+08/15/95
+AJM - fixed bug in FFT function (#define for EFFFFTINV was wrong! - ouch)
+AJM - seems to work for both Osc Bank and ovr-add, but initial section is 
+      junk (why?).
+      Overlap-add is sensitive to N parameter. Different values of N produce
+      very different amplitude levels. (example, 32 versus 64 versus 256)
+      Osc Bank seems to work pretty consistently - why so different? This
+      implies that the problem is at unconvert() or overlapadd() - more
+      research?
+	
+

@@ -1,0 +1,254 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "cifres.h"
+#include "ver.h"
+#include "afxres.h"
+#include "regdev\\vfereg.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_VISLGO              ICON    DISCARDABLE     "RES\\VISLGO.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDR_VFEARRPTR           CURSOR  DISCARDABLE     "RES\\ARRPTR.CUR"
+IDR_VFESELMRK           CURSOR  DISCARDABLE     "RES\\SELMRK.CUR"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 3,00,0,00
+PRODUCTVERSION 3,00,0,00
+FILEFLAGSMASK 0x0L
+FILEFLAGS 0x0L
+FILEOS 0x1L
+FILETYPE 0x2L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Voice Information Systems, Inc\0"
+            VALUE "FileDescription", "VISI VFEdit C Interface DLL\0"
+            VALUE "FileVersion", "3.00.000\0"
+            VALUE "InternalName", "VFECIF\0"
+            VALUE "LegalCopyright", "Copyright \251 Andrew J. Michalik 1987 - 1996\0"
+            VALUE "LegalTrademarks", "VFEdit\256 is a registered trademark of Andrew J. Michalik.#\0"
+            VALUE "OriginalFilename", "VFECIF.DLL\0"
+            VALUE "ProductName", "VISI VFEdit C Interface DLL\0"
+            VALUE "ProductVersion", "3.00.000\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252 
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// 1000
+//
+
+IDR_CODE 1000 PRELOAD MOVEABLE PURE "REGDEV\\KECHK.WIN"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CIFLIBNAM           "C Interface"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VFEAUDTYP           "%1 Audio (*%2)\n"
+    IDS_UNKAUDDEV           "Unknown audio device"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SELBSTFMT           "Best match"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CIFDLLSUP           "CIF"
+    IDS_AMPDLLSUP           "Amp"
+    IDS_EFFDLLSUP           "Eff"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FIODLLSUP           "FIO"
+    IDS_MCIDLLSUP           "MCI"
+    IDS_PCMDLLSUP           "PCM"
+    IDS_TMIDLLSUP           "TMI"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_MODVERMIS			"Software module version mismatch: %s DLL"
+    IDS_ACCKEYNON           "Accelerator Key not installed!"
+    IDS_DOSMEMERR           "Insufficient DOS global memory.\nSome functions will be inhibited."
+    IDS_INSMEMERR           "Insufficient main memory."
+    IDS_OPNFILERR           "Error opening file."
+    IDS_TMPDIRERR           "Error accessing temporary directory: %s"
+    IDS_TMPCREERR           "Error creating temporary work file: %s"
+    IDS_TMPCREREP           "Using temporary work file: %s instead."
+    IDS_TMPRENERR           "Error renaming temporary work file: %s"
+    IDS_TMPDELERR           "Error deleting temporary work file: %s"
+	IDS_MASBAKERR			"Error backing up master file."
+	IDS_MASRESERR			"Error restoring master backup file."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MASLODERR           "Error loading master file."
+    IDS_WRKLODERR           "Error loading work file."
+    IDS_SNPLODERR           "Error loading snippet file."
+	IDS_TXTLODERR           "Error loading text file."
+    IDS_UNDACCERR           "Error accessing UNDO file.\nUNDO information will be lost."
+    IDS_CUTFILERR           "Error accessing CUT file.\nCUT information will be lost."
+	IDS_SHFFILERR			"Error shifting file.\nOriginal information may be lost."
+ 	IDS_TXTWRTERR			"Error writing text file."		
+ 	IDS_SNPWRTERR			"Error writing snippet file."		
+ 	IDS_WRKWRTERR			"Error writing work file."		
+	IDS_SEGSELERR			"Error selecting segment."
+	IDS_SEGUPDERR			"Error updating segment."
+ 	IDS_SEGCREERR			"Error creating new segment."		
+ 	IDS_SEGDELERR			"Error deleting specified segment."		
+ 	IDS_SEGCREWRN			"Warning: Maximum size exceeded! Operation cancelled."		
+ 	IDS_SEGDELWRN			"Warning: Segment still active! Operation cancelled."		
+	IDS_EBSEOSERR			"Effects Buffer Stream EOS Error.\nOriginal information may be lost."
+	IDS_DCEALOERR			"Dynamic compressor / expander allocation error."
+	IDS_ECHALOERR			"Effects Echo allocation error."
+	IDS_FADALOERR			"Effects Fade allocation error."
+	IDS_POWALOERR			"Frequency Spectrum Analyzer allocation error."
+	IDS_EQUFFTERR			"Frequency Equalizer FFT error."
+	IDS_EQUALOERR			"Frequency Equalizer allocation error."
+	IDS_USRCANREQ           "Operation cancelled at user's request."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_AAFALGNON           "Off"
+    IDS_AAFALGFST           "2nd order integer (fast)"
+    IDS_AAFALGNRM           "2nd order float (normal)"
+    IDS_AAFALG6II           "6th order integer (fast)"
+    IDS_AAFALG6IF           "6th order float (better)"
+    IDS_AAFALGFFT           "FFT FIR (better)"
+	IDS_AAFALGERR			"Error setting anti-aliasing filter parameters."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESALGNON           "Off"
+    IDS_RESALGFST           "Sample skip (fast)"
+    IDS_RESALGNRM           "Linear (normal)"
+    IDS_RESALGFFT           "FFT (best)"
+	IDS_RESALGERR			"Error setting frequency resampling parameters."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DTMALGNON           "Off"
+    IDS_DTMALGFFT           "FFT (best)"
+	IDS_DTMALGERR			"Error setting DTMF filter parameters."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_POLACTMAS			"Loading"
+	IDS_POLACTSNP			"Extracting"
+	IDS_POLACTGPH			"Graphing"
+	IDS_POLACTCUE			"Cueing"
+	IDS_POLACTLOG			"Logging"
+	IDS_POLACTSHF			"Shifting"
+	IDS_POLACTOVR			"Overlaying"
+	IDS_POLACTCVT			"Converting"
+	IDS_POLACTCOP			"Copying"
+	IDS_POLACTERA			"Erasing"
+	IDS_POLACTUND			"Undoing"
+	IDS_POLACTRED			"Redoing"
+	IDS_POLACTPLA			"Playing"
+	IDS_POLACTREC			"Recording"
+	IDS_POLACTUPD			"Updating"
+	IDS_POLACTSAV			"Saving"
+	IDS_POLACTSCN			"Scanning"
+	IDS_POLACTPOW			"Analyzing"
+	IDS_POLACTTON			"Generating"
+END
+
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DEMLIMERR           "Demo Limit reached!\nOrder Now: Call 1-800-234-VISI"
+    IDS_UNKMSGERR           "Unknown error"
+END
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""cifres.h""\r\n"
+    "#include ""ver.h""\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""regdev\\\\vfereg.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+

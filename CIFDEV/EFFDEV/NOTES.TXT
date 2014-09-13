@@ -1,0 +1,31 @@
+Changed 08/95:
+        Moved filter procedure out of EffFFTAlo (and out of data block)
+        and pass into EffFFTFtr on function call.
+
+        Move the (EFFPOLPRC fpPolPrc, DWORD ulPolDat) opposite way 
+
+        Updated for new FFTFtr function Protocol:
+        Returns TRUE to continue processing; DstCnt returned in pointer
+        variable.
+
+        Added usAtDRes to EBS allocation and support routines
+
+        In FFTOvrSav: Moved
+        ulCtrPts = min (ulCtrPts, ulFshCnt - min (ulFshCnt, lpOvrBlk->ulSrcOff));
+        Re-tested OK for unity and binary file compare, various sizes.
+
+        EffF2PLow
+        Generalized to FIR/IIR routines.
+
+        FtrFFTAAF
+        FtrFFTTon
+        Eliminated from effects DLL.
+
+        EffEquAlo
+        Bunch of bug fixes.
+
+        EffDCEAlo
+        Skip processing if dynamic range is 0;
+
+
+

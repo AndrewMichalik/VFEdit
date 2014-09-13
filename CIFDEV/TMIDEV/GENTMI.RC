@@ -1,0 +1,234 @@
+/************************************************************************/
+/* Generic Telco Media I/F Resources: GenTMI.rc         V2.00  07/15/94 */
+/* Copyright (c) 1987-1995 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define NOGDICAPMASKS      
+#define NOWINMESSAGES
+#define NONCMESSAGES
+#define NOSYSMETRICS
+#define NODRAWFRAME
+#define NOMENUS    
+#define NOICON    
+#define NOKEYSTATE
+#define NOSYSCOMMANDS
+#define NORASTEROPS
+#define NOSHOWWINDOW
+#include "windows.h"
+#include <ver.h>
+
+#include "gentmi.h"                     /* Generic MMI definitions      */
+#include "tmisup.h"                     /* Generic TMI support defs     */
+#include "tmimsg.h"                     /* File I/O support error defs  */
+
+/************************************************************************/
+/************************************************************************/
+STRINGTABLE 
+{
+    /********************************************************************/
+    /*          Media Control Library reported Messages                 */
+    /********************************************************************/
+    SI_TMIUNKMSG, "Unknown message"
+
+    /********************************************************************/
+    /*          Media Control Library reported Errors                   */
+    /********************************************************************/
+    SI_TMIUNKERR, "Unknown error"
+    SI_TMITIFMIS, "Software module version mismatch: TIF DLL"
+    SI_TMIINSREA, "Insufficient DOS real memory."
+    SI_TMISIZCHD, "Failed to size cached file."
+    SI_TMIACCCHD, "Error accessing cached file."
+    SI_TMICRECBK, "Failed to create callback window."
+    SI_TMIFSTBLK, "Failed to write first block to device."
+    SI_TMIVBDWIO, "Voice board waveform I/O error %i."
+    SI_TMIINSTIM, "Not enough Windows timers for continuous I/O."
+    SI_TMIBUFUND, "Buffer underflow; please increase device buffer size."
+    SI_TMIEXTUND, "Extended I/O underflow; please increase device buffer size."
+
+    /********************************************************************/
+    /********************************************************************/
+    SI_TMIUSEDEF, "System initialization parameter error, using defaults."
+    SI_TMISYSACT, "System active, using defaults."
+    SI_TMIBADVBD, "Voice board(s) failed self test."
+    SI_TMIVBDINA, "Voice board(s) NOT active."
+    SI_TMIVBHERR, "Voice board(s) hardware error. Please\nrun the manufacturer's diagnostic tests."
+    SI_TMIVBIERR, "Voice board interrupt level not available."
+    SI_TMIDRIMEM, "Voice driver insufficient memory."
+    SI_TMIBADEMS, "Voice driver EMS missing or corrupted."
+    SI_TMIERREMS, "Voice driver EMS error."
+    SI_TMIVBDERR, "Voice board failure. Check board & TSR driver."
+    SI_TMIMXINUL  "Mpx board(s) not installed"
+    SI_TMIMXIERR, "Mpx board(s) interrupt level not available."
+    SI_TMIMXSTRT, "Mpx board(s) already started."
+    SI_TMIMXBERR, "Mpx board failure. Check board & TSR driver."
+
+    /********************************************************************/
+    /*                  TI/F DLL reported errors                        */
+    /********************************************************************/
+    SI_TIFUNKMSG, "TIF DLL: Unknown message reported."
+    SI_EXTSUPERR, "TIF DLL: Cannot initialize Dos Extender support."
+    SI_TSRNOTACT, "TIF DLL: TSR Interface error! Verify that your telephony board\ndriver is installed and run the manufacturer's diagnostic tests."
+    SI_INVLINNUM, "TIF DLL: Invalid line or port number request."
+    SI_CTLINSMEM, "TIF DLL: Insufficient memory to run."
+    SI_CTLFILNOF, "TIF DLL: Controller file not found."
+    SI_CTLPTHNOF, "TIF DLL: Controller path not found."
+    SI_CTLLNKTSK, "TIF DLL: Attempt to link to task."
+    SI_CTLSEPSEG, "TIF DLL: Library requires separate segments."
+    SI_CTLAPLMEM, "TIF DLL: Insufficient memory to load application."   
+    SI_CTLWINVER, "TIF DLL: Incorrect Windows version."
+    SI_CTLBADEXE, "TIF DLL: Invalid controller EXE file."
+    SI_CTLOS2APP, "TIF DLL: OS/2 application."
+    SI_CTLDOSAPP, "TIF DLL: Dos 4.0 Application."
+    SI_CTLUNKEXE, "TIF DLL: Unknown EXE type."
+    SI_CTLMODVER, "TIF DLL: Protected mode wrong version."
+    SI_CTLSECINS, "TIF DLL: Attempt to load second instance."
+    SI_CTLEMSERR, "TIF DLL: Large frame EMS error."
+    SI_CTLPROMOD, "TIF DLL: Attempt to load protected mode."
+    SI_CTLPSPERR, "TIF DLL: Error setting PSP."
+    SI_CTLWNDERR, "TIF DLL: Error setting window handle."
+
+    SI_TMIBCMPRO, "BiCom Telephony (DOS TSR)"
+    SI_TMIDLGPRO, "Dialogic Telephony (DOS TSR)"
+    SI_TMINWVPRO, "New Voice Telephony (DOS TSR)"
+    SI_TMIRTXPRO, "Rhetorex Telephony (DOS TSR)"
+
+    /********************************************************************/
+    /********************************************************************/
+    SI_DBXBKGCLR, "DialogBackground"
+
+    /********************************************************************/
+    /*                      Generic profile strings                     */
+    /********************************************************************/
+    PI_VBSWIN,      "VoiceBoardSoftware"    /* SW int address           */
+    PI_VBHWIR,      "VoiceBoardIRQ"         /* HW int req number        */
+    PI_MXSWIN,      "MultiplexerSoftware"   /* SW int address           */
+    PI_MXHWIR,      "MultiplexerIRQ"        /* HW int req number        */
+    PI_LINENO,      "LineNumber"            /* Line Number              */
+    PI_MAXSIL,      "MaximumSilence"        /* Max sil duration (secs)  */
+    PI_MAXSND,      "MaximumSound"          /* Max snd duration (secs)  */
+    PI_MPXINP,      "MultiplexerInput"      /* Microphone Input on/ off */
+    PI_MPXLOC,      "MultiplexerLocal"      /* Local conn on or off     */
+    PI_MPXOUT,      "MultiplexerOutput"     /* Speaker Output on or off */
+    PI_SILCMP,      "SilenceCompression"    /* Sil compress sens (msec) */
+    PI_AGCMOD,      "AGCMode"               /* AGC mode                 */
+    PI_TRMOOH,      "TerminateOnOffHook"    /* Term on/off hook state   */
+    PI_WAICAL,      "WaitForCall"           /* Wait for call            */
+    
+    /********************************************************************/
+    /*                      Dialogic profile strings                    */
+    /********************************************************************/
+    PI_FLASH_CHAR,  "flash_char"
+    PI_FLASH_TIME,  "flash_time"
+    PI_PAUSE_TIME,  "pause_time"
+    PI_DIGRATE,     "digrate"
+    PI_SCH_TM,      "sch_tm"
+    PI_P_BK,        "p_bk"
+    PI_P_MK,        "p_mk"
+    PI_P_IDD,       "p_idd"
+    PI_T_IDD,       "t_idd"
+    PI_OH_DLY,      "oh_dly"
+    PI_R_ON,        "r_on"
+    PI_R_OFF,       "r_off"
+    PI_R_IRD,       "r_ird"
+    PI_S_BNC,       "s_bnc"
+    PI_TTDATA,      "ttdata"
+    PI_MINPDON,     "minpdon"
+    PI_MINPDOFF,    "minpdoff"
+    PI_MINIPD,      "minipd"
+    PI_MINLCOFF,    "minlcoff"
+    PI_REDGE,       "redge"
+    PI_MAXPDOFF,    "maxpdoff"
+    
+    PI_DTPL_DLY,    "dtpl_dly"
+    PI_DT_EDGE,     "dt_edge"
+    PI_DTRC_DLY,    "dtrc_dly"
+    PI_SB_SIZ,      "sb_siz"
+
+    PI_CSTINT,      "cstint"
+    
+}
+
+/************************************************************************/
+/************************************************************************/
+RNGWAIBOX DIALOG 8, 8, 100, 40
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_VISIBLE
+CAPTION "Audio Interface"
+{
+    CTEXT "Waiting for Call...", -1,       10,  4, 80, 12 
+    DEFPUSHBUTTON "Cancel",      IDCANCEL, 25, 20, 50, 14, WS_GROUP
+}
+  
+SYSCFGBOX DIALOG LOADONCALL MOVEABLE DISCARDABLE 8, 8, 134, 226
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Telephony Configure"
+BEGIN
+       CONTROL "&System",       -1, "button", BS_GROUPBOX | WS_GROUP | WS_CHILD, 4, 4, 128, 200
+       CONTROL "Software Interrupt:", -1, "static", SS_LEFT | WS_CHILD, 8, 16, 70, 12 
+       CONTROL "Voice Board IRQ:",    -1, "static", SS_LEFT | WS_CHILD, 8, 32, 70, 12 
+       CONTROL "Multiplexer IRQ:",    -1, "static", SS_LEFT | WS_CHILD, 8, 48, 70, 12
+       CONTROL "Line Number:",    -1, "static", SS_LEFT | WS_CHILD, 8, 64, 70, 12
+       CONTROL "", DI_VBSWIN, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 16, 32, 12
+       CONTROL "", DI_VBHWIR, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 32, 32, 12
+       CONTROL "", DI_MXHWIR, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 48, 32, 12
+       CONTROL "", DI_LINNUM, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 64, 32, 12
+#if ((defined (DLG)) || (defined (NWV)) || (defined (RTX))) /************/
+       CONTROL "Mpx Input:",   -1, "static", SS_LEFT | WS_CHILD,     8, 80, 70, 12
+       CONTROL "Mpx Output:",  -1, "static", SS_LEFT | WS_CHILD,     8, 96, 70, 12
+       CONTROL "Silence Comp, ms:", -1, "static", SS_LEFT | WS_CHILD, 8, 112, 70, 12
+       CONTROL "", DI_MPXINP, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 80, 32, 12
+       CONTROL "", DI_MPXOUT, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 96, 32, 12
+       CONTROL "", DI_SILCMP, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 112 32, 12
+#endif /*****************************************************************/
+       CONTROL "Max Silence, sec:", -1, "static", SS_LEFT | WS_CHILD, 8, 128, 70, 12
+       CONTROL "Max Sound, sec:",   -1, "static", SS_LEFT | WS_CHILD, 8, 144, 70, 12
+       CONTROL "", DI_MAXSIL, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 128, 32, 12
+       CONTROL "", DI_MAXSND, "edit", ES_LEFT | WS_BORDER | WS_TABSTOP | WS_CHILD, 96, 144, 32, 12
+       CONTROL "AGC On/Off", DI_AGCMOD, "button", BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP | WS_CHILD, 8, 170, 120, 12
+       CONTROL "Wait for call", DI_WAICAL, "button", BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP | WS_CHILD, 8, 186, 120, 12
+       CONTROL "Accept", IDOK,     "button", BS_DEFPUSHBUTTON | WS_TABSTOP | WS_CHILD, 16, 208, 40, 14
+       CONTROL "Cancel", IDCANCEL, "button", BS_PUSHBUTTON | WS_TABSTOP | WS_CHILD, 80, 208, 40, 14
+END
+
+/************************************************************************/
+/*                              Version                                 */
+/************************************************************************/
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     3,00,0,00
+PRODUCTVERSION  3,00,0,00
+FILEFLAGSMASK   0
+FILEFLAGS       0
+FILEOS          VOS__WINDOWS16
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Voice Information Systems, Inc\0"
+            VALUE "FileDescription", "VISI Telco Media Interface DLL\0"
+            VALUE "FileVersion", "3.00.000\0"
+            VALUE "InternalName", "GenTMI\0"
+            VALUE "LegalCopyright", "Copyright \251 Andrew J. Michalik 1987 - 1995\0"
+            VALUE "LegalTrademarks", "VFEdit\256 is a registered trademark of Andrew J. Michalik.#\0"
+#if defined (DLG) /******************************************************/
+            VALUE "OriginalFilename", "DLGTMI.DLL\0"
+            VALUE "ProductName", "VISI Dialogic\256 Telco Media Interface DLL\0"
+#endif /*****************************************************************/
+#if defined (NWV) /******************************************************/
+            VALUE "OriginalFilename", "NWVTMI.DLL\0"
+            VALUE "ProductName", "VISI New Voice\256 Telco Media Interface DLL\0"
+#endif /*****************************************************************/
+#if defined (RTX) /******************************************************/
+            VALUE "OriginalFilename", "RTXTMI.DLL\0"
+            VALUE "ProductName", "VISI Rhetorex\256 Telco Media Interface DLL\0"
+#endif /*****************************************************************/
+            VALUE "ProductVersion", "3.00.000\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252 
+    END
+END
+

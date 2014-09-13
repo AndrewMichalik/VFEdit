@@ -1,0 +1,27 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+ArgsOrCaller=..\vfedit.exe
+External=0
+BrkptCount=4
+BrkptType1=0
+BrkptActive1=1
+BrkptAmbig1=0
+BrkptIndex1=-1
+BrkptLoc1={,e:\betdev\vfedev\cifdev\vfecif.cpp,} .102
+BrkptType2=0
+BrkptActive2=1
+BrkptAmbig2=0
+BrkptIndex2=-1
+BrkptLoc2={,e:\betdev\vfedev\cifdev\vfecif.cpp,} .88
+BrkptType3=0
+BrkptActive3=1
+BrkptAmbig3=0
+BrkptIndex3=-1
+BrkptLoc3={,e:\betdev\vfedev\cifdev\vfecif.cpp,} .149
+BrkptType4=0
+BrkptActive4=1
+BrkptAmbig4=0
+BrkptIndex4=-1
+BrkptLoc4={,e:\betdev\vfedev\cifdev\auddev.cpp,} .92
+WatchCount=0

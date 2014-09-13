@@ -1,0 +1,211 @@
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt dlgtst.c
+dlgtst.c
+dlgtst.c(57) : warning C4120: based/unbased mismatch
+dlgtst.c(66) : warning C4120: based/unbased mismatch
+dlgtst.c(76) : warning C4120: based/unbased mismatch
+dlgtst.c(85) : warning C4120: based/unbased mismatch
+dlgtst.c(85) : warning C4120: based/unbased mismatch
+dlgtst.c(96) : warning C4120: based/unbased mismatch
+dlgtst.c(96) : warning C4120: based/unbased mismatch
+dlgtst.c(106) : warning C4120: based/unbased mismatch
+dlgtst.c(106) : warning C4120: based/unbased mismatch
+dlgtst.c(116) : warning C4120: based/unbased mismatch
+dlgtst.c(116) : warning C4120: based/unbased mismatch
+dlgtst.c(134) : warning C4120: based/unbased mismatch
+dlgtst.c(134) : warning C4120: based/unbased mismatch
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt xl1tab.c
+xl1tab.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt xl1sim.c
+xl1sim.c
+xl1sim.c(254) : warning C4102: 'scndnb' : unreferenced label
+	link/NOD/NOE/A:16   object\xl1tab.obj + object\xl1sim.obj,, NUL, mlibce;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+LINK : warning L4014: /ALIGNMENT : option ignored for MS-DOS executable file
+	xl1tab > dlgxl1.tab
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt dlgxl1.c
+dlgxl1.c
+dlgxl1.c(149) : warning C4102: 'decset' : unreferenced label
+dlgxl1.c(149) : warning C4102: 'dcfsum' : unreferenced label
+dlgxl1.c(149) : warning C4102: 'chkset' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'awdone' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'tstss2' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'store2' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'scndnb' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'tstss1' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'store1' : unreferenced label
+dlgxl1.c(288) : warning C4102: 'awstrt' : unreferenced label
+dlgxl1.c(408) : warning C4102: 'wadone' : unreferenced label
+dlgxl1.c(408) : warning C4102: 'tstss2' : unreferenced label
+dlgxl1.c(408) : warning C4102: 'scndnb' : unreferenced label
+dlgxl1.c(408) : warning C4102: 'tstss1' : unreferenced label
+dlgxl1.c(408) : warning C4102: 'wastrt' : unreferenced label
+dlgxl1.c(589) : warning C4102: 'decset' : unreferenced label
+dlgxl1.c(589) : warning C4102: 'tstlo1' : unreferenced label
+dlgxl1.c(589) : warning C4102: 'chkset' : unreferenced label
+dlgxl1.c(40) : warning C4704: 'DlgA04toCmp' : in-line assembler precludes global optimizations
+dlgxl1.c(157) : warning C4704: 'DlgA04toG16' : in-line assembler precludes global optimizations
+dlgxl1.c(296) : warning C4704: 'DlgG16toA04' : in-line assembler precludes global optimizations
+dlgxl1.c(418) : warning C4704: 'DlgA04toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt xl2tab.c
+xl2tab.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt xl2sim.c
+xl2sim.c
+xl2sim.c(60) : warning C4704: 'WavToF' : in-line assembler precludes global optimizations
+	link/NOD/NOE/A:16   object\xl2tab.obj + object\xl2sim.obj,, NUL, mlibce;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+LINK : warning L4014: /ALIGNMENT : option ignored for MS-DOS executable file
+	xl2tab > dlgxl2.tab
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt dlgxl2.c
+dlgxl2.c
+dlgxl2.c(161) : warning C4102: 'pwdone' : unreferenced label
+dlgxl2.c(161) : warning C4102: 'decset' : unreferenced label
+dlgxl2.c(161) : warning C4102: 'chksmp' : unreferenced label
+dlgxl2.c(161) : warning C4102: 'fwstrt' : unreferenced label
+dlgxl2.c(241) : warning C4102: 'wpdone' : unreferenced label
+dlgxl2.c(241) : warning C4102: 'decset' : unreferenced label
+dlgxl2.c(241) : warning C4102: 'chksmp' : unreferenced label
+dlgxl2.c(241) : warning C4102: 'wfstrt' : unreferenced label
+dlgxl2.c(385) : warning C4102: 'lstbyt' : unreferenced label
+dlgxl2.c(385) : warning C4102: 'chkset' : unreferenced label
+dlgxl2.c(385) : warning C4102: 'fmstrt' : unreferenced label
+dlgxl2.c(83) : warning C4704: 'DlgF08toG16' : in-line assembler precludes global optimizations
+dlgxl2.c(169) : warning C4704: 'DlgG16toF08' : in-line assembler precludes global optimizations
+dlgxl2.c(253) : warning C4704: 'DlgF08toM32' : in-line assembler precludes global optimizations
+	del ..\dlgxlt.lib
+	lib ..\dlgxlt.lib -+object\dlgxl1.obj -+object\dlgxl2.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\dlgxl1.obj : module not in library
+
+LIB : warning U4155: object\dlgxl2.obj : module not in library
+	link/NOD/NOE/A:16   object\dlgtst.obj, dlgtst, NUL, ..\dlgxlt.lib + mlibce;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+LINK : warning L4014: /ALIGNMENT : option ignored for MS-DOS executable file
+	cl -c -FoObject\ -I\w31dev\include -DG11 -DG11 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g11xl1.c
+g11xl1.c
+	cl -c -FoObject\ -I\w31dev\include -DG11 -DG11 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g11xl2.c
+g11xl2.c
+	del ..\g11xlt.lib
+	lib ..\g11xlt.lib -+object\g11xl1.obj -+object\g11xl2.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\g11xl1.obj : module not in library
+
+LIB : warning U4155: object\g11xl2.obj : module not in library
+	cl -c -FoObject\ -I\w31dev\include -DG21 -DG21 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g21xl1.c
+g21xl1.c
+	cl -c -FoObject\ -I\w31dev\include -DG21 -DG21 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g23xl1.c
+g23xl1.c
+	cl -c -FoObject\ -I\w31dev\include -DG21 -DG21 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g23xl2.c
+g23xl2.c
+	cl -c -FoObject\ -I\w31dev\include -DG21 -DG21 -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt g2xxlt.c
+g2xxlt.c
+	del ..\g21xlt.lib
+	lib ..\g21xlt.lib -+object\g21xl1.obj -+object\g23xl1.obj    -+object\g23xl2.obj -+object\g2xxlt.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\g21xl1.obj : module not in library
+
+LIB : warning U4155: object\g23xl1.obj : module not in library
+
+LIB : warning U4155: object\g23xl2.obj : module not in library
+
+LIB : warning U4155: object\g2xxlt.obj : module not in library
+	cl -c -FoObject\ -I\w31dev\include -DHAR -DHAR -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt harxl1.c
+harxl1.c
+	del ..\harxlt.lib
+	lib ..\harxlt.lib -+object\harxl1.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\harxl1.obj : module not in library
+	cl -c -FoObject\ -DMSW -I\w31dev\include -DMSW -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt msadec.c
+msadec.c
+	cl -c -FoObject\ -DMSW -I\w31dev\include -DMSW -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt msaxl1.c
+msaxl1.c
+	cl -c -FoObject\ -DMSW -I\w31dev\include -DMSW -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt msaenc.c
+msaenc.c
+	del ..\mswxlt.lib
+	lib ..\mswxlt.lib -+object\msaxl1.obj -+object\msaenc.obj    -+object\msadec.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\msaxl1.obj : module not in library
+
+LIB : warning U4155: object\msaenc.obj : module not in library
+
+LIB : warning U4155: object\msadec.obj : module not in library
+	cl -c -FoObject\ -DNWV -I\w31dev\include -DNWV -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt nwvtst.c
+nwvtst.c
+	cl -c -FoObject\ -DNWV -I\w31dev\include -DNWV -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt nwvxl1.c
+nwvxl1.c
+	cl -c -FoObject\ -DNWV -I\w31dev\include -DNWV -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt nwviir.c
+nwviir.c
+	del ..\nwvxlt.lib
+	lib ..\nwvxlt.lib -+object\nwvxl1.obj -+object\nwviir.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\nwvxl1.obj : module not in library
+
+LIB : warning U4155: object\nwviir.obj : module not in library
+	link/NOD/NOE/A:16   object\nwvtst.obj, nwvtst, NUL, ..\nwvxlt.lib + \c151\lib\mlibce;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+LINK : warning L4014: /ALIGNMENT : option ignored for MS-DOS executable file
+	cl -c -FoObject\ -I\w31dev\include -DPTC -DPTC -V"Copyright AJM, 800-234-VISI" -W3 -AM  -G2 -Gsw -Zp -FPa -Ocglt ptctst.c
+ptctst.c
+	cl -c -FoObject\ -I\w31dev\include -DPTC -DPTC -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -FPa -Ocglt ptcxl1.c
+ptcxl1.c
+	del ..\ptcxlt.lib
+	lib ..\ptcxlt.lib -+object\ptcxl1.obj;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\ptcxl1.obj : module not in library
+	link/NOD/NOE/A:16   object\ptctst.obj, ptctst, NUL, ..\ptcxlt.lib ..\nwvxlt.lib+ \c151\lib\mlibce;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+LINK : warning L4014: /ALIGNMENT : option ignored for MS-DOS executable file
+	cl -c -FoObject\ -I\w31dev\include -DRTX -DRTX -V"Copyright AJM, 800-234-VISI" -W3 -ALw -G2 -Gsw -Zp -FPa -Ocglt rtxxl1.c
+rtxxl1.c
+	del ..\rtxxlt.lib
+	lib ..\rtxxlt.lib -+object\rtxxl1.obj -+cvtdos.lib;
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+
+LIB : warning U4155: object\rtxxl1.obj : module not in library
+
+LIB : warning U4155: cvtdos.lib : module not in library

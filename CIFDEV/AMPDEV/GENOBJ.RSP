@@ -1,0 +1,6 @@
+object\genamp.obj + object\ampmsg.obj +
+object\ampgph.obj +
+object\ampmse.obj + object\msesup.obj +
+object\ampsta.obj + object\ampxyz.obj +
+object\dllsup.obj + object\winmem.obj + object\winmsg.obj
+

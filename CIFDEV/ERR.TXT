@@ -1,0 +1,1687 @@
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt genamp.c
+genamp.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt ampmsg.c
+ampmsg.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt ampgph.c
+ampgph.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt ampmse.c
+ampmse.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt msesup.c
+msesup.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt ampsta.c
+ampsta.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt ampxyz.c
+ampxyz.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -I\w31dev\include -DDLG -DDLG -V"Copyright AJM, 800-234-VISI" -W3 -AMw -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genamp.dll,                     NUL, libw+mdllcew, DLGamp;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genamp.obj   object\ampmsg.obj +
+Object Modules [.obj]: object\ampgph.obj +
+Object Modules [.obj]: object\ampmse.obj + object\msesup.obj +
+Object Modules [.obj]: object\ampsta.obj + object\ampxyz.obj +
+Object Modules [.obj]: object\dllsup.obj + object\winmem.obj + object\winmsg.obj
+	rc -I\w31dev\include -DDLG   genamp.rc genamp.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+	implib  DLGamp.lib DLGamp.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genamp.dll ..\..\exedev\DLGamp.dll
+        1 file(s) copied
+	copy   genamp.dll DLGamp.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt genfio.c
+genfio.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fioqry.c
+fioqry.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fiomsg.c
+fiomsg.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fiomas.c
+fiomas.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fiowrk.c
+fiowrk.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fioseg.c
+fioseg.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fiosnp.c
+fiosnp.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fiotxt.c
+fiotxt.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fioofs.c
+fioofs.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt filfio.c
+filfio.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt ff_w32.c
+ff_w32.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt filsup.c
+filsup.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt fillow.c
+fillow.c
+fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt wavfil.c
+wavfil.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt vbsfas.c
+vbsfas.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt vbsfil.c
+vbsfil.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt vbsmth.c
+vbsmth.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGstb.c
+dlgstb.c
+	link/NOD/NOE/A:16    @DLGobj.rsp, genfio.dll,               NUL, libw+mdllcew mmsystem, DLGfio;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genfio.obj +
+Object Modules [.obj]: object\fioqry.obj + object\fiomsg.obj +
+Object Modules [.obj]: object\fiomas.obj + object\fiowrk.obj + object\fioseg.obj +
+Object Modules [.obj]: object\fiosnp.obj + object\fiotxt.obj +
+Object Modules [.obj]: object\fioofs.obj + object\filfio.obj + object\ff_w32.obj +
+Object Modules [.obj]: object\filsup.obj + object\fillow.obj +
+Object Modules [.obj]: object\wavfil.obj +
+Object Modules [.obj]: object\vbsfas.obj + object\vbsfil.obj + object\vbsmth.obj +
+Object Modules [.obj]: object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+Object Modules [.obj]: object\dlgstb.obj
+	rc -DW31 -DDLG   genfio.rc genfio.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+	implib  DLGfio.lib DLGfio.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genfio.dll ..\..\exedev\DLGfio.dll
+        1 file(s) copied
+	copy   genfio.dll DLGfio.dll
+        1 file(s) copied
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt genmci.c
+genmci.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt mciqry.c
+mciqry.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt mcimsg.c
+mcimsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt mcicfg.c
+mcicfg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt mciwav.c
+mciwav.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt wavdio.c
+wavdio.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DWAV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @mciobj.rsp, genmci.dll,                     NUL, libw+mdllcew mmsystem, WAVmci;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genmci.obj +
+Object Modules [.obj]: object\mciqry.obj + object\mcimsg +
+Object Modules [.obj]: object\mcicfg.obj + object\mciwav.obj + object\wavdio.obj +
+Object Modules [.obj]: object\dllsup.obj +
+Object Modules [.obj]: object\winmem.obj + object\winmsg.obj
+	rc -I\w31dev\include -DW31 -DWAV   genmci.rc genmci.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+	implib  WAVmci.lib WAVmci.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genmci.dll ..\..\exedev\WAVmci.dll
+        1 file(s) copied
+	copy   genmci.dll WAVmci.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @DLGlib.rsp, DLGpcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DDLG   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+	implib  DLGpcm.lib DLGpcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\DLGpcm.dll
+        1 file(s) copied
+	copy   genpcm.dll DLGpcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @G21lib.rsp, G21pcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: g21xlt.lib dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DG21   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+	implib  G21pcm.lib G21pcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\G21pcm.dll
+        1 file(s) copied
+	copy   genpcm.dll G21pcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @HARlib.rsp, HARpcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: harxlt.lib nwvxlt.lib dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DHAR   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+	implib  HARpcm.lib HARpcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\HARpcm.dll
+        1 file(s) copied
+	copy   genpcm.dll HARpcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @NWVlib.rsp, NWVpcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: nwvxlt.lib dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DNWV   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+	implib  NWVpcm.lib NWVpcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\NWVpcm.dll
+        1 file(s) copied
+	copy   genpcm.dll NWVpcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @PTClib.rsp, PTCpcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: ptcxlt.lib nwvxlt.lib dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DPTC   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+	implib  PTCpcm.lib PTCpcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\PTCpcm.dll
+        1 file(s) copied
+	copy   genpcm.dll PTCpcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt genpcm.c
+genpcm.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmini.c
+pcmini.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmqry.c
+pcmqry.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmfio.c
+pcmfio.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt pcmmxm.c
+pcmmxm.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt blkcvt.c
+blkcvt.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt mpcsup.c
+mpcsup.c
+mpcsup.c(146) : warning C4102: 'endset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(146) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'lstbyt' : unreferenced label
+mpcsup.c(327) : warning C4102: 'chkset' : unreferenced label
+mpcsup.c(327) : warning C4102: 'fmstrt' : unreferenced label
+mpcsup.c(61) : warning C4704: 'MPCL16toM32' : in-line assembler precludes global optimizations
+mpcsup.c(209) : warning C4704: 'MPCP08toM32' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -D_P_DLG -D_P_G11 -D_P_MSW -AMw -W3 -G2 -Gsw -Zp -FPa -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, genpcm.dll,                     NUL, libw+mdllcew @RTXlib.rsp, RTXpcm;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\genpcm.obj   object\pcmini.obj   object\pcmqry.obj +
+Object Modules [.obj]: object\pcmfio.obj + object\pcmmxm.obj +
+Object Modules [.obj]: object\blkcvt.obj + object\mpcsup.obj +
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+Libraries [.lib]: rtxxlt.lib rtxxlt\cvtdos.lib dlgxlt.lib g11xlt.lib mswxlt.lib
+	rc -DW31 -DRTX   genpcm.rc genpcm.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+	implib  RTXpcm.lib RTXpcm.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   genpcm.dll ..\..\exedev\RTXpcm.dll
+        1 file(s) copied
+	copy   genpcm.dll RTXpcm.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\DLGpcm.lib, DLGeff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DDLG   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  DLGeff.lib DLGeff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\DLGeff.dll
+        1 file(s) copied
+	copy   geneff.dll DLGeff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DG21 -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\G21pcm.lib, G21eff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DG21   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  G21eff.lib G21eff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\G21eff.dll
+        1 file(s) copied
+	copy   geneff.dll G21eff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DHAR -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\HARpcm.lib, HAReff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DHAR   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  HAReff.lib HAReff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\HAReff.dll
+        1 file(s) copied
+	copy   geneff.dll HAReff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\NWVpcm.lib, NWVeff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DNWV   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  NWVeff.lib NWVeff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\NWVeff.dll
+        1 file(s) copied
+	copy   geneff.dll NWVeff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DPTC -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\PTCpcm.lib, PTCeff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DPTC   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  PTCeff.lib PTCeff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\PTCeff.dll
+        1 file(s) copied
+	copy   geneff.dll PTCeff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi geneff.c
+geneff.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffse.c
+efffse.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effvol.c
+effvol.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effchn.c
+effchn.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effmix.c
+effmix.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effnoi.c
+effnoi.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffad.c
+efffad.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effech.c
+effech.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effres.c
+effres.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffir.c
+efffir.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effiir.c
+effiir.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi firdes.c
+firdes.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi iirdes.c
+iirdes.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffft.c
+efffft.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftequ.c
+fftequ.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi efffqs.c
+efffqs.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsmst.c
+fqsmst.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fqsobs.c
+fqsobs.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftovr.c
+fftovr.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi fftlow.c
+fftlow.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi effebs.c
+effebs.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi ebssup.c
+ebssup.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	link/NOD/NOE/A:16    @genobj.rsp, geneff.dll,                     NUL, libw+mdllcew ..\pcmdev\RTXpcm.lib, RTXeff;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\geneff.obj +
+Object Modules [.obj]: object\efffse.obj +
+Object Modules [.obj]: object\effvol.obj + object\effchn.obj + object\effmix.obj +
+Object Modules [.obj]: object\effnoi.obj + object\efffad.obj + object\effech.obj +
+Object Modules [.obj]: object\effres.obj + object\efffir.obj + object\effiir.obj +
+Object Modules [.obj]: object\firdes.obj + object\iirdes.obj +
+Object Modules [.obj]: object\efffft.obj + object\fftequ.obj +
+Object Modules [.obj]: object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+Object Modules [.obj]: object\fftovr.obj + object\fftlow.obj +
+Object Modules [.obj]: object\effebs.obj + object\ebssup.obj +
+Object Modules [.obj]: object\dllsup.obj + 
+Object Modules [.obj]: object\fillow.obj + object\winmem.obj + object\winmsg.obj
+	rc -DW31 -DRTX   geneff.rc geneff.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 14 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 15 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 16 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 17 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 18 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 19 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 20 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 21 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 22 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 23 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 24 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 25 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 26 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 27 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 28 set to PRELOAD
+	implib  RTXeff.lib RTXeff.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   geneff.dll ..\..\exedev\RTXeff.dll
+        1 file(s) copied
+	copy   geneff.dll RTXeff.dll
+        1 file(s) copied
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt gentmi.c
+gentmi.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmiqry.c
+tmiqry.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmimsg.c
+tmimsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGcfg.c
+dlgcfg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGdig.c
+dlgdig.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGDIO.c
+dlgdio.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\filsup.c
+..\fiodev\filsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DDLG -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	link/NOD/NOE/A:16    @DLGobj.rsp, gentmi.dll,                     NUL, libw+mdllcew @DLGlib.rsp, DLGtmi;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\gentmi.obj +
+Object Modules [.obj]: object\tmiqry.obj + object\tmimsg.obj +
+Object Modules [.obj]: object\dlgcfg.obj + object\dlgdig.obj +
+Object Modules [.obj]: object\dlgdio.obj +
+Object Modules [.obj]: object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+Object Modules [.obj]: object\filsup.obj + object\fillow.obj
+Libraries [.lib]: ..\..\tifdll\tiflib\dlgtif.lib
+	rc -I\w31dev\include -DW31 -DDLG   gentmi.rc gentmi.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+	implib  DLGtmi.lib DLGtmi.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   gentmi.dll ..\..\exedev\DLGtmi.dll
+        1 file(s) copied
+	copy   gentmi.dll DLGtmi.dll
+        1 file(s) copied
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt gentmi.c
+gentmi.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmiqry.c
+tmiqry.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmimsg.c
+tmimsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGcfg.c
+dlgcfg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGdig.c
+dlgdig.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGDIO.c
+dlgdio.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\filsup.c
+..\fiodev\filsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DNWV -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	link/NOD/NOE/A:16    @DLGobj.rsp, gentmi.dll,                     NUL, libw+mdllcew @DLGlib.rsp, NWVtmi;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\gentmi.obj +
+Object Modules [.obj]: object\tmiqry.obj + object\tmimsg.obj +
+Object Modules [.obj]: object\dlgcfg.obj + object\dlgdig.obj +
+Object Modules [.obj]: object\dlgdio.obj +
+Object Modules [.obj]: object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+Object Modules [.obj]: object\filsup.obj + object\fillow.obj
+Libraries [.lib]: ..\..\tifdll\tiflib\dlgtif.lib
+	rc -I\w31dev\include -DW31 -DNWV   gentmi.rc gentmi.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+	implib  NWVtmi.lib NWVtmi.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   gentmi.dll ..\..\exedev\NWVtmi.dll
+        1 file(s) copied
+	copy   gentmi.dll NWVtmi.dll
+        1 file(s) copied
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt gentmi.c
+gentmi.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmiqry.c
+tmiqry.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt tmimsg.c
+tmimsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGcfg.c
+dlgcfg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGdig.c
+dlgdig.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt DLGDIO.c
+dlgdio.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\dllsup.c
+..\os_dev\dllsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmem.c
+..\os_dev\winmem.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\os_dev\winmsg.c
+..\os_dev\winmsg.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\filsup.c
+..\fiodev\filsup.c
+	cl -c -FoObject\ -I\w31dev\include -DW31 -DRTX -V"Copyright AJM, 800-234-VISI" -AMw -W3 -G2 -Gsw -Zp -Ocglt   ..\fiodev\fillow.c
+..\fiodev\fillow.c
+..\fiodev\fillow.c(224) : warning C4704: 'Rd_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(296) : warning C4704: 'Wr_FilFwd' : in-line assembler precludes global optimizations
+..\fiodev\fillow.c(377) : warning C4704: 'Wr_FilCom' : in-line assembler precludes global optimizations
+	link/NOD/NOE/A:16    @DLGobj.rsp, gentmi.dll,                     NUL, libw+mdllcew @DLGlib.rsp, RTXtmi;
+
+Microsoft (R) Segmented Executable Linker  Version 5.60.220 Sep  9 1994
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+Object Modules [.obj]: /NOD/NOE/A:16 object\gentmi.obj +
+Object Modules [.obj]: object\tmiqry.obj + object\tmimsg.obj +
+Object Modules [.obj]: object\dlgcfg.obj + object\dlgdig.obj +
+Object Modules [.obj]: object\dlgdio.obj +
+Object Modules [.obj]: object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+Object Modules [.obj]: object\filsup.obj + object\fillow.obj
+Libraries [.lib]: ..\..\tifdll\tiflib\dlgtif.lib
+	rc -I\w31dev\include -DW31 -DRTX   gentmi.rc gentmi.dll
+Microsoft (R) Windows Resource Compiler Version 3.11
+Copyright (C) Microsoft Corp. 1985-1992. All rights reserved.
+
+RC: warning RW4002: Non-discardable segment 2 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 3 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 4 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 5 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 6 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 7 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 8 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 9 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 10 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 11 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 12 set to PRELOAD
+RC: warning RW4002: Non-discardable segment 13 set to PRELOAD
+	implib  RTXtmi.lib RTXtmi.def
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	copy   gentmi.dll ..\..\exedev\RTXtmi.dll
+        1 file(s) copied
+	copy   gentmi.dll RTXtmi.dll
+        1 file(s) copied
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c VFECIF.CPP
+vfecif.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPCHD.CPP
+ampchd.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPDSP.CPP
+ampdsp.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDFIL.CPP
+audfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMEM.C
+os_dev\winmem.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDDEV.CPP
+auddev.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMSG.C
+os_dev\winmsg.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c TMPFIL.CPP
+tmpfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDEFF.CPP
+audeff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c UNDLST.CPP
+undlst.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESFIL.CPP
+sesfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEDT.CPP
+sesedt.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEFF.CPP
+seseff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFFRQ.CPP
+efffrq.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFEQU.CPP
+effequ.cpp
+	echo >NUL @VFECIF.CRF
+	link /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL @VFECIF.CRF
+Object Modules [.obj]: /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL VFECIF.OBJ +
+Object Modules [.obj]: AMPCHD.OBJ +
+Object Modules [.obj]: AMPDSP.OBJ +
+Object Modules [.obj]: AUDFIL.OBJ +
+Object Modules [.obj]: WINMEM.OBJ +
+Object Modules [.obj]: AUDDEV.OBJ +
+Object Modules [.obj]: WINMSG.OBJ +
+Object Modules [.obj]: TMPFIL.OBJ +
+Object Modules [.obj]: AUDEFF.OBJ +
+Object Modules [.obj]: UNDLST.OBJ +
+Object Modules [.obj]: SESFIL.OBJ +
+Object Modules [.obj]: SESEDT.OBJ +
+Object Modules [.obj]: SESEFF.OBJ +
+Object Modules [.obj]: EFFFRQ.OBJ +
+Object Modules [.obj]: EFFEQU.OBJ +
+Object Modules [.obj]: 
+Run File [VFECIF.exe]: VFECIF.DLL
+List File [e:VFECIF.map]: nul
+Libraries [.lib]: E:\C151\CDK16\LIB\+
+Libraries [.lib]: e:\c151\lib\+
+Libraries [.lib]: e:\c151\mfc\lib\+
+Libraries [.lib]: lafxdw tmidev\nwvtmi oldnames libw ldllcew mcidev\wavmci ampdev\dlgamp fiodev\dlgfio effdev\nwveff pcmdev\nwvpcm commdlg.lib olecli.lib olesvr.lib shell.lib
+Definitions File [nul.def]: VFECIF.DEF;
+	rc /nologo /k /t VFECIF.RES VFECIF.DLL
+        1 file(s) copied
+	implib /nowep VFECIF.LIB VFECIF.DLL
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	if not exist MSVC.BND 	rc /nologo /k /t VFECIF.RES VFECIF.DLL
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c VFECIF.CPP
+vfecif.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPCHD.CPP
+ampchd.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPDSP.CPP
+ampdsp.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDFIL.CPP
+audfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMEM.C
+os_dev\winmem.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDDEV.CPP
+auddev.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMSG.C
+os_dev\winmsg.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c TMPFIL.CPP
+tmpfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDEFF.CPP
+audeff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c UNDLST.CPP
+undlst.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESFIL.CPP
+sesfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEDT.CPP
+sesedt.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEFF.CPP
+seseff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFFRQ.CPP
+efffrq.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFEQU.CPP
+effequ.cpp
+	echo >NUL @VFECIF.CRF
+	link /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL @VFECIF.CRF
+Object Modules [.obj]: /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL VFECIF.OBJ +
+Object Modules [.obj]: AMPCHD.OBJ +
+Object Modules [.obj]: AMPDSP.OBJ +
+Object Modules [.obj]: AUDFIL.OBJ +
+Object Modules [.obj]: WINMEM.OBJ +
+Object Modules [.obj]: AUDDEV.OBJ +
+Object Modules [.obj]: WINMSG.OBJ +
+Object Modules [.obj]: TMPFIL.OBJ +
+Object Modules [.obj]: AUDEFF.OBJ +
+Object Modules [.obj]: UNDLST.OBJ +
+Object Modules [.obj]: SESFIL.OBJ +
+Object Modules [.obj]: SESEDT.OBJ +
+Object Modules [.obj]: SESEFF.OBJ +
+Object Modules [.obj]: EFFFRQ.OBJ +
+Object Modules [.obj]: EFFEQU.OBJ +
+Object Modules [.obj]: 
+Run File [VFECIF.exe]: VFECIF.DLL
+List File [e:VFECIF.map]: nul
+Libraries [.lib]: E:\C151\CDK16\LIB\+
+Libraries [.lib]: e:\c151\lib\+
+Libraries [.lib]: e:\c151\mfc\lib\+
+Libraries [.lib]: lafxdw tmidev\rtxtmi oldnames libw ldllcew mcidev\wavmci ampdev\dlgamp fiodev\dlgfio effdev\rtxeff pcmdev\rtxpcm commdlg.lib olecli.lib olesvr.lib shell.lib
+Definitions File [nul.def]: VFECIF.DEF;
+	rc /nologo /k /t VFECIF.RES VFECIF.DLL
+        1 file(s) copied
+	implib /nowep VFECIF.LIB VFECIF.DLL
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	if not exist MSVC.BND 	rc /nologo /k /t VFECIF.RES VFECIF.DLL
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c VFECIF.CPP
+vfecif.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPCHD.CPP
+ampchd.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AMPDSP.CPP
+ampdsp.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDFIL.CPP
+audfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMEM.C
+os_dev\winmem.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDDEV.CPP
+auddev.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c OS_DEV\WINMSG.C
+os_dev\winmsg.c
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c TMPFIL.CPP
+tmpfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c AUDEFF.CPP
+audeff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c UNDLST.CPP
+undlst.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESFIL.CPP
+sesfil.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEDT.CPP
+sesedt.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c SESEFF.CPP
+seseff.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFFRQ.CPP
+efffrq.cpp
+	cl /nologo /W3 /ALw /YX /O2 /D "NDEBUG" /D "_USRDLL" /GD /Fp"VFECIF.PCH"  /c EFFEQU.CPP
+effequ.cpp
+	echo >NUL @VFECIF.CRF
+	link /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL @VFECIF.CRF
+Object Modules [.obj]: /NOLOGO /NOD /NOE /PACKC:61440 /ALIGN:16 /ONERROR:NOEXE /MAP:FULL VFECIF.OBJ +
+Object Modules [.obj]: AMPCHD.OBJ +
+Object Modules [.obj]: AMPDSP.OBJ +
+Object Modules [.obj]: AUDFIL.OBJ +
+Object Modules [.obj]: WINMEM.OBJ +
+Object Modules [.obj]: AUDDEV.OBJ +
+Object Modules [.obj]: WINMSG.OBJ +
+Object Modules [.obj]: TMPFIL.OBJ +
+Object Modules [.obj]: AUDEFF.OBJ +
+Object Modules [.obj]: UNDLST.OBJ +
+Object Modules [.obj]: SESFIL.OBJ +
+Object Modules [.obj]: SESEDT.OBJ +
+Object Modules [.obj]: SESEFF.OBJ +
+Object Modules [.obj]: EFFFRQ.OBJ +
+Object Modules [.obj]: EFFEQU.OBJ +
+Object Modules [.obj]: 
+Run File [VFECIF.exe]: VFECIF.DLL
+List File [e:VFECIF.map]: nul
+Libraries [.lib]: E:\C151\CDK16\LIB\+
+Libraries [.lib]: e:\c151\lib\+
+Libraries [.lib]: e:\c151\mfc\lib\+
+Libraries [.lib]: lafxdw tmidev\dlgtmi oldnames libw ldllcew mcidev\wavmci ampdev\dlgamp fiodev\dlgfio effdev\dlgeff pcmdev\dlgpcm commdlg.lib olecli.lib olesvr.lib shell.lib
+Definitions File [nul.def]: VFECIF.DEF;
+	rc /nologo /k /t VFECIF.RES VFECIF.DLL
+        1 file(s) copied
+	implib /nowep VFECIF.LIB VFECIF.DLL
+
+Microsoft (R) Import Library Manager  Version 1.50
+Copyright (C) Microsoft Corp 1984-1993.  All rights reserved.
+
+	if not exist MSVC.BND 	rc /nologo /k /t VFECIF.RES VFECIF.DLL

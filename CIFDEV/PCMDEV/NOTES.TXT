@@ -1,0 +1,24 @@
+Step 1:
+    0)  PCM to Ini lmemset (lpITC, 0, sizeof (*lpITC)); to init
+    1)  PCM to ITC should accept *lpusBytCnt argument, can be lpusRsv001
+        initially. 
+    2)  PCM to G16 routines should use *lpusBytCnt for the loop counters
+        change usSmpCnt to usRsv001; modify test routines accordingly.   
+    3)  G16 to PCM routines should use *lpusSmpCnt for the loop counters
+        change usSmpCnt to usRsv001; modify test routines accordingly   
+    4)  Remove optional bytcnt in low level conversion routines,
+        ie,  if (lpusBytCnt) *lpusBytCnt = usSmpCnt / 2;
+           ->                *lpusBytCnt = usSmpCnt / 2;
+        usBytCnt is essential for conversion with odd bit 
+        counts (3, 5, etc).
+
+Step 2:
+    1)  G16 to PCM routines should be modified to accept usBytCnt for 
+        maximum byte output count;
+    2)  BlkCvt PCM to G16 functions should be modified to pass the maximum
+        sample count permitted, not the PCMSmp2Bh approximation.
+    3)  BlkCvt G16 to PCM functions should be modified to pass the maximum
+        byte count permitted, not the PCMBtoSmp approximation.
+    4)  The above do not become an issue until you get odd byte counts
+        or compression schemes that expand to non-linear counts.
+

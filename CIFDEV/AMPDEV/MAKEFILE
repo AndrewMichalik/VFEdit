@@ -1,0 +1,121 @@
+#
+# Standard compiler command line switches
+#	d       Redefined macros
+#	c       No link
+#	AM      Medium memory model
+#	Gsw     Stack probes & Windows
+#	G2      80286 Instruction Set
+#	Gh      C5.1 compatible object
+#	Ox      Max optimization (Note: C6.00a float op error for "ei")
+#	Od      No optimization
+#	W2      Intermediate warning level
+#	Zp      Structure packing
+#	Zd      Symbolic Debug
+#	Zi      CodeView Debug
+#	NT      Named text (code area) follows
+#	Alnw	Check for DS==SS
+#	V       Imbed version string
+#
+# Standard linker command line switches
+#   NOD     No default library
+#   A:x     Segment alignment (default = 512 bytes)
+#   SE:x    Set max number of segments
+
+# -----------------------------------------------------------------------
+# Compile and Link options (distribution & debug)
+# -----------------------------------------------------------------------
+!IFDEF deb
+# ---- DEBUG ----
+ap=masm/MX/V/ZI
+cp=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -W3 -AM  -G2 -Gsw -Zp -Od -Zi
+cd=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -W3 -AMw -G2 -Gsw -Zp -Od -Zi 
+lp=$(linker)/NOD/NOE/A:16/CO$(L_Defs)
+!ELSE
+# ---- Default: DISTRIBUTION ----
+ap=masm/MX/V
+cp=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -W3 -AM  -G2 -Gsw -Zp -Ocglt  
+cd=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -W3 -AMw -G2 -Gsw -Zp -Ocglt 
+lp=$(linker)/NOD/NOE/A:16$(L_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Version Control and Copyright Defs
+# -----------------------------------------------------------------------
+V_Note = "Copyright AJM, 800-234-VISI"
+
+# -----------------------------------------------------------------------
+# Hardware specific build paths
+# -----------------------------------------------------------------------
+# ---- DEFAULT Dialogic ----
+C_Defs = DLG
+
+# -----------------------------------------------------------------------
+# Windows version Library build paths & Copy Destination paths
+# -----------------------------------------------------------------------
+!IFDEF w30
+# ---- Windows 3.0 ----
+WinLib = libw+win87em+mlibcew
+DLLLib = libw+win87em+mdllcew
+W_Defs = -I\w30dev\include -D$(C_Defs)
+W_Stub =
+DstPth = ..\..\exedev^\
+LibEnt = \w30dev\lib\libentry.obj
+DLLExt = dll
+linker = link
+rc = \w30dev\rc $(W_Defs)
+rd = \w30dev\rc $(W_Defs)
+!ELSE
+# ---- DEFAULT C8 & Win 3.1 ----
+WinLib = libw+mlibcew
+DLLLib = libw+mdllcew
+W_Defs = -I\w31dev\include -D$(C_Defs)
+W_Stub =
+DstPth = ..\..\exedev^\
+LibEnt =
+DLLExt = dll
+linker = link
+rc = rc $(W_Defs)
+rd = rc $(W_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Standard inference rules
+# -----------------------------------------------------------------------
+.c{object\}.obj:
+    $(cd) $(@B).c
+.cpp{object\}.obj:
+    $(cd) $(@B).cpp
+
+# -----------------------------------------------------------------------
+# The Executables, Libraries & Resources File List
+# -----------------------------------------------------------------------
+$(DstPth)$(C_Defs)amp.$(DLLExt): genamp.$(DLLExt)
+    copy   genamp.$(DLLExt) $(DstPth)$(C_Defs)amp.$(DLLExt)
+    copy   genamp.$(DLLExt) $(C_Defs)amp.$(DLLExt)
+
+genamp.$(DLLExt): $(C_Defs)amp.def genamp.rc                            \
+            object\genamp.obj object\ampmsg.obj                         \
+            object\ampgph.obj                                           \
+            object\ampmse.obj object\msesup.obj                         \
+            object\ampsta.obj object\ampxyz.obj                         \
+            object\dllsup.obj object\winmem.obj object\winmsg.obj
+    $(lp)   $(LibEnt) @genobj.rsp, genamp.$(DLLExt),                    \
+            NUL, $(DLLLib), $(C_Defs)amp;
+    $(rd)   genamp.rc genamp.$(DLLExt)
+    implib  $(C_Defs)amp.lib $(C_Defs)amp.def
+
+object\genamp.obj: genamp.c genamp.h ampsup.h ampmsg.h 
+object\gphsup.obj: gphsup.c genamp.h ampsup.h
+object\ampgph.obj: ampgph.c genamp.h ampsup.h
+object\ampmse.obj: ampmse.c genamp.h ampsup.h 
+object\msesup.obj: msesup.c genamp.h ampsup.h
+object\ampsta.obj: ampsta.c genamp.h ampsup.h
+object\ampxyz.obj: ampxyz.c genamp.h ampsup.h
+object\ampmsg.obj: ampmsg.c genamp.h ampsup.h ampmsg.h
+object\dllsup.obj: ..\os_dev\dllsup.c ..\os_dev\dllsup.h ..\os_dev\winmem.h
+    $(cd)   ..\os_dev\dllsup.c
+object\winmem.obj: ..\os_dev\winmem.c ..\os_dev\winmem.h
+    $(cd)   ..\os_dev\winmem.c
+object\winmsg.obj: ..\os_dev\winmsg.c ..\os_dev\winmsg.h
+    $(cd)   ..\os_dev\winmsg.c
+

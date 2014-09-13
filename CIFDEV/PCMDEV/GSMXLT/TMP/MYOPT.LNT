@@ -1,0 +1,8 @@
+-ie:\c810\include
+-ie:inc
+-A
+-cmsc
+-e537
+-e1904  // Don't flag /* ... */ comments
+-efile(766,mathcon.h)
+-elib(????)

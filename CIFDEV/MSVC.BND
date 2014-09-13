@@ -1,0 +1,23 @@
+VFECIF.OBJ +
+AMPCHD.OBJ +
+AMPDSP.OBJ +
+AUDFIL.OBJ +
+WINMEM.OBJ +
+AUDDEV.OBJ +
+WINMSG.OBJ +
+TMPFIL.OBJ +
+AUDEFF.OBJ +
+UNDLST.OBJ +
+SESFIL.OBJ +
+SESEDT.OBJ +
+SESEFF.OBJ +
+EFFFRQ.OBJ +
+EFFEQU.OBJ +
+
+VFECIF.DLL
+nul
+E:\C151\CDK16\LIB\+
+e:\c151\lib\+
+e:\c151\mfc\lib\+
+lafxdw tmidev\dlgtmi oldnames libw ldllcew mcidev\wavmci ampdev\dlgamp fiodev\dlgfio effdev\dlgeff pcmdev\dlgpcm commdlg.lib olecli.lib olesvr.lib shell.lib
+VFECIF.DEF;

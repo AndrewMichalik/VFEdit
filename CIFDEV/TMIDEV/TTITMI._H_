@@ -1,0 +1,47 @@
+/************************************************************************/
+/* Dialogic Media Control I/F Defs: DlgTMI.h           V2.00  06/10/92 */
+/* Copyright (c) 1987-1992 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+
+typedef struct _DIGOPNEXT {             /* Dig extended open params     */
+    struct  SysConfigArea ttidcb;       /* TTI Specific control block   */
+    WORD    usCSTInt;                   /* Dlg Specific control block   */
+} DIGOPNEXT;
+
+#define _pdbSYSCFG(pOP) ((struct SysConfigArea FAR *)(&(pOP->ucExtPrm[0])))
+
+/************************************************************************/
+/************************************************************************/
+#define AGCMODOFF      0                /* AGC Slow, full range         */
+#define AGCMODON1      1                /* AGC Fast, full range         */
+#define AGCMODON2      2                /* AGC Slow, limited range      */
+#define AGCMODON3      3                /* AGC Fast, limited range      */
+#define AGCMODMSK    0x3                /* AGC Bit mask                 */
+
+/************************************************************************/
+/************************************************************************/
+typedef struct _DIGSYSPRM {             /* Digitizer syst param list    */
+    WORD            usIniCod;           /* Digitizer init code          */
+    unsigned int    uiLinCnt;           /* Line count                   */
+} DIGSYSPRM;
+typedef struct _DIGLINPRM {             /* Digitizer line param list    */
+    BYTE    ucMaxSil;                   /* Max silence                  */
+    BYTE    ucMaxSnd;                   /* Max sound                    */
+    WORD    usSCBSiz;                   /* Sound compression buff size  */
+    WORD    usAGCMod;                   /* AGC mode                     */
+    short   sFilHdl;                    /* Play/Rec file handle         */
+} DIGLINPRM;
+
+/************************************************************************/
+/************************************************************************/
+typedef struct _MPXSYSPRM {             /* Multiplexer sys param list   */
+    WORD            usIniCod;           /* Multiplexer code             */
+    unsigned int    uiPrtCnt;           /* Port count                   */
+} MPXSYSPRM;
+
+#define CONMIC  1                       /* Mpx Set microphone conn      */
+#define CONSPK  2                       /* Mpx Set speaker connection   */
+#define CONLOC  3                       /* Mpx Set local connection     */
+    
+

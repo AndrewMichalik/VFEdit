@@ -1,0 +1,10 @@
+ <B>The <R>default file type<B> setting tells VFEdit about the format of the
+    files you will be editing.
+ "<R>Pure<B>" files contain only digitized sound. This is the most common
+    selection.
+ "<R>Indexed<B>" or "<R>VBase<B>" files contain groups of sound (or phrases)
+    along with format and annotation text. Make this selection if you will
+    be using VFEdit with a system that supports this file type.
+ "<R>Wave<B>" files contain header information and digitized sound. This is
+    a popular selection for users with multimedia devices.
+

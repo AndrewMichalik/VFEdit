@@ -1,0 +1,65 @@
+
+                    VFEdit Professional Prompt Editor
+
+
+Contents:
+
+    The DLGVFE3D.ZIP file contains a demonstration and evaluation version
+    of VFEdit(R), the Professional Prompt Editor.
+
+    VFEdit (vee-ef-edit, short for Voice File Edit) is a program that lets 
+    you edit sound the way a word processor lets you edit text. A word 
+    processor lets you to cut, copy, insert, replace, and re-arrange 
+    written words. VFEdit lets you do the same thing with spoken words 
+    - and a lot more.
+    
+    You speak into a microphone and record your words. VFEdit then converts 
+    your words and music (plus and anything else you may want to add) into 
+    something you can actually see and use. VFEdit shows you what sound 
+    looks like. The basic reason to use VFEdit is that you simply want your 
+    audio presentations to sound good - just as you want your written 
+    presentations to look good. 
+
+    VFEdit supports Record and Playback using any Windows compatible sound 
+    board, Dialogic compatible telephony card, and even works with the 
+    PC Speaker driver.
+
+    If you develop for voice processing, or if you only change, fix, and 
+    improve your voice prompts, you'll find VFEdit just about indispensable. 
+    Satisfying. Fun, too!
+
+To Unpack:
+    
+    1)  Unzip the file DLGVFE3D.ZIP to extract each floppy image:
+        PKUNZIP DLGVFE3D.ZIP
+    2)  Unzip the disk images to floppy using the create directory option: 
+        PKUNZIP -d VFE001.ZIP a:
+        PKUNZIP -d VFE002.ZIP a:
+        PKUNZIP -d VFE003.ZIP a:
+    3)  Run the Setup program, and enter the demo serial number 
+        "0000.0000.0000" (without the double quotes)
+
+
+Other VISI Products:
+
+    Don't forget to ask about our other exciting products:
+    
+    Audio ToolBox converts to and from pure & indexed files, 
+        Microsoft Multimedia Wave (8, 16, MS ADPCM), linear 16 
+        and unsigned 8 bit, plus Dialogic 4 and 8 bit. Convert 
+        files recorded at 22 KHz, 11KHz, 8KHz and 6Khz - and 
+        provides filters for proper re-sampling.
+
+    TI/F DLL (tif-dee-el-el), The Microsoft Windows Voice
+        Mail Driver, lets you add Voice Mail power to your
+        Microsoft Windows applications.
+
+    VoxFonts, the "Software Only" Text-to-Speech adds an
+        unlimited vocabulary to your Interactive Voice
+        Response applications.
+    
+    Scribe, The DOS Speech to Text Transcription Utility,
+        lets you hear digital audio files without the need
+        for additional hardware. It's like turning your PC
+        into a transcription machine.
+

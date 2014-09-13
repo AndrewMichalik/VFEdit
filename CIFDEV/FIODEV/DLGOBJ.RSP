@@ -1,0 +1,11 @@
+object\genfio.obj +
+object\fioqry.obj + object\fiomsg.obj +
+object\fiomas.obj + object\fiowrk.obj + object\fioseg.obj +
+object\fiosnp.obj + object\fiotxt.obj +
+object\fioofs.obj + object\filfio.obj + object\ff_w32.obj +
+object\filsup.obj + object\fillow.obj +
+object\wavfil.obj +
+object\vbsfas.obj + object\vbsfil.obj + object\vbsmth.obj +
+object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+object\dlgstb.obj
+

@@ -1,0 +1,104 @@
+/************************************************************************/
+/* Generic PCM Conversion Resources: GenPCM.rc          V2.00  07/15/97 */
+/* Copyright (c) 1987-1997 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define NOGDICAPMASKS	  
+#define NOWINMESSAGES
+#define NONCMESSAGES
+#define NOSYSMETRICS
+#define NODRAWFRAME
+#define NOMENUS    
+#define NOICON    
+#define NOKEYSTATE
+#define NOSYSCOMMANDS
+#define NORASTEROPS
+#define NOSHOWWINDOW
+#include <windows.h>
+#include <ver.h>
+
+#include "pcmsup.h"                     /* PCM/APCM xlate lib defs      */
+
+STRINGTABLE 
+{
+
+    /********************************************************************/
+    /*                      PCM Specific Text Strings                   */
+    /********************************************************************/
+    SI_UNKPCM000, "Unknown"              
+    SI_AVAPCM004, "AVA 4 bit"            
+    SI_BKTPCM001, "BrookTrout CVSD"            
+    SI_DLGPCM004, "Dialogic 4 bit ADPCM"       
+    SI_DLGPCM008, "Dialogic 8 bit u-Law"       
+    SI_FLTPCM032, "Float 32 bit"       
+    SI_FTRPCM032, "FFT Real 32 bit"       
+    SI_G11PCMI08, "C-ITU (CCITT) G.711 A-Law"       /* Inverted A-Law   */
+    SI_G11PCMF08, "C-ITU (CCITT) G.711 u-Law"       /* Folded   u-Law   */
+    SI_G21PCM004, "C-ITU (CCITT) G.721"
+    SI_G22PCM004, "C-ITU (CCITT) G.722"
+    SI_G23PCM003, "C-ITU (CCITT) G.723 3 bit"
+    SI_HARPCM001, "Harris Semiconductor CVSD"
+    SI_MPCPCM008, "Multimedia unsigned 8 bit"       
+    SI_MPCPCM016, "Multimedia linear  16 bit"       
+    SI_MSAPCM004, "MS Wave ADPCM"        
+    SI_NWVPCM001, "New Voice CVSD"       
+    SI_PTCPCM001, "Perception Technology CVSD"       
+    SI_RTXPCM003, "Rhetorex 3 bit ADPCM"       
+    SI_RTXPCM004, "Rhetorex 4 bit ADPCM"       
+    SI_TTIPCM008, "TTI 8 bit"        
+
+}
+
+/************************************************************************/
+/*                              Version                                 */
+/************************************************************************/
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    	3,00,0,00
+PRODUCTVERSION 	3,00,0,00
+FILEFLAGSMASK  	0
+FILEFLAGS      	0
+FILEOS         	VOS__WINDOWS16
+FILETYPE       	VFT_DLL
+FILESUBTYPE    	VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Voice Information Systems, Inc\0"
+            VALUE "FileDescription", "VISI PCM Conversion DLL\0"
+            VALUE "FileVersion", "3.00.000\0"
+            VALUE "InternalName", "GenPCM\0"
+            VALUE "LegalCopyright", "Copyright \251 Andrew J. Michalik 1987 - 1997\0"
+            VALUE "LegalTrademarks", "VFEdit\256 is a registered trademark of Andrew J. Michalik.#\0"
+#if defined (DLG) /******************************************************/
+            VALUE "OriginalFilename", "DLGPCM.DLL\0"
+            VALUE "ProductName", "VISI Dialogic\256 PCM Conversion DLL\0"
+#endif /*****************************************************************/
+#if defined (NWV) /******************************************************/
+            VALUE "OriginalFilename", "NWVPCM.DLL\0"
+            VALUE "ProductName", "VISI New Voice\256 PCM Conversion DLL\0"
+#endif /*****************************************************************/
+#if defined (RTX) /******************************************************/
+            VALUE "OriginalFilename", "RTXPCM.DLL\0"
+            VALUE "ProductName", "VISI Rhetorex\256 PCM Conversion DLL\0"
+#endif /*****************************************************************/
+#if defined (TTI) /******************************************************/
+            VALUE "OriginalFilename", "TTIPCM.DLL\0"
+            VALUE "ProductName", "VISI TTI\256 PCM Conversion DLL\0"
+#endif /*****************************************************************/
+            VALUE "ProductVersion", "3.00.000\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252 
+    END
+END
+
+/************************************************************************/
+/*                          User Registration                           */
+/************************************************************************/
+#include "regdev\\pcmreg.h"
+IDR_CODE AZ_KECHK PRELOAD "regdev\\kechk.win"
+

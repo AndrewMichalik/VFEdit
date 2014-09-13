@@ -1,0 +1,43 @@
+LIBRARY         DLGAMP
+DESCRIPTION     'Dialogic Amplitude Display (C) Andrew J. Michalik, 1987-1993'
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE'
+
+CODE            MOVEABLE  
+DATA            MOVEABLE SINGLE
+SEGMENTS        GENAMP_TEXT PRELOAD FIXED        
+
+HEAPSIZE        1024
+
+EXPORTS
+    WEP              @2  RESIDENTNAME
+    AMPSUPVER        @4
+
+    AMPDLLINI       @10
+
+    AMPSTAPOS       @80
+    AMPSTAPNT       @82
+
+    AMPXAXPOS       @90
+    AMPXAXPNT       @92
+    AMPXAXSCR       @94
+    AMPXAXUPD       @96
+
+    AMPYAXPOS       @100
+    AMPYAXPNT       @102
+
+    AMPZAXUPD       @110
+    AMPZAXSCR       @112
+
+    AMPGPHPOS       @120
+    AMPGPHPNT       @122
+
+    AMPMSELDN       @130
+    AMPMSEMOV       @132
+    AMPMSELUP       @134
+
+    AMPCARBLN       @140
+    AMPCARMOV       @142
+
+    AMPSELMOV       @150
+

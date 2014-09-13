@@ -1,0 +1,81 @@
+LIBRARY         DLGFIO
+DESCRIPTION     'Dialogic File Interface (C) Andrew J. Michalik, 1987-1993'
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE'
+
+CODE            MOVEABLE  
+DATA            MOVEABLE SINGLE
+SEGMENTS        GENFIO_TEXT PRELOAD FIXED        
+
+HEAPSIZE        1024
+
+EXPORTS
+    WEP              @2  RESIDENTNAME
+    FIOSUPVER        @4
+
+    FIODLLINI       @10
+
+    FIOOPNENU       @30       
+    FIOIXPENU       @32       
+    FIOPCMENU       @34
+    FIOCHNENU       @36
+    FIOFRQENU       @38
+    FIODESQRY       @40
+    FIOEXTQRY       @42
+    FIOCAPQRY       @44
+
+    MSGASKFMTPRC    @60
+    SELFILIDXPRC    @62
+
+    FIOMASLOD       @80
+    FIOMASQRY       @82
+    FIOMASUPD       @84
+    FIOMASREL       @86
+                      
+	FIOWRKLOD       @90
+    FIOWRKUPD       @94
+    FIOWRKREL       @96
+                      
+    FIOSEGSEL       @100
+    FIOSEGDES       @102
+    FIOSEGCRE       @104
+    FIOSEGDEL       @106
+
+	FIOSNPLOD       @110
+	FIOSNPUPD       @114
+    FIOSNPREL       @116
+                       
+    FIOTXTLOD       @120
+    FIOTXTUPD       @124
+    FIOTXTREL       @126
+                       
+    FIOFNDFST       @150
+    FIOFNDNXT       @152
+    FIOFNDEND       @154
+
+    FIOOFSOPN       @170
+
+    FIOOFSAPP       @180
+    FIOOFSDUP       @182
+    FIOOFSSHF       @184
+    FIOOFSREP       @186
+    FIOOFSDEL       @188
+    FIOOFSREN       @190
+    FIOOFSLEN       @192
+    FIOOFSCVT       @194
+
+    FIOFILCOP       @200       
+    FIOFILDUP       @202
+    FIOFILMOV       @204       
+    FIOFILSHF       @206       
+
+    FIOOS_INF       @210
+
+    FILHDLOPN       @220
+    FILHDLCRE       @222
+    FILHDLCLS       @224
+    FILGETPOS       @226
+    FILSETPOS       @228
+    FILGETLEN       @230
+    FILGETSTA       @232
+

@@ -1,0 +1,69 @@
+                    Modifications for ProLine/2V board
+                                05/01/96
+
+
+/************************************************************************/
+/************************************************************************/
+AudDev.cpp
+    AudDevOpn ()
+    ...
+    m_mhDevCfg = duplicate copy of (mhDevCfg) data
+    ...
+    AudDevCls ()
+    ...
+    Release m_mhDevCfg duplicate copy
+    ...
+
+/************************************************************************/
+/************************************************************************/
+DlgCfg.c, line 444
+    ...
+    Read Audio Jack setting
+    ...
+
+/************************************************************************/
+/************************************************************************/
+DlgDig.h
+    ...
+    Add variable for Audio Jack setting
+    ...
+
+/************************************************************************/
+/************************************************************************/
+DlgDig.c, line 444
+    ...
+WORD FAR PASCAL TMILinOpn (WORD FAR *pusLinNum, HWND hCBkWnd, 
+                VISMEMHDL mhCfgMem, LPSTR szDesStr, WORD usMaxLen)
+{
+...
+
+    /********************************************************************/
+    /* Set ProLine/2V hook status                                       */
+    /********************************************************************/
+    if (lpDigCfg->tdTMIDef.scSysCfg.sAudJck) {
+        sethook (*pusLinNum, H_ONH);                /* Force On-hook    */
+        if (OOH_TRM != PolEvtQue (*pusLinNum, hCBkWnd, OOH_TRM, EVTPOLTIM)) {
+            GloMemUnL (mhCfgMem);
+            return ((DWORD) SI_TMINOHOOK);      /* Cannot on/off hook   */
+        }
+        if (setiparm (*pusLinNum, )) {
+            GloMemUnL (mhCfgMem);
+            return ((DWORD) SI_TMINOHOOK);      /* Cannot on/off hook   */
+        }
+        if (T_STPARM != PolEvtQue (*pusLinNum, hCBkWnd, T_STPARM, EVTPOLTIM)) {
+            GloMemUnL (mhCfgMem);
+            return ((DWORD) SI_TMINOHOOK);      /* Cannot on/off hook   */
+        }
+        /****************************************************************/
+        /****************************************************************/
+//        WaiForEvt (hCBkWnd, (FARPROC) RngWaiBoxPrc, "RNGWAIBOX"); 
+        ClrEvtQue (*pusLinNum);
+    }
+
+
+TMILinCls (..., VISMEMHDL mhCfgMem)
+    ...
+    Pass configuration to terminate routine for resetting ProLine/2V
+    ...
+
+

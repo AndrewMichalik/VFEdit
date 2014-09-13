@@ -1,0 +1,157 @@
+/************************************************************************/
+/* Generic File I/O Resources: GenFIO.rc                V2.00  08/20/95 */
+/* Copyright (c) 1987-1995 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define NOGDICAPMASKS      
+#define NOWINMESSAGES
+#define NONCMESSAGES
+#define NOSYSMETRICS
+#define NODRAWFRAME
+#define NOMENUS    
+#define NOICON    
+#define NOKEYSTATE
+#define NOSYSCOMMANDS
+#define NORASTEROPS
+#define NOSHOWWINDOW
+#include <windows.h>
+#include <ver.h>
+
+#include "fiosup.h"                     /* File I/O support definitions */
+#include "fiomsg.h"                     /* File I/O support error defs  */
+
+/************************************************************************/
+/************************************************************************/
+#define     WS_TABGRP (WS_TABSTOP | WS_GROUP)
+
+/************************************************************************/
+STRINGTABLE 
+{
+
+    /********************************************************************/
+    /*                  File I/O Library reported Errors                */
+    /********************************************************************/
+    SI_FIOUNKERR, "Unknown error."
+    SI_UNKACCERR, "Unknown file access error."
+    SI_FILEXIOVR, "File exists, overwrite?"
+    SI_FILLCKORO, "File locked or read-only."
+    SI_INVFILFMT, "Invalid file format."
+    SI_INVPCMFMT, "Invalid file pcm format."
+    SI_BADOVRWRT, "Cannot overwrite file."
+    SI_BADOPNSRC, "Cannot open source file."
+    SI_BADOPNDST, "Cannot open output file."
+    SI_BADUPDWRK, "Cannot update working file."
+    SI_FILCOPERR, "File copy error."
+    SI_FILSHFERR, "File shift error."
+    SI_INVFILHDL, "Invalid file handle."
+    SI_INSDSKSPC, "Insufficient disk space."
+    SI_USRCANREQ, "User cancelled request."
+
+    /********************************************************************/
+    /*                  File Operation Request Messages                 */
+    /********************************************************************/
+    SI_IDXINSMEM, "Insufficient index memory."   
+    SI_IDXSELNEW, "Select index:"   
+    SI_IDXCREBFR, "Create index before:"
+    SI_IDXSELDEL, "Delete index:"       
+
+    /********************************************************************/
+    /*              Indexed Format Specific Messages                    */
+    /********************************************************************/
+    SI_IDXCNTREQ, "Enter index count:"
+    SI_IDXEOFTXT, "** File End **"
+
+    /********************************************************************/
+    /*                  Hardware Specific Text Strings                  */
+    /********************************************************************/
+    SI_FILFMTUNK, "Unknown"             /* Unknown file format          */
+    SI_FILFMTHDR, "Headered"            /* Headered file format         */
+    SI_FILFMTPL2, "PowerLine"           /* PowerLine file format        */
+    SI_FILFMTPUR, "Pure"                /* Pure file format             */
+    SI_FILFMTSU4, "Summa"               /* Summa Four file format       */
+    SI_FILFMTVBS, "Indexed"             /* VBase file format            */
+    SI_FILFMTWAV, "Wave"                /* MM Wave file format          */
+
+    SI_FILEXTUNK, ".*"                  /* Unknown file extension       */
+    SI_FILEXTHDR, ".hdr"                /* Headered file extension      */
+    SI_FILEXTPL2, ".vox"                /* PowerLine file extension     */
+    SI_FILEXTPUR, ".vox"                /* Pure file extension          */
+    SI_FILEXTSU4, ".su4"                /* Summa Four file extension    */
+    SI_FILEXTVBS, ".vap"                /* VBase file extension         */
+    SI_FILEXTWAV, ".wav"                /* MM Wave file extension       */
+
+    /********************************************************************/
+    /********************************************************************/
+    SI_DBXBKGCLR, "DialogBackground"
+
+}
+
+/************************************************************************/
+/************************************************************************/
+MsgAskBox DIALOG LOADONCALL MOVEABLE DISCARDABLE 8, 8, 164, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+{
+    CONTROL "", DI_REQSTR, "static", SS_CENTER | WS_CHILD, 16, 8, 88, 12
+    EDITTEXT    DI_RSPSTR,          40, 28, 40, 12, ES_LEFT | ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP
+    DEFPUSHBUTTON  "OK", IDOK,     118,  4, 40, 14, WS_GROUP
+    PUSHBUTTON "Cancel", IDCANCEL, 118, 24, 40, 14, WS_GROUP
+}
+
+IdxSelBox DIALOG LOADONCALL MOVEABLE DISCARDABLE 8, 8, 164, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Index Operation"
+    BEGIN
+        LTEXT "",                       DI_IDXINS,    4,  6,  92, 12
+        RTEXT "Index#",                 -1,         100,  6,  32, 12 
+        EDITTEXT                        DI_IDXNUM,  134,  4,  26, 12, WS_BORDER | WS_TABSTOP
+        LTEXT "Index  Length",          DI_IDXHDR,    4, 24,  76, 10 
+        CONTROL "", DI_IDXLST, LISTBOX,
+            LBS_NOTIFY | WS_VSCROLL | WS_BORDER | WS_TABSTOP, 4,  36, 76, 56
+        CTEXT "Offset:",                DI_IDXOIN,   82,  24,  36, 10 
+        CTEXT "",                       DI_IDXOFF,   82,  36,  36, 12, WS_BORDER 
+        LTEXT "Annotation Text:",       DI_IDXTIN,    4,  98, 100, 10, WS_DISABLED
+        LTEXT "",                       DI_IDXTXT,    4, 110, 156, 32, WS_DISABLED | WS_BORDER 
+        DEFPUSHBUTTON  "OK",            IDOK,       120,  58, 40,  14, WS_GROUP
+        PUSHBUTTON     "Cancel",        IDCANCEL,   120,  78, 40,  14, WS_GROUP
+   END
+
+/************************************************************************/
+/*                              Version                                 */
+/************************************************************************/
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     3,00,0,01
+PRODUCTVERSION  3,00,0,01
+FILEFLAGSMASK   0
+FILEFLAGS       0
+FILEOS          VOS__WINDOWS16
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "Voice Information Systems, Inc\0"
+            VALUE "FileDescription", "VISI File Interface DLL\0"
+            VALUE "FileVersion", "3.00.001\0"
+            VALUE "InternalName", "GenFIO\0"
+            VALUE "LegalCopyright", "Copyright \251 Andrew J. Michalik 1987 - 1995\0"
+            VALUE "LegalTrademarks", "VFEdit\256 is a registered trademark of Andrew J. Michalik.#\0"
+#if defined (DLG) /******************************************************/
+            VALUE "OriginalFilename", "DLGFIO.DLL\0"
+            VALUE "ProductName", "VISI Dialogic\256 File Input/Output DLL\0"
+#endif /*****************************************************************/
+#if defined (NWV) /******************************************************/
+            VALUE "OriginalFilename", "NWVFIO.DLL\0"
+            VALUE "ProductName", "VISI New Voice\256 File Input/Output DLL\0"
+#endif /*****************************************************************/
+            VALUE "ProductVersion", "3.00.001\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252 
+    END
+END
+
+

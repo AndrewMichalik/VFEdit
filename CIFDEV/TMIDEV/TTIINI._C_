@@ -1,0 +1,158 @@
+/************************************************************************/
+/* TTI TMI Init Settings: TTIIni.c                      V2.00  06/10/92 */
+/* Copyright (c) 1987-1992 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define  NOCOMM                         /* Inhibit certain windows defs */
+#include "windows.h"                    /* Windows SDK definitions      */
+#include "..\..\ttidev\ttilib.h"        /* Dialogic D4x standard defs   */
+#include "gentmi.h"                     /* Generic TMI definitions      */
+#include "tmisup.h"                     /* Generic TMI support defs     */
+#include "ttitmi.h"                     /* Dialogic TMI definitions     */
+
+#include <string.h>                     /* String manipulation funcs    */
+#include <stdlib.h>                     /* Misc string/math/error funcs */
+
+/************************************************************************/
+/************************************************************************/
+DIGOPNPRM FAR * FAR PASCAL DigPrmGet (LPSTR szCfgNam, HANDLE FAR * lphPrmGlo)
+{
+
+    DIGOPNPRM FAR * lpOpnPtr;    
+    DIGOPNEXT FAR * lpExtPtr;    
+
+    /********************************************************************/
+    /********************************************************************/
+    if ((DIGOPNPRM FAR *) NULL == (lpOpnPtr = GetGloMem 
+        (lphPrmGlo, sizeof (DIGOPNPRM)))) return ((DIGOPNPRM FAR *) NULL);
+    lpExtPtr = (DIGOPNEXT FAR *) (lpOpnPtr->ucExtPrm);
+
+    /********************************************************************/
+    /* Check for user specified configuration file and set              */
+    /* board parameters accordingly.                                    */
+    /********************************************************************/
+    lpOpnPtr->usHWILvl = (WORD) sRdWIni (szCfgNam, PI_VBHWIR, 0);
+    lpOpnPtr->usSWILvl = (WORD) sRdWIni (szCfgNam, PI_VBSWIN, 0);
+
+    /********************************************************************/
+    /* Reset & initialize DCB parameters                                */
+    /********************************************************************/
+    _fmemset (&lpExtPtr->ttidcb, 0, sizeof (struct SysConfigArea));
+
+    lpExtPtr->ttidcb.sca_ftime2      = (CHAR) sRdWIni (szCfgNam, "ftime2",      lpExtPtr->ttidcb.sca_ftime2);     
+    lpExtPtr->ttidcb.sca_ptime2      = (CHAR) sRdWIni (szCfgNam, "ptime2",      lpExtPtr->ttidcb.sca_ptime2);     
+    lpExtPtr->ttidcb.sca_min_offh    = (CHAR) sRdWIni (szCfgNam, "min_offh",    lpExtPtr->ttidcb.sca_min_offh);   
+    lpExtPtr->ttidcb.sca_min_onh     = (CHAR) sRdWIni (szCfgNam, "min_onh",     lpExtPtr->ttidcb.sca_min_onh);    
+    lpExtPtr->ttidcb.sca_flash_sep   = (CHAR) sRdWIni (szCfgNam, "flash_sep",   lpExtPtr->ttidcb.sca_flash_sep);  
+    lpExtPtr->ttidcb.sca_ringdeb_off = (CHAR) sRdWIni (szCfgNam, "ringdeb_off", lpExtPtr->ttidcb.sca_ringdeb_off);
+    lpExtPtr->ttidcb.sca_ringdeb_on  = (CHAR) sRdWIni (szCfgNam, "ringdeb_on",  lpExtPtr->ttidcb.sca_ringdeb_on); 
+    lpExtPtr->ttidcb.sca_sil_thrhld  = (CHAR) sRdWIni (szCfgNam, "sil_thrhld",  lpExtPtr->ttidcb.sca_sil_thrhld); 
+    lpExtPtr->ttidcb.sca_tone_dur    = (CHAR) sRdWIni (szCfgNam, "tone_dur",    lpExtPtr->ttidcb.sca_tone_dur);   
+    lpExtPtr->ttidcb.sca_tone_sep    = (CHAR) sRdWIni (szCfgNam, "tone_sep",    lpExtPtr->ttidcb.sca_tone_sep);   
+    lpExtPtr->ttidcb.sca_dchar_def   = (CHAR) sRdWIni (szCfgNam, "dchar_def",   lpExtPtr->ttidcb.sca_dchar_def);  
+    lpExtPtr->ttidcb.sca_pchar2      = (CHAR) sRdWIni (szCfgNam, "pchar2",      lpExtPtr->ttidcb.sca_pchar2);     
+    lpExtPtr->ttidcb.sca_pchar1      = (CHAR) sRdWIni (szCfgNam, "pchar1",      lpExtPtr->ttidcb.sca_pchar1);     
+    lpExtPtr->ttidcb.sca_fchar2      = (CHAR) sRdWIni (szCfgNam, "fchar2",      lpExtPtr->ttidcb.sca_fchar2);     
+    lpExtPtr->ttidcb.sca_fchar1      = (CHAR) sRdWIni (szCfgNam, "fchar1",      lpExtPtr->ttidcb.sca_fchar1);     
+    lpExtPtr->ttidcb.sca_ftime1      = (CHAR) sRdWIni (szCfgNam, "ftime1",      lpExtPtr->ttidcb.sca_ftime1);     
+    lpExtPtr->ttidcb.sca_ptime1      = (CHAR) sRdWIni (szCfgNam, "ptime1",      lpExtPtr->ttidcb.sca_ptime1);     
+    lpExtPtr->ttidcb.sca_pdbi        = (CHAR) sRdWIni (szCfgNam, "pdbi",        lpExtPtr->ttidcb.sca_pdbi);       
+    lpExtPtr->ttidcb.sca_pdmi        = (CHAR) sRdWIni (szCfgNam, "pdmi",        lpExtPtr->ttidcb.sca_pdmi);       
+    lpExtPtr->ttidcb.sca_pdid        = (CHAR) sRdWIni (szCfgNam, "pdid",        lpExtPtr->ttidcb.sca_pdid);       
+    lpExtPtr->ttidcb.sca_tdid        = (CHAR) sRdWIni (szCfgNam, "tdid",        lpExtPtr->ttidcb.sca_tdid);       
+    lpExtPtr->ttidcb.sca_odi         = (CHAR) sRdWIni (szCfgNam, "odi",         lpExtPtr->ttidcb.sca_odi);        
+    lpExtPtr->ttidcb.sca_rcrd        = (CHAR) sRdWIni (szCfgNam, "rcrd",        lpExtPtr->ttidcb.sca_rcrd);       
+    lpExtPtr->ttidcb.sca_sildeb_off  = (CHAR) sRdWIni (szCfgNam, "sildeb_off",  lpExtPtr->ttidcb.sca_sildeb_off); 
+    lpExtPtr->ttidcb.sca_dtmfdeb_off = (CHAR) sRdWIni (szCfgNam, "dtmfdeb_off", lpExtPtr->ttidcb.sca_dtmfdeb_off);
+    lpExtPtr->ttidcb.sca_sildeb_on   = (CHAR) sRdWIni (szCfgNam, "sildeb_on",   lpExtPtr->ttidcb.sca_sildeb_on);  
+    lpExtPtr->ttidcb.sca_dtmfdeb_on  = (CHAR) sRdWIni (szCfgNam, "dtmfdeb_on",  lpExtPtr->ttidcb.sca_dtmfdeb_on); 
+    lpExtPtr->ttidcb.sca_dtmfdur     = (CHAR) sRdWIni (szCfgNam, "dtmfdur",     lpExtPtr->ttidcb.sca_dtmfdur);    
+    lpExtPtr->ttidcb.sca_loopcd_on   = (CHAR) sRdWIni (szCfgNam, "loopcd_on",   lpExtPtr->ttidcb.sca_loopcd_on);  
+    lpExtPtr->ttidcb.sca_loopcd_off  = (CHAR) sRdWIni (szCfgNam, "loopcd_off",  lpExtPtr->ttidcb.sca_loopcd_off); 
+    lpExtPtr->ttidcb.sca_linecd_on   = (CHAR) sRdWIni (szCfgNam, "linecd_on",   lpExtPtr->ttidcb.sca_linecd_on);  
+    lpExtPtr->ttidcb.sca_linecd_off  = (CHAR) sRdWIni (szCfgNam, "linecd_off",  lpExtPtr->ttidcb.sca_linecd_off); 
+    lpExtPtr->ttidcb.sca_cboff_deb   = (CHAR) sRdWIni (szCfgNam, "cboff_deb",   lpExtPtr->ttidcb.sca_cboff_deb);  
+    lpExtPtr->ttidcb.sca_rde         = (CHAR) sRdWIni (szCfgNam, "rde",         lpExtPtr->ttidcb.sca_rde);        
+
+    /********************************************************************/
+    /********************************************************************/
+//    LPCIns.linloc = ONLINE;
+//    LPCIns.oospkr = OFF;
+//    LPCIns.oomicr = OFF;
+
+    /********************************************************************/
+    /********************************************************************/
+    lpExtPtr->usCSTInt = (WORD) sRdWIni (szCfgNam, PI_CSTINT, 
+        OFFHOOKCOMP | ONHOOKCOMP | LCONTRANS | LCOFFTRANS | RINGSREC);
+  
+    /********************************************************************/
+    /********************************************************************/
+    return (lpOpnPtr);
+    
+}
+
+BOOL FAR PASCAL DigPrmRel (HANDLE hPrmGlo)
+{
+    return (RelGloMem (hPrmGlo));
+}
+
+
+MPXOPNPRM FAR * FAR PASCAL MpxPrmGet (LPSTR szCfgNam, HANDLE FAR * lphPrmGlo)
+{
+
+    MPXOPNPRM FAR * lpOpnPtr;    
+
+    /********************************************************************/
+    /********************************************************************/
+    if ((MPXOPNPRM FAR *) NULL == (lpOpnPtr = GetGloMem 
+        (lphPrmGlo, sizeof (MPXOPNPRM)))) return ((MPXOPNPRM FAR *) NULL);
+
+    /********************************************************************/
+    /* Check for user specified configuration file and set              */
+    /* board parameters accordingly.                                    */
+    /********************************************************************/
+    lpOpnPtr->usHWILvl = (WORD) sRdWIni (szCfgNam, PI_MXHWIR, 0);
+    lpOpnPtr->usSWILvl = (WORD) sRdWIni (szCfgNam, PI_MXSWIN, 0);
+
+    /********************************************************************/
+    /********************************************************************/
+    return (lpOpnPtr);
+    
+}
+
+BOOL FAR PASCAL MpxPrmRel (HANDLE hPrmGlo)
+{
+    return (RelGloMem (hPrmGlo));
+}
+
+
+/************************************************************************/
+/************************************************************************/
+short   sRdWIni (LPSTR szCfgNam, LPSTR szKeyNam, short sDefVal)
+{
+    short       sKeyVal;
+    static char szPrfVal[TMIMAXSTR];
+    static char *pcEndPtr;
+
+    /********************************************************************/
+    /********************************************************************/
+    GetProfileString ((LPSTR) szCfgNam, (LPSTR) szKeyNam, (LPSTR) "",
+        (LPSTR) szPrfVal, TMIMAXSTR);
+    if (szPrfVal[0] == '\0') return (sDefVal);
+  
+    /********************************************************************/
+    /********************************************************************/
+    if (strnicmp (szPrfVal, "0x", 2) == 0) {
+        pcEndPtr = strchr (&szPrfVal[2], '\0');
+        sKeyVal = (short) strtoul (&szPrfVal[2], &pcEndPtr, 16);
+    }
+    else sKeyVal = atoi (szPrfVal);
+
+    /********************************************************************/
+    /********************************************************************/
+    return (sKeyVal);
+
+}
+
+
+

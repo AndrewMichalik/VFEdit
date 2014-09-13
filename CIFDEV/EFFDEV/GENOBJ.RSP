@@ -1,0 +1,13 @@
+object\geneff.obj +
+object\efffse.obj +
+object\effvol.obj + object\effchn.obj + object\effmix.obj +
+object\effnoi.obj + object\efffad.obj + object\effech.obj +
+object\effres.obj + object\efffir.obj + object\effiir.obj +
+object\firdes.obj + object\iirdes.obj +
+object\efffft.obj + object\fftequ.obj +
+object\efffqs.obj + object\fqsmst.obj + object\fqsobs.obj +
+object\fftovr.obj + object\fftlow.obj +
+object\effebs.obj + object\ebssup.obj +
+object\dllsup.obj + 
+object\fillow.obj + object\winmem.obj + object\winmsg.obj
+

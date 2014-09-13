@@ -1,0 +1,13 @@
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Option Explicit
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Global Const VFE_JRSTR = "VFEditJr"     ' Pro/ Jr string
+Global Const REGKEYSTR = "9u239u23"     ' Master Key (HW key ignored)
+'Global Const REGKEYSTR = "sr00v5c0"     ' License Seq Key: S/N 1000 (HW key ignored)
+'Global Const REGKEYSTR = "z180p7c0"     ' Evaluation until 8/01/98 (HW key ignored)
+'Global Const REGKEYSTR = "00000000"     ' Working Demo (HW key ignored)
+'Global Const REGKEYSTR = ""             ' Key required: no msg if HW key missing!
+

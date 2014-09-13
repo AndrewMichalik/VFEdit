@@ -1,0 +1,276 @@
+                VFEdit Change Implementation: Version 3.20
+                                01/15/99
+
+Working:
+
+3.20c.1 (done):
+    1)  Fixed MS bug for long file name with spaces.
+
+3.20b.0 (done):
+    1)  Long file name creation of wave files; win 95/98 recognition of
+        files with no attributes set.
+
+3.20a.0 (done):
+    1)  Fixed long file name support in NT.
+	2)  Fixed: 10.5 sec file, scroll to 6 sec, cut 6 to end: Lost scroll bar.
+    3)  Fixed: Position overflow (very large number) on play and scroll.
+    4)  Update resource strings and help boxes to 1997 dates.
+    5)  Added "rename or replace" message for downlevel VBDB300.DLL
+    6)  Updated install program copyright dates.
+    7)  No TSR string on Tom's caption bar.
+    5)  Sample user submitted file NITCxxx.WAV - edit select doesn't get all.
+    8)  Help: Echo decay and delay description switched.
+
+3.20d.x (done):
+    1)  "Edit .Ini File" Button: Can get confused if 
+        miscellaneous .INI's are in various directories, but the defaults 
+        will be read from the one in the Windows\ directory. Used 
+        GetWindowsDirectory() to hard-code .INI path name.
+    2)  Added fixes to WavFil.c (DLG OKI, WIOOutEnd() RIFF & DATA chunk lengths) 
+    3)  Added fixes to FilLow.c (define llseek return)
+    4)  Install: Removed InstallationCharacteristics setting
+    5)  Help File: Improved tech support help section.
+    6)  Install: It's OK to temporarily remove disk #1...
+    7)  AudDev.cpp: Increase FRQSHFTHR to 1.25% for Dialogic 8092 sample rate
+        compatability (used with EASE).
+   13) 	Allow user to specify custom frequency in Device Select dialog box.
+   14) Removed BBS phone number from .HLP file.
+
+Done?
+   19)  Update Help file with newer promotional text on ToolBox, etc.
+   18)  Change "CCITT" references to "C-ITU (CCITT)"
+   30)  File Open: tab to directory, hit enter to get directory list - nothing!
+        File Open control intercepts enter key, does not permit any access!
+   32)  Lev Elbert
+        Sorted 200.vox after 1.vox (fixed 02/11/97)
+        File Import does not remember file types.
+        Out of memory error. (yadda, yadda, yadda)
+        Position of last file used in file list box goes to bottom (fixed 02/11/97).
+        File Open loses template vx??????.vox (AJM: not true - tested 02/11/97)
+		Directory list label truncates logically.
+    8)  A 3 KHz tone pasted into a 8 KHz file gets rolled off alot!! (need 6 pole?)
+   15)  Ron Lytal: VFEdit renames files even if they are read-only. Then
+        leaves the .BK1 file around, since it is RO.
+   16)  Support for new Dialogic .wav files and playback in extended formats.
+   17)  Crash on record! Added ulLvlByt to CWIOCBk::RecLvlChk(). MCI buffer
+        pointer shift by ulBytCnt causes read past end of memory.
+   18)  Inhibit DOS TSR selection on NT, inhibit Audio Dev Sel if no 
+        devices present.
+   19)  AudDevStp() does not return correct sample count - uses sample position
+		from the Audio device - needs to map into source file - return in msec!!!
+		SmpPosAdj() does not look quite right for looping adjustment - fixed.
+   20)  Auto-select index on command line: SesEdtOpn() accepts segment description,
+	    SesFilOpn() accepts description, SesFilSegLod() accepts description,
+	    SesFilSegLod(), FIOSegSel() & VBSSegSel() accept SEGJMPQRY as 
+	    "jump to without query".	
+        (Steve Koerner needs for Expert Sys)
+   21)  Move DLGFIO function calls into VFECIF for VFEdit.exe
+   22)  Changed "blank" bitmap in MSOUTLIN.VBX to prevent crash on some
+        Win 3.x machines (video driver related). 30 second delay problem 
+        remains; removing all bitmaps appears to fix that, but is not viable.
+
+To Do: 
+	1)  ^C During effects or file load gives weird message:
+        FioDev\FIOOFS.c & FilFIO.c: Return correct error codes (esp. for cancel)
+    2)  Win 95 I/F Review: Register file types, primary verbs, icons in Registry
+                         : Warning for multiple instances?
+                         : Title bar and minimized icon contents?
+    3)  Correct shortened input on MSADPCM file input.
+    4)  Zoom to Fit with no selection should query when "Ask User" is set.
+    5)  Zoom keyboard keys not reflected in menu check marks (lower level function).
+    6)  Update "At:x" dialog box in status bar on stop playback. Behaves
+		differently when zoomed vs no-zoom.
+    7)  Allow generate tone to produce a sweep tone.
+    8)  Selectable undo level count.
+    9)  Play from at position marker.
+   10)  WTS: Mute on playback, lower output on record. Do API's support?
+   11)  MCI DLL: WaveOutSetVolume after checking with waveOutGetDevCaps
+   12)  Improve "Edit Mix" volume level for file with unequal length.
+   13)  Better user control of playback cursor position control.
+   14)  On "extents Ask User", shoul default to "At Position".
+   15)  NT 3.51: Detect and inhibit DIalogic TSR option.
+   12)  Manual: Auto-backup is document sensitive.
+   13)  Manual: Ease: FE_SYS\EXE\genload, d40chk, strt_d40.bat
+   11)  Manual: Update "Using a Math Coprocessor" for 386 and above.
+   12)  Manual: Improve tech support help section.
+   13)  Manual: Remove references to "Dictaphone"
+   14)  Manual: Add reference to "Wait for Call"
+   18)  Manual: Document Command Line Macro function calls
+   19)  Manual: "Working with dB Sample Section"
+   20)  Manual: Note on D40A/B "best match" limitation
+   21)  Manual: Add index reference to Import/Export under Convert
+
+To Do: Feature Requests
+    1)  Multiple presets for effects
+    2)  Cut/Copy to Clipboard.
+    3)  Stretch based volume adjust
+    4)  Exponential fade
+    5)  Locate sound/silence
+    6)  Snap to zero crossing
+    7)  "Analyze" menu with average signal level & std deviation.
+    8)  View in db (logarithmic scale). View in voltage level. Choice
+        of view effects the parameters (% or dB) used in selection
+        dialog boxes.
+    9)  Cut Guard - guard on cut/ erase ADPCM to avoid weird effects
+        from cutting near a high stepsize region.
+   10)  On-hook after terminating flag (ie, default hook flag).
+   11)  File & PCM format = AUTO: Auto-detects file format
+   12)  Option to auto-load next prompt after a save operation.
+   13)  On/Off hook, Loop current indicators.
+   14)  Merge record into existing VBase format file.
+   15)  Disk space on file open/save, remaining on record extents.
+   16)  FFT freq shift, interpolate freq shift
+   17)  OLE server
+   18)  Inflection frequency shift
+   19)  Play list
+   20)  Silence compression/ elimination
+   21)  Playback to designated point & begin record (pacing)
+   22)  10 bookmarks, 10 range marks
+   23)  Preview mix, more than 2, file browse box
+   24)  Drag & Drop
+   25)  Play "exclude region"
+   26)  DC bias adjust?
+   27)  Use oscillator bank to reduce low frequency noise. 
+   29)  Set default view resolution in view configure dialog.
+   30)  Add "defaults" API to replace NewVoice hacks in VB code.
+   31)  Tom Cook, 6/98 - 3.2 - Separate file type memory for import/exp
+
+3.00c.x (done):
+    1)  Changed DlgTIF & DlgCtl dates to 06/30/95 for install compatibility.
+
+3.00c.1 (done):
+    1)  Modified WavFil.c to use replace FilGetPos with mmioSeek to fix
+        wave file chsize error.
+
+3.00c.0 (done):
+    1) Modified WinMem.c GloMemUnL() to ignore NULL memory handle
+    2) VFEReg.c: Changed fmemcpy to fstrncpy to avoid read past end off string.
+    3) PCMDev\TBxReg.c: Changed fmemcpy to fstrncpy to avoid read past end of string.
+    4) FilRep.c: Fixed call to FilMov with NULL lpErrCod argument.
+    5) WinMem.c: Fixed return to NEAR for LocalAllocate & Lock
+    6) PCMFIO.c: PCMWr_PCM(,,,ulDstByt), PCMG16toP(,,,ulDstByt): fixed count
+    7) FFTEqu.c: Line 56, check for ">=".
+    8) PCMQry.c: Test for GRDQRY, return correct value (slow seek problem).
+    9) Install: web site next to 800 number; replace "VBase" with "Indexed"
+   10) PCMQry.c: PCMByt2Sl (), set #pragma optimize("", off) (VxF related err).
+   11) Command line SendKey() for delay and wait for completion.
+   12) Medium Res, zoom, high; File Revert - both medium and high res checked!
+   13) Load 8K 8 bit, copy, paste to 8K 4 bit - Get resample filter question
+       because AudFilCmpChk() checks more than just frequency - modify, replace?
+   14) MCIWav.c, DlgDig.c - Init szDesStr; 
+       Unlock mem on failed block allocation or on/off hook.        
+   15) Fixed install for TI/F DLL (SRCDIR) rename of old, CHECK TI/F DLL install!!
+
+3.00b.0 (done):
+    Removed conditional from VFECIF.RC (was for DLG only)
+    Memory allocation fix:
+        Memory leak? Newvoice files on NwV card - must exit to release.
+        Low Memory: Run Access, run NewVoice VFEdit, low memory, slow.
+        Ins mem on play: working with Voxfonts font and waves
+        Cleaned-up VU meter initial conditions, reduced size of buffer
+	Zoom uses center of visible region when near end of file fix:
+	    Switching from View Res Medium to View Res Low goes to end of file.
+	Echo over-modulation fix:
+   		EffEch.c, line 112, line 119 - need to check for PCM overflow.
+    File Exit: "Save File", "Yes" - doesn't exit!
+       AudDocSav() - return TRUE if successful
+    Insert Silence, Extents Selection - putting non-numerics causes abort.
+       EdtRngBad () - check and convert to val()
+       FntSel.frm - CmdOK_Click - check for valid range
+       EffMix.frm - CmdOK_Click - return Val ()
+       EffMix.frm - beep for non-zero mix level
+       PosSel.frm - CmdOK_Click - return Val ()
+       ExtSel.frm - CmdOK_Click - return Val ()
+    Move most recent file to top of list.
+       Modify RcnFilWrt() and call in RcnFilOpn() if successful.
+    Zero length Echo delay:
+       Ignore if set to zero
+    Query user on "Segment revert" for indexed files
+    Added command line menu string parser.
+    Disabled message (added beep) in SafGetDir() in VisUtl.bas on bad directory
+
+
+3.00x.7 (done):
+    Bug in Diamond drivers causes GPF in draw past visible area - added patch.
+    - review other uses of drawRectangle to check for similiar error.
+    Premature termination on short file snippets (.2 seconds) on NewVoice.
+    Reviewed all dialog tabs and default focus.
+    Add Demo / Jr version to about box.        
+    Removed MSADPCM from file open dialogs.
+	Edit crop beginning past end of file with auto-extend silence leaves silence.
+	Edit cut beginning past end of file leaves silence.
+	Demo limited to 2 indexed segments per execution.
+	Removed MSADPCM from file open.
+	Removed Dialogic G21 from selection.
+    VFEdit Jr.: $99 list, $57 to John Shapiro.
+    Added Auto-backup on save check box.
+    Setup: Not detecting /renaming DLG*.* (10-01-93) in Windows directory???
+
+3.00x.3 (done):
+	1)  Checked mix levels - especially from stereo 16 bit files.
+    2)  Checked Wait for call on Dialogic device select on re-select of device.
+	3)  Mix from multi-channel files fixed.	
+	4)  Fixed cancel during equalize & spectrum show graph.
+	5)  Fixed weird form appearing after closing form, then play/rec without 
+        clicking on new.
+	6)  Fixed GP fault on TMI device record (Level meter error)
+
+3.00x.2 (done):
+    1)  Too many fixes to document.
+    2)  35 seconds to open a 17.5 Meg Dlg ADPCM file over network    
+
+3.00x.0: (interface)
+    1)  Undo / ReDo
+    2)  Icon Bar
+    3)  Record modes: overlay (range) or insert (at).
+    4)  Auto-crop
+    5)  Move at point / paste mark graphically
+    6)  Restart play at previous stop point.
+    7)  Open pre-selects previous for for iterating through list
+    8)  Auto-scroll right left when hitting edge of window.
+    9)  Multiple file windows
+   10)  Most recent files menu
+   11)  Change line number in config parameters.
+   12)  Auto-gain adjust (compander)
+   13)  16 bit edit capability
+   14)  Normalize
+   15)  Wave I/O, re-sample
+   16)  Separate defaults for file path on I/O or menu basis 
+   17)  Index select NEXT
+   18)  Select index on creation
+   19)  A-law support
+   20)  Hot key for Index previous/next
+   21)  Total time along with elapsed time.
+   22)  Set WIN.INI params from inside VFEdit cfg dialogs.
+   23)  Display file has been changed indicator
+   24)  Key lock one-run bypass with date-dependant
+   25)  Append index to end (save time vs save space), compress on save
+   26)  Import 12 12+sign (drop LSB), Bell PCM, OKI, Rhetorix, TTI.
+        Voice Power (reverse bit order)
+
+3.00x.0: (internal / architectural)
+    1)  Improved chsize speed (no double initialization) on file lengthen ops
+    2)  Increased Indexed text length to 2048 bytes
+    3)  xxxFIO.DLL, xxxPCM.DLL, xxxATL.DLL
+    4)  AtlLib -> MPC style function calls
+    5)  Config box moved to xxxAtl.DLL
+    6)  Idle noise reducer -> 16 bit
+    7)  Display bit format of current
+    8)  Clean up SnpFil IdxRec caching of indices; go direct to 
+        global memory through function.
+    9)  Moved AtlLib into DLL.
+    10) Pack/ Unpack util: VBase: Compress on write only. 
+        16Mhz 286: 3 min to load 2200 sec, 125 prompts (out of 800). 
+        (Richard Babb)
+    11) VBase: Frequency shown at open, set display freq accordingly
+    12) All text into resource.
+    13) Separate "System Configuration" into two sections for "Edit"
+        parameters and Play/Record parameters.
+    14) DlgXlt\Xl1Tab
+        #define DCFSMPCNT    1      /* DC Filter multiplier >> 8    */
+        TTIXlt\Xl1Tab
+        #define DCFSMPCNT    8      /* DC Filter multiplier >> 8    */
+
+
+
+

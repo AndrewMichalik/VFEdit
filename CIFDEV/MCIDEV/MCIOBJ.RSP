@@ -1,0 +1,6 @@
+object\genmci.obj +
+object\mciqry.obj + object\mcimsg +
+object\mcicfg.obj + object\mciwav.obj + object\wavdio.obj +
+object\dllsup.obj +
+object\winmem.obj + object\winmsg.obj
+

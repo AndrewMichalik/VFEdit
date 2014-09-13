@@ -1,0 +1,9 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+ArgsOrCaller=..\vfedit.exe
+External=0
+BrkptCount=0
+WatchCount=2
+WatchExpr1=usTMIPro,x
+WatchExpr2=usCtlPro,x

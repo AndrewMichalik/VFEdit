@@ -1,0 +1,170 @@
+#
+# Standard compiler command line switches
+#	d       Redefined macros
+#	c       No link
+#	AM      Medium memory model
+#	Gsw     Stack probes & Windows
+#	G2      80286 Instruction Set
+#	G3      80386 Instruction Set
+#	Gh      C5.1 compatible object
+#	Ox      Max optimization (Note: C6.00a float op error for "ei")
+#	Od      No optimization
+#	W2      Intermediate warning level
+#	Zp      Structure packing
+#	Zd      Symbolic Debug
+#	Zi      CodeView Debug
+#	NT      Named text (code area) follows
+#	Alnw	Check for DS==SS
+#	V       Imbed version string
+#
+# Standard linker command line switches
+#   NOD     No default library
+#   A:x     Segment alignment (default = 512 bytes)
+#   SE:x    Set max number of segments
+
+# -----------------------------------------------------------------------
+# Compile and Link options (distribution & debug)
+# -----------------------------------------------------------------------
+!IFDEF deb
+# ---- DEBUG ----
+ap=masm/MX/V/ZI
+cp=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -AM  -W3 -G2 -Gsw -Zp -Od -Zi -FPi  
+cd=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -AMw -W3 -G2 -Gsw -Zp -Od -Zi -FPi  
+lp=$(linker)/NOD/NOE/A:16/CO$(L_Defs)
+!ELSE
+# ---- Default: DISTRIBUTION ----
+ap=masm/MX/V
+cp=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -AM  -W3 -G2 -Gsw -Zp -Ocglt -FPi  
+cd=cl -c -FoObject\ $(W_Defs) -D$(C_Defs) -V$(V_Note) -AMw -W3 -G2 -Gsw -Zp -Ocglt -FPi 
+lp=$(linker)/NOD/NOE/A:16$(L_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Version Control and Copyright Defs
+# -----------------------------------------------------------------------
+V_Note = "Copyright AJM, 800-234-VISI"
+
+# -----------------------------------------------------------------------
+# Hardware specific build paths
+# -----------------------------------------------------------------------
+!IFDEF g21
+# ---- CCITT G.721 ----
+C_Defs = G21
+!ELSE
+!IFDEF har
+# ---- Harris ----
+C_Defs = HAR
+!ELSE
+!IFDEF nwv
+# ---- New Voice ----
+C_Defs = NWV
+!ELSE
+!IFDEF ptc
+# ---- PTC ----
+C_Defs = PTC
+!ELSE
+!IFDEF rtx
+# ---- RTX ----
+C_Defs = RTX
+!ELSE
+# ---- DEFAULT Dialogic ----
+C_Defs = DLG
+!ENDIF
+!ENDIF
+!ENDIF
+!ENDIF
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Operating System version Library build paths & Copy Destination paths
+# -----------------------------------------------------------------------
+!IFDEF w30
+# ---- Windows 3.0 ----
+WinLib = libw+win87em+mlibcew
+DLLLib = libw+win87em+mdllcew
+W_Defs = -I\w30dev\include -DW30
+W_Stub =
+DstPth = ..\..\exedev^\
+LibEnt = \w30dev\lib\libentry.obj
+DLLExt = dll
+linker = link
+rc = \w30dev\rc $(W_Defs) -D$(C_Defs) 
+rd = \w30dev\rc $(W_Defs) -D$(C_Defs) 
+!ELSE
+# ---- DEFAULT C8 & Win 3.1 ----
+WinLib = libw+mlibcew
+DLLLib = libw+mdllcew
+W_Defs = -DW31
+W_Stub =
+DstPth = ..\..\exedev^\
+LibEnt =
+DLLExt = dll
+linker = link
+rc = rc $(W_Defs) -D$(C_Defs)
+rd = rc $(W_Defs) -D$(C_Defs)
+!ENDIF
+
+# -----------------------------------------------------------------------
+# Standard inference rules
+# -----------------------------------------------------------------------
+.c{object\}.obj:
+    $(cd) $(@B).c
+.cpp{object\}.obj:
+    $(cd) $(@B).cpp
+
+# -----------------------------------------------------------------------
+# The Executables, Libraries & Resources File List
+# -----------------------------------------------------------------------
+$(DstPth)$(C_Defs)eff.$(DLLExt): geneff.$(DLLExt)
+    copy   geneff.$(DLLExt) $(DstPth)$(C_Defs)eff.$(DLLExt)
+    copy   geneff.$(DLLExt) $(C_Defs)eff.$(DLLExt)
+
+geneff.$(DLLExt): $(C_Defs)eff.def geneff.rc                            \
+            object\geneff.obj                                           \
+            object\efffse.obj                                           \
+            object\effvol.obj object\effchn.obj object\effmix.obj       \
+            object\effnoi.obj object\efffad.obj object\effech.obj       \
+            object\effres.obj object\efffir.obj object\effiir.obj       \
+            object\firdes.obj object\iirdes.obj                         \
+            object\efffft.obj object\fftequ.obj                         \
+            object\efffqs.obj object\fqsmst.obj object\fqsobs.obj       \
+            object\fftovr.obj object\fftlow.obj                         \
+            object\effebs.obj object\ebssup.obj                         \
+            object\dllsup.obj                                           \
+            object\fillow.obj object\winmem.obj object\winmsg.obj
+    $(lp)   $(LibEnt) @genobj.rsp, geneff.$(DLLExt),                    \
+            NUL, $(DLLLib) ..\pcmdev\$(C_Defs)pcm.lib, $(C_Defs)eff;
+    $(rd)   geneff.rc geneff.$(DLLExt)
+    implib  $(C_Defs)eff.lib $(C_Defs)eff.def
+
+object\geneff.obj: geneff.c geneff.h effsup.h effmsg.h
+object\efffse.obj: efffse.c geneff.h effsup.h ..\os_dev\winmem.h ..\pcmdev\genpcm.h
+object\effvol.obj: effvol.c geneff.h effsup.h ..\os_dev\winmem.h ..\pcmdev\genpcm.h
+object\effchn.obj: effchn.c geneff.h effsup.h ..\os_dev\winmem.h
+object\effmix.obj: effmix.c geneff.h effsup.h ..\os_dev\winmem.h
+object\effnoi.obj: effnoi.c geneff.h effsup.h ..\os_dev\winmem.h
+object\effech.obj: effech.c geneff.h effsup.h ..\os_dev\winmem.h
+object\efffad.obj: efffad.c geneff.h effsup.h ..\os_dev\winmem.h
+object\effres.obj: effres.c geneff.h effsup.h ..\os_dev\winmem.h
+object\efffir.obj: efffir.c geneff.h effsup.h ..\os_dev\winmem.h
+object\effiir.obj: effiir.c geneff.h effsup.h ..\os_dev\winmem.h
+object\firdes.obj: firdes.c geneff.h effsup.h
+object\iirdes.obj: iirdes.c geneff.h effsup.h
+object\efffft.obj: efffft.c geneff.h effsup.h ..\os_dev\winmem.h
+object\fftequ.obj: fftequ.c geneff.h effsup.h ..\os_dev\winmem.h
+object\efffqs.obj: efffqs.c geneff.h effsup.h 
+object\fqsmst.obj: fqsmst.c geneff.h effsup.h ..\os_dev\winmem.h
+object\fqsobs.obj: fqsobs.c geneff.h effsup.h ..\os_dev\winmem.h
+object\fftovr.obj: fftovr.c geneff.h effsup.h ..\os_dev\winmem.h ..\pcmdev\genpcm.h
+object\fftlow.obj: fftlow.c geneff.h effsup.h
+object\effebs.obj: effebs.c geneff.h effsup.h ..\os_dev\winmem.h ..\pcmdev\genpcm.h
+object\ebssup.obj: ebssup.c geneff.h effsup.h ..\os_dev\winmem.h ..\pcmdev\genpcm.h
+object\dllsup.obj: ..\os_dev\dllsup.c ..\os_dev\dllsup.h ..\os_dev\winmem.h
+    $(cd)   ..\os_dev\dllsup.c
+object\fillow.obj: ..\fiodev\fillow.c ..\fiodev\filutl.h
+    $(cd)   ..\fiodev\fillow.c
+object\winmem.obj: ..\os_dev\winmem.c ..\os_dev\winmem.h
+    $(cd)   ..\os_dev\winmem.c
+object\winmsg.obj: ..\os_dev\winmsg.c ..\os_dev\winmsg.h
+    $(cd)   ..\os_dev\winmsg.c
+

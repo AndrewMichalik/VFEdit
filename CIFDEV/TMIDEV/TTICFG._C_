@@ -1,0 +1,325 @@
+/************************************************************************/
+/* TTI Configuration: TTICfg.c                          V2.00  06/10/92 */
+/* Copyright (c) 1987-1992 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define  NOCOMM                         /* Inhibit certain windows defs */
+#include "windows.h"                    /* Windows SDK definitions      */
+#include "..\..\ttidev\ttilib.h"        /* Dialogic D4x standard defs   */
+#include "gentmi.h"                     /* Generic TMI definitions      */
+#include "tmisup.h"                     /* Generic TMI support defs     */
+#include "ttitmi.h"                     /* Dialogic TMI definitions     */
+
+#include <string.h>                     /* String manipulation funcs    */
+#include <stdlib.h>                     /* Misc string/math/error funcs */
+
+/************************************************************************/
+/************************************************************************/
+#define MPXINPDEF         TRUE          /* Requested Mpx input          */
+#define MPXOUTDEF         TRUE          /* Requested Mpx output         */
+#define MPXLOCDEF         TRUE          /* Requested Mpx local          */
+#define MAXSILDEF            0          /* Max sil allowed during rcrd  */
+#define MAXSNDDEF            0          /* Max snd allowed during rcrd  */
+#define SILCMPDEF            0          /* Sil compression sensitivity  */
+#define AGCMODDEF            0          /* AGC Mode default             */
+#define TRMOOHDEF         TRUE          /* Term on/off hook state       */
+
+/************************************************************************/
+/*                  Forward & External References                       */
+/************************************************************************/
+extern  TMIGLO      TMIGlo;             /* Generic TMI Lib Globals      */
+extern  DIGSYSPRM   DigSysPrm;          /* Digitizer sys param list     */
+extern  MPXSYSPRM   MpxSysPrm;          /* Multiplexer sys param list   */
+
+BOOL    TstValChg (HWND,  WORD, int, int FAR *);
+int     DigSafSet (short, WORD, int, int FAR *);
+BOOL    MpxSafSet (short, int, int FAR *);
+
+short   UpdDigPrm (HWND, TMIDEF *);
+
+/************************************************************************/
+/*                  Dialog Box Data Transfer Defs                       */
+/*   Separate local allocs and dialog inst props permit full re-entry   */
+/************************************************************************/
+#define DBXPRPTXT   "DbxInsBlk"
+#define FAKLOCHDL   HANDLE              /* Fake local handle            */
+#define FAKLOCPTR   VOID NEAR *         /* Fake local pointer           */
+
+static struct {                         
+    TMIDEF  * pDbxInsBlk;               /* Inst local data block ptr    */
+} InpXfrBlk;
+
+/************************************************************************/
+/************************************************************************/
+DWORD   FAR PASCAL TMICfgIni (LPSTR szCfgNam, TMIDEF FAR *lpTMIDef)
+{
+
+    /********************************************************************/
+    /*                  Get configuration parameters                    */
+    /********************************************************************/
+    lpTMIDef->sLinNum = sRdWIni (szCfgNam, PI_LINENO, lpTMIDef->sLinNum);
+    lpTMIDef->sMpxInp = sRdWIni (szCfgNam, PI_MPXINP, MPXINPDEF) ? CONMIC : 0;
+    lpTMIDef->sMpxOut = sRdWIni (szCfgNam, PI_MPXOUT, MPXOUTDEF) ? CONSPK : 0;
+    lpTMIDef->sMpxLoc = sRdWIni (szCfgNam, PI_MPXLOC, MPXLOCDEF) ? CONLOC : 0;
+    lpTMIDef->sMaxSil = sRdWIni (szCfgNam, PI_MAXSIL, MAXSILDEF);
+    lpTMIDef->sMaxSnd = sRdWIni (szCfgNam, PI_MAXSND, MAXSNDDEF);
+    lpTMIDef->sSilCmp = SILCMPDEF;
+    lpTMIDef->sAGCMod = sRdWIni (szCfgNam, PI_AGCMOD, AGCMODDEF) && AGCMODMSK;
+    lpTMIDef->sTrmOOH = sRdWIni (szCfgNam, PI_TRMOOH, TRMOOHDEF);
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+/************************************************************************/
+/*               Create the Config Box Window Procedure                 */
+/************************************************************************/
+DWORD   FAR PASCAL TMICfgMod (TMIDEF FAR *lpTMIDef)
+{
+    FARPROC lpPrcAdr;
+    int     iRetCod;
+    HANDLE  hInsBlk;                    /* Instance data block handle   */
+    TMIDEF *pInsBlk;                    /* Inst local data block ptr    */
+
+    /********************************************************************/
+    /* Allocate shared local memory for this instance of dialog box     */
+    /********************************************************************/
+    if (NULL == (InpXfrBlk.pDbxInsBlk = pInsBlk = GetLocMem 
+        (&hInsBlk, sizeof (TMIDEF)))) return ((WORD) -1);
+    *pInsBlk = *lpTMIDef;
+
+    /********************************************************************/
+    /********************************************************************/
+    lpPrcAdr = MakeProcInstance ((FARPROC) CfgEdtBoxPrc, TMIGlo.hLibIns);
+    iRetCod = DialogBox (TMIGlo.hLibIns, (LPSTR) "SYSCFGBOX", NULL, lpPrcAdr);
+    FreeProcInstance ((FARPROC) lpPrcAdr);
+
+    /********************************************************************/
+    /********************************************************************/
+    *lpTMIDef = *pInsBlk;
+    RelLocMem (hInsBlk);
+    return (iRetCod);
+  
+}
+  
+  
+/************************************************************************/
+/*                Configuration Box Edit Procedure                      */
+/************************************************************************/
+BOOL FAR PASCAL CfgEdtBoxPrc (HWND hWnd, unsigned message, WPARAM wParam,
+                long lParam)
+{
+
+    TMIDEF  *pInsBlk;                   /* Inst local data block ptr    */
+
+    switch (message) {
+    case WM_INITDIALOG:
+        /****************************************************************/
+        /* Store instance specific data pointer                         */
+        /****************************************************************/
+        if (!SetProp (hWnd, DBXPRPTXT, (FAKLOCHDL) (pInsBlk = InpXfrBlk.pDbxInsBlk))) {
+            EndDialog (hWnd, -1);
+            break;
+        }
+        /****************************************************************/
+        /****************************************************************/
+        CtrDlgBox (NULL, hWnd, GetDlgItem (hWnd, IDOK), CTR_CTR);
+
+        /****************************************************************/
+        /* Disable selections if no Digitizer connected                 */
+        /****************************************************************/
+        if ((DigSysPrm.usIniCod) || (0 == pInsBlk->sLinNum)) {
+            EnableWindow (GetDlgItem (hWnd, DI_MPXINP), FALSE);
+            EnableWindow (GetDlgItem (hWnd, DI_MPXOUT), FALSE);
+            EnableWindow (GetDlgItem (hWnd, DI_MPXLOC), FALSE);
+            EnableWindow (GetDlgItem (hWnd, DI_MAXSIL), FALSE);
+            EnableWindow (GetDlgItem (hWnd, DI_MAXSND), FALSE);
+            EnableWindow (GetDlgItem (hWnd, DI_AGCMOD), FALSE);
+        }
+
+        /****************************************************************/
+        SetDlgItemInt  (hWnd, DI_LINNUM, pInsBlk->sLinNum, FALSE);
+        CheckDlgButton (hWnd, DI_MPXINP, pInsBlk->sMpxInp);
+        CheckDlgButton (hWnd, DI_MPXOUT, pInsBlk->sMpxOut);
+        CheckDlgButton (hWnd, DI_MPXLOC, pInsBlk->sMpxLoc);
+        SetDlgItemInt  (hWnd, DI_MAXSIL, pInsBlk->sMaxSil, FALSE);
+        SetDlgItemInt  (hWnd, DI_MAXSND, pInsBlk->sMaxSnd, FALSE);
+        CheckDlgButton (hWnd, DI_AGCMOD, AGCMODOFF != pInsBlk->sAGCMod);
+
+        /****************************************************************/
+        /* Let Windows set focus                                        */
+        /****************************************************************/
+        return (TRUE);
+
+    case WM_COMMAND:
+      if (NULL == (pInsBlk = (FAKLOCPTR) GetProp (hWnd, DBXPRPTXT))) {
+          EndDialog (hWnd, -1);
+          break;
+      }
+      switch(wParam) {
+        /****************************************************************/
+        /****************************************************************/
+        case IDOK:
+            UpdDigPrm (hWnd, pInsBlk);
+            EndDialog(hWnd, 0);
+            return(TRUE);
+
+        case IDCANCEL:
+            EndDialog(hWnd, -1);
+            return(TRUE);
+
+        default:
+            return(FALSE);
+      }
+        break;
+
+    case WM_DESTROY:
+      RemoveProp (hWnd, DBXPRPTXT);
+      break;
+
+    default:
+        return(FALSE);
+    }
+
+    return(FALSE);
+}
+
+
+short   UpdDigPrm (HWND hWnd, TMIDEF *pInsBlk)
+{
+    int     iWrkInt;
+
+    /********************************************************************/
+    /* If system is inactive, set line number to < MAXDIGCNT and return */
+    /********************************************************************/
+    if (DigSysPrm.usIniCod) {
+        if (!TstValChg (hWnd, DI_LINNUM, pInsBlk->sLinNum, &iWrkInt)) 
+            return (FALSE);
+        if (iWrkInt > MAXDIGCNT) {
+            MessageBeep (0);
+            return (FALSE);
+        }
+        pInsBlk->sLinNum = iWrkInt;
+        return (TRUE);
+    }
+    
+//    /********************************************************************/
+//    /* Line number changed: reset old line, set new                     */
+//    /********************************************************************/
+//    if (TstValChg (hWnd, DI_LINNUM, pInsBlk->sLinNum, &iWrkInt)) {
+//
+//    }
+    
+    /********************************************************************/
+    /* System Active: Set Digitizer & Multiplexer params if changed     */
+    /********************************************************************/
+/****************************************************************/
+iWrkInt = IsDlgButtonChecked (hWnd, DI_MPXINP) ? CONMIC : 0;
+if (iWrkInt != pInsBlk->sMpxInp) {
+//    if (iWrkInt)
+//        pInsBlk->sMpxInp = atconn (CONMIC) ? pInsBlk->sMpxInp : CONMIC;
+//    else 
+//        pInsBlk->sMpxInp = atdisc (CONMIC) ? pInsBlk->sMpxInp : 0;
+}
+/****************************************************************/
+iWrkInt = IsDlgButtonChecked (hWnd, DI_MPXOUT) ? CONSPK : 0;
+if (iWrkInt != pInsBlk->sMpxOut) {
+//    if (iWrkInt)
+//        pInsBlk->sMpxOut = atconn (CONSPK) ? pInsBlk->sMpxOut : CONSPK;
+//    else 
+//        pInsBlk->sMpxOut = atdisc (CONSPK) ? pInsBlk->sMpxOut : 0;
+}
+/****************************************************************/
+iWrkInt = IsDlgButtonChecked (hWnd, DI_MPXLOC) ? CONLOC : 0;
+if (iWrkInt != pInsBlk->sMpxLoc) {
+//    if (iWrkInt)
+//        pInsBlk->sMpxLoc = atconn (CONLOC) ? pInsBlk->sMpxLoc : CONLOC;
+//    else 
+//        pInsBlk->sMpxLoc = atdisc (CONLOC) ? pInsBlk->sMpxLoc : 0;
+}
+
+    /****************************************************************/
+    if (TstValChg (hWnd, DI_MAXSIL, pInsBlk->sMaxSil, &iWrkInt)) 
+        DigSafSet (pInsBlk->sLinNum, MAX_SIL, iWrkInt, &(pInsBlk->sMaxSil));
+
+    /****************************************************************/
+    if (TstValChg (hWnd, DI_MAXSND, pInsBlk->sMaxSnd, &iWrkInt)) 
+        DigSafSet (pInsBlk->sLinNum, MAX_SND, iWrkInt, &(pInsBlk->sMaxSnd));
+
+    /****************************************************************/
+    iWrkInt = (BOOL) IsDlgButtonChecked (hWnd, DI_AGCMOD);
+    if (iWrkInt != (BOOL) pInsBlk->sAGCMod)
+        DigSafSet (pInsBlk->sLinNum, AGC_MOD, iWrkInt, &(pInsBlk->sAGCMod));
+
+    /********************************************************************/
+    /********************************************************************/
+    return (TRUE);
+
+}
+
+
+BOOL TstValChg (HWND hWnd, WORD usItmDID, int iOrgVal, int FAR * piDstVal)
+{
+
+    BOOL    bXltOK;
+    int     iNewVal;
+
+    /********************************************************************/
+    /********************************************************************/
+    iNewVal = GetDlgItemInt (hWnd, usItmDID, (BOOL FAR *) &bXltOK, FALSE);
+    if (bXltOK && (iNewVal != iOrgVal)) {
+        *piDstVal = iNewVal;            
+        return (TRUE);
+    }
+
+    /********************************************************************/
+    /********************************************************************/
+    return (FALSE);
+
+}
+
+BOOL DigSafSet (short sLinNum, WORD usReq_ID, int iReqVal, int FAR *piDstVal)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    if (!DigTMISet (sLinNum, usReq_ID, iReqVal)) {
+        *piDstVal = iReqVal;            
+        return (TRUE);
+    }
+
+    /********************************************************************/
+    /********************************************************************/
+    MessageBeep (0);
+    return (FALSE);
+}
+
+
+BOOL MpxSafSet (short sLinNum, int iReqPrt, int FAR *piDstPrt)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    if (*piDstPrt && MpxTMISet (sLinNum, MPX_DIS, *piDstPrt)) {
+        MessageBeep (0);
+        return (FALSE);
+    }
+    *piDstPrt = 0;
+
+    /********************************************************************/
+    /********************************************************************/
+    if (iReqPrt && MpxTMISet (sLinNum, MPX_CON, iReqPrt)) {
+        MessageBeep (0);
+        return (FALSE);
+    }
+    *piDstPrt = iReqPrt;    
+
+    /********************************************************************/
+    /********************************************************************/
+    return (TRUE);
+}
+
+
+

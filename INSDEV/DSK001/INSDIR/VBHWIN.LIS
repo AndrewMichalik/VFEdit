@@ -1,0 +1,8 @@
+ <B>The <R>voice board hardware interrupt<B> setting tells VFEdit how your
+    system is configured.
+ If you know the Interrupt Request number (IRQ) for your voice,
+    board, enter it here. This number is typically between <R>2<B> and <R>7<B>.
+ If you don't know your IRQ number, leave the default setting of <R>0<B>
+    and VFEdit will read the value specified when you start the voice
+    board's terminate-and-stay-resident device driver.
+

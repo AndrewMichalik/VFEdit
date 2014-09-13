@@ -1,0 +1,5 @@
+object\genpcm.obj + object\pcmini.obj + object\pcmqry.obj +
+object\pcmfio.obj + object\pcmmxm.obj +
+object\blkcvt.obj + object\mpcsup.obj +
+object\fillow.obj + object\winmem.obj + object\winmsg.obj
+

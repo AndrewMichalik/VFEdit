@@ -1,0 +1,50 @@
+LIBRARY         RTXTMI
+DESCRIPTION     'Rhetorex Telco Media I/F (C) Andrew J. Michalik, 1987-1995'
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE'
+
+CODE            MOVEABLE  
+DATA            MOVEABLE SINGLE
+SEGMENTS        GENTMI_TEXT PRELOAD FIXED        
+
+HEAPSIZE        1024
+
+EXPORTS
+    WEP              @2  RESIDENTNAME PRIVATE
+    TMISUPVER        @4
+
+    TMIDLLINI       @10
+    TMICFGLOD       @12
+    TMICFGQRY       @14
+    TMICFGMOD       @16
+    TMICFGREL       @18
+
+    TMIDIGENU       @30
+    TMIPCMENU       @32
+    TMICHNENU       @34
+    TMIFRQENU       @36
+    TMICAPQRY       @38
+
+    TMICBKWIN       @60
+    RNGWAIBOXPRC    @62 
+    CFGEDTBOXPRC    @64
+
+    TMISYSINI       @80
+    TMISYSTRM       @82
+
+    TMIDIGALO       @90
+    TMIDIGREL       @92
+
+    TMILINOPN       @100
+    TMILINCLS       @102
+
+    TMIFILSTA       @120
+    TMIFILPLA       @122
+    TMIPLABEG       @124
+    TMIFILREC       @128
+    TMIRECBEG       @130
+    TMIRECLVL       @132
+    TMIFILPAU       @134
+    TMIFILTRM       @136
+
+

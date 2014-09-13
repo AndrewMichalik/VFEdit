@@ -1,0 +1,7 @@
+object\gentmi.obj +
+object\tmiqry.obj + object\tmimsg.obj +
+object\dlgcfg.obj + object\dlgdig.obj +
+object\dlgdio.obj +
+object\dllsup.obj + object\winmem.obj + object\winmsg.obj +
+object\filsup.obj + object\fillow.obj
+

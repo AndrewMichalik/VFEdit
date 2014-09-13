@@ -1,0 +1,37 @@
+; This help project requires hc 3.1
+[OPTIONS]
+errorlog = vfedit.err
+title = VFEdit 3.0
+contents = CONTENTS
+compress = false
+oldkeyphrase = false
+warning = 3
+
+[FILES]
+vfedit.rtf
+
+[MAP]
+contents        10
+refAbtVIS       20
+refTchSup       30
+refOthPrd       40
+refFilOpn       50
+refFilFmt       60
+refFntSel       70
+refViwCfg       80
+refPosSel       90
+refExtSel      100
+refEdtCfg      110
+refEffMix      120
+refEffEqu      130
+refTonGen      140
+refEffCfg      150
+refDevSel      160
+refPlaCfg      170
+refRecCfg      180
+refFtrCfg      190
+refAudDoc      200
+refEnvOpt      210
+refModVer      220
+refVerInf      230
+

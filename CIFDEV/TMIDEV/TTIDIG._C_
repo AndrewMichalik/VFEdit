@@ -1,0 +1,225 @@
+/************************************************************************/
+/* TTI Digitizer Media Ctl I/F: TTIDig.c                V2.00  06/10/92 */
+/* Copyright (c) 1987-1992 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define  NOCOMM                         /* Inhibit certain windows defs */
+#include "windows.h"                    /* Windows SDK definitions      */
+#include "..\..\ttidev\ttilib.h"        /* Dialogic D4x standard defs   */
+#include "..\pcmdev\genpcm.h"           /* PCM/APCM conv routine defs   */
+#include "gentmi.h"                     /* Generic TMI definitions      */
+#include "tmisup.h"                     /* Generic TMI support defs     */
+#include "tmimsg.h"                     /* File I/O support error defs  */
+#include "ttitmi.h"                     /* Dialogic TMI definitions     */
+
+#include <string.h>                     /* String manipulation funcs    */
+#include <stdlib.h>                     /* Misc string/math/error funcs */
+#include <stdio.h>                      /* Standard I/O                 */
+#include <dos.h>                        /* Low level dos calls          */
+
+/************************************************************************/
+/************************************************************************/
+#define SMPFRQDEF      6757             /* Default sample frequency     */
+
+short   SetAGCMod (WORD, WORD);         /* Cvt to TTI agc               */
+
+/************************************************************************/
+/************************************************************************/
+DIGSYSPRM   DigSysPrm = {               /* Digitizer sys param list     */
+            AISYSNOTACT,                /* System not active.           */
+            0 };                        /* No lines available           */
+
+DIGLINPRM   DigLinPrm[MAXDIGCNT+1];     /* Digitizer line param list    */
+
+
+/************************************************************************/
+/************************************************************************/
+DWORD FAR PASCAL TMIWavIni (UINT uiTMIDID, DWORD ulPrm001, DIGOPNPRM FAR * lpOpnPrm)
+{
+
+    WORD            usRetCod;
+    unsigned int    uiFFCNum;           /* 1st  Feature controller num  */
+    unsigned int    uiLFCNum;           /* Last Feature controller num  */
+
+    /********************************************************************/
+    /* Check if Voice Board driver is installed. If not, return.        */
+    /*                                                                  */
+    /* Set Reg Key = strrev (BASE36 (App Key || Usr Key))               */
+    /* Full: 1033 || 1123 (x11) = swap (NR80 || 5J90)                   */ 
+    /* Beta: 1039 || 1129 (x11) = swap (HT80 || ZK90)                   */ 
+    /********************************************************************/
+    if (usRetCod = TIFSupIni (lpOpnPrm->usSWILvl, 0L, 
+        (DWORD) (LPSTR) "-kz990z990")) return (TIFBASMSG + usRetCod);
+
+    if (0 != (usRetCod = SetSysConfig (_pdbSYSCFG(lpOpnPrm)))) {
+        if (AISYSACTIVE == usRetCod) return (0);
+        return (SI_TMIUSEDEF);
+    }
+
+    /********************************************************************/
+    /* Initialize Voice and Multiplexer boards.                         */
+    /* Start system, on error return code for ASCII error message       */
+    /********************************************************************/
+    if (AICLEANRTN != (DigSysPrm.usIniCod = StartPWRLINE (&DigSysPrm.uiLinCnt, 
+      &uiFFCNum, &uiLFCNum))) switch (DigSysPrm.usIniCod) {
+        case AISYSNOTACT:
+            return (SI_TMIVBDINA);      /* Voice board(s) NOT active    */
+        default:
+            return (SI_TMIVBDERR);      /* V brd fail: Chk inst & set   */
+    }
+
+    /********************************************************************/
+    /********************************************************************/
+    if (0 == (lpOpnPrm->usLinNum = TIFLinGet (lpOpnPrm->usLinNum,
+      CALLBACK_WINDOW, MAKELONG (lpOpnPrm->hCbkWnd, lpOpnPrm->usMsgBas))))
+        return (SI_TMINOLINI);          /* Cannot Initialize Line       */
+
+//    /********************************************************************/
+//    /* Clear Line I/O area and line status blocks                       */
+//    /********************************************************************/
+//    ClearLIOA (&LPCIns.ttilio);
+//    memset (&LinSta, 0, sizeof (struct lstblk));
+//    LPCIns.ttilio.lio_comp_rate = DEFCMPRAT;            
+//    LPCIns.linloc = ONLINE;
+//    LPCIns.oospkr = OFF;
+//    LPCIns.oomicr = OFF;
+
+    /********************************************************************/
+    /*                  Initialize line parameters.                     */
+    /********************************************************************/
+LineEnable(lpOpnPrm->usLinNum,
+    OFFHOOKCOMP | ONHOOKCOMP
+    | LCONTRANS | LCOFFTRANS
+    | RINGSREC, 1);
+
+    ClearDigits (lpOpnPrm->usLinNum);
+  
+    /********************************************************************/
+    /********************************************************************/
+//GetLSA (lpOpnPrm->usLinNum, &LinSta.ttilsa);
+    ClrEvtQue (lpOpnPrm->usLinNum);                         /* Clr Que  */
+  
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+DWORD FAR PASCAL TMIWavTrm (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    StopLine (uiLinNum);
+    TIFLinRel (uiLinNum, 0L, 0L);
+
+    /********************************************************************/
+    /********************************************************************/
+    StopPWRLINE ();
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+/************************************************************************/
+/************************************************************************/
+DWORD FAR PASCAL DigTMISet (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+  
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+}
+
+
+/************************************************************************/
+/************************************************************************/
+DWORD FAR PASCAL DigTMIInf (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+}
+
+/************************************************************************/
+/*                      Waveform I/O Routines                           */
+/************************************************************************/
+DWORD FAR PASCAL DigTMISee (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+    return (0L);
+}
+
+DWORD FAR PASCAL DigTMICue (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+    return (0L);
+}
+
+DWORD FAR PASCAL DigTMIPla (UINT uiLinNum, DWORD ulPrm001, 
+                 DIGPLAPRM FAR * lpPlaPrm)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+DWORD FAR PASCAL DigTMIRec (UINT uiLinNum, DWORD ulPrm001, 
+                 DIGPLAPRM FAR * lpPlaPrm)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+DWORD FAR PASCAL DigTMIPau (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+    return (0L);
+}
+
+DWORD FAR PASCAL DigTMIStp (UINT uiLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+}
+
+/************************************************************************/
+/*              PCM Type, AGC Mode, Freq Flags Converter                */
+/************************************************************************/
+short SetAGCMod (usLinNum, usAGCMod)
+WORD    usLinNum;
+WORD    usAGCMod;
+{
+    union   REGS    rInpReg;
+    union   REGS    rOutReg;
+    struct  SREGS   rSegReg;
+
+    #define AISETAGC    0x25
+
+    /********************************************************************/
+    /********************************************************************/
+    rInpReg.h.ah = AISETAGC;                    /* Set AGC Mode Command */
+    rInpReg.h.al = (char) usLinNum;             /* Line Number          */
+    rInpReg.x.bx = usAGCMod;                    /* Mode                 */
+    call_app_int (&rInpReg, &rOutReg, &rSegReg);
+    return ((short) rOutReg.h.ah);
+
+}
+
+BOOL TstTrmEvt (WORD usTIFEvt, EVTTRM usTstTrm)  
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (NUL_TRM);
+}
+
+
+

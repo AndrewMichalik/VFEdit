@@ -1,0 +1,48 @@
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'   Voice Information Systems (1-800-234-VISI) VFEdit Professional Prompt Editor
+'                   (c) Copyright Andrew J. Michalik 1987-1999
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Option Explicit
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Windows API functions
+' Prototypes
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Declare Function GetWindowsDirectory Lib "Kernel" (ByVal lpszSysPath As String, ByVal cbSysPath As Integer) As Integer
+Declare Function GetPrivateProfileString Lib "Kernel" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Integer, ByVal lpFilename As String) As Integer
+Declare Function WritePrivateProfileString Lib "Kernel" (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpString As String, ByVal lplFileName As String) As Integer
+Declare Function GetCurrentTask Lib "Kernel" () As Integer
+Declare Function GetModuleHandle Lib "Kernel" (ByVal lpModuleName As String) As Integer
+Declare Function GetModuleUsage Lib "Kernel" (ByVal hLibModule As Integer) As Integer
+Declare Sub FreeLibrary Lib "Kernel" (ByVal hLibModule As Integer)
+Declare Function GetModuleFileName Lib "Kernel" (ByVal hModule As Integer, ByVal lpFilename As String, ByVal nSize As Integer) As Integer
+Declare Function IsWindow Lib "User" (ByVal hWnd As Integer) As Integer
+Declare Sub GetWindowRect Lib "User" (ByVal hWnd As Integer, iRecAdr As Integer)
+Declare Function GetSystemMetrics Lib "User" (ByVal iReqFlg As Integer) As Integer
+Declare Function GetFileVersionInfoSize Lib "ver.dll" (ByVal lpszFileName As String, lpdwHandle As Long) As Long
+Declare Function GetFileVersionInfo Lib "ver.dll" (ByVal lpszFileName As String, ByVal lpdwHandle As Long, ByVal cbbuf As Long, ByVal lpvdata As String) As Integer
+Declare Function VerQueryValue Lib "ver.dll" (ByVal lpvBlock As String, ByVal lpszSubBlock As String, lplpBuffer As Long, lpcb As Integer) As Integer
+Declare Function lstrcpyn Lib "Kernel" (ByVal lpszString1 As Any, ByVal lpszString2 As Long, ByVal cChars As Integer) As Long
+Declare Function WinHelp Lib "User" (ByVal hWnd As Integer, ByVal lpHelpFile As String, ByVal wCommand As Integer, dwData As Any) As Integer
+
+' Windows Type declarations
+Type tagRECT
+    left As Integer
+    top As Integer
+    right As Integer
+    bottom As Integer
+End Type
+
+' Windows variable definitions
+Global Const WM_USER = &H400           ' User defined message base
+Global Const HWND_BOTTOM = 1           ' Bottom Z-Order
+Global Const HWND_TOP = 0              ' Top Z-Order
+Global Const HWND_TOPMOST = -1         ' Relative Top Z-Order
+Global Const HWND_NOTOPMOST = -2       ' Behind all top-most
+Global Const SWP_NOMOVE = 2
+
+' GetSystemMetrics
+Global Const SM_CXMin = 28
+Global Const SM_CYMin = 29
+

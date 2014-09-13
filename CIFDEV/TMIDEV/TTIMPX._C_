@@ -1,0 +1,49 @@
+/************************************************************************/
+/* TTI Multiplexer Media Ctl I/F: TTIMpx.c              V2.00  06/10/92 */
+/* Copyright (c) 1987-1992 Andrew J. Michalik                           */
+/*                                                                      */
+/************************************************************************/
+#define  NOCOMM                         /* Inhibit certain windows defs */
+#include "windows.h"                    /* Windows SDK definitions      */
+#include "..\..\ttidev\ttilib.h"        /* Dialogic D4x standard defs   */
+#include "gentmi.h"                     /* Generic TMI definitions      */
+#include "tmisup.h"                     /* Generic TMI support defs     */
+#include "tmimsg.h"                     /* File I/O support error defs  */
+#include "ttitmi.h"                     /* Dialogic TMI definitions     */
+
+
+/************************************************************************/
+/************************************************************************/
+MPXSYSPRM   MpxSysPrm = {               /* Multiplexer sys param list   */
+            AISYSNOTACT,                /* System not active.           */
+            0 };                        /* No ports available           */
+
+/************************************************************************/
+/************************************************************************/
+DWORD FAR PASCAL MpxDevOpn (UINT uiTMIDID, DWORD ulPrm001, MPXOPNPRM FAR * lpOpnPrm)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+DWORD FAR PASCAL MpxDevCls (UINT usLinNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+
+}
+
+DWORD FAR PASCAL MpxTMISet (UINT uiPrtNum, DWORD ulPrm001, DWORD ulPrm002)
+{
+
+    /********************************************************************/
+    /********************************************************************/
+    return (0L);
+}
+
+

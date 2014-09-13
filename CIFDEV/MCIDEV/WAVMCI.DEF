@@ -1,0 +1,41 @@
+LIBRARY         WAVMCI
+DESCRIPTION     'MM Wave Media Control I/F (C) Andrew J. Michalik, 1987-1995'
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE'
+
+CODE            MOVEABLE  
+DATA            MOVEABLE SINGLE
+SEGMENTS        GENMCI_TEXT PRELOAD FIXED        
+
+HEAPSIZE        1024
+
+EXPORTS
+    WEP              @2  RESIDENTNAME PRIVATE
+    MCISUPVER        @4
+
+    MCIDLLINI       @10
+    MCICFGLOD       @12
+    MCICFGQRY       @14
+    MCICFGMOD       @16
+    MCICFGREL       @18
+
+    MCIWAVENU       @30       
+    MCIPCMENU       @32       
+    MCICHNENU       @34
+    MCIFRQENU       @36
+    MCICAPQRY       @38
+
+    MCICBKWIN       @60
+    CFGEDTBOX       @64
+
+    MCIWAVOPN       @100
+    MCIWAVCLS       @102
+
+    WAVFILSTA       @120
+    WAVFILPLA       @122
+    WAVPLABEG       @124
+    WAVFILREC       @128
+    WAVRECBEG       @130
+    WAVFILPAU       @134
+    WAVFILTRM       @136
+

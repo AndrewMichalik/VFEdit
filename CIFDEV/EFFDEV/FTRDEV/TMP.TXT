@@ -1,0 +1,3 @@
+CHII Low Pass: 5000	Grd: 0.300000	Sec: 2	Len: 2	Rej: 40.000000
+Sec 0:	Zer: 0.2856	0.2856	Pol: -0.4289	
+Sec 1:	Zer: 0.1420	0.1420	Pol: -0.7159	

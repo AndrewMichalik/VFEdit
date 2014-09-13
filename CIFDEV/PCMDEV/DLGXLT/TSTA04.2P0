@@ -1,0 +1,752 @@
+
+Test 1: Initialize Idx/Off test 1:
+gsCurWav:   52  sNxtSIx:   11  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 1:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -63  sNxtSIx:    4  sResCnt:      0
+gsCurWav:  -82  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -82  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -92  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -67  sNxtSIx:    2  sResCnt:      0
+gsCurWav:   14  sNxtSIx:   12  sResCnt:      0
+gsCurWav:   62  sNxtSIx:   10  sResCnt:      0
+gsCurWav:   70  sNxtSIx:    8  sResCnt:      1
+gsCurWav:   67  sNxtSIx:    6  sResCnt:      2
+gsCurWav:   38  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   -1  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -53  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  -74  sNxtSIx:    5  sResCnt:      0
+gsCurWav:  -76  sNxtSIx:    3  sResCnt:      1
+gsCurWav:  -84  sNxtSIx:    1  sResCnt:      0
+gsCurWav:  -39  sNxtSIx:    8  sResCnt:      0
+gsCurWav:   52  sNxtSIx:   11  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 1:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 1:
+Low:   -3  High:    1  Run total:       1
+Low:   -3  High:    5  Run total:       1
+Low:   -7  High:   17  Run total:       1
+Low:  -11  High:   28  Run total:       1
+Low:   -4  High:   19  Run total:       1
+Low:   -1  High:    6  Run total:       1
+Low:   -3  High:   13  Run total:       1
+Low:  -10  High:   10  Run total:       1
+Low:  -58  High:   23  Run total:       1
+Low:  -40  High:    8  Run total:       1
+Low:   -7  High:    3  Run total:       1
+Low:   -2  High:    2  Run total:       1
+Low:   -5  High:   22  Run total:       1
+Low:  -10  High:   29  Run total:       1
+Low:  -10  High:   42  Run total:       1
+Low:   -2  High:   22  Run total:       1
+Low:   -2  High:    4  Run total:       1
+Low:   -1  High:   13  Run total:       1
+Low:  -25  High:   16  Run total:       1
+Low:  -69  High:   22  Run total:       1
+
+Test 5: Repeated (sep calls) Osc Conv test 1:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:  -11  High:   28  Run total:      -1
+Low:   -4  High:   19  Run total:      -1
+Low:   -1  High:    6  Run total:      -1
+Low:   -3  High:   13  Run total:      -1
+Low:  -10  High:   10  Run total:       1
+Low:  -58  High:   23  Run total:       1
+Low:  -40  High:    8  Run total:       0
+Low:   -7  High:    3  Run total:       1
+Low:   -2  High:    2  Run total:       1
+Low:   -5  High:   22  Run total:       0
+Low:  -10  High:   29  Run total:      -1
+Low:  -10  High:   42  Run total:       0
+Low:   -2  High:   22  Run total:       0
+Low:   -2  High:    4  Run total:      -1
+Low:   -1  High:   13  Run total:      -1
+Low:  -25  High:   16  Run total:       1
+Low:  -69  High:   22  Run total:       1
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 1:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 1:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		 cc	  -14	  -26	  -41	  -59
+P->W:	 a9		 90	  -71	  -75	  -78	  -71
+P->W:	 a9		  4	  -76	  -77	  -70	  -49
+P->W:	 74		 21	  -13	   33	   63	   78
+P->W:	  0		  8	   81	   83	   85	   78
+P->W:	 a9		 bb	   58	   47	   25	    6
+P->W:	 ea		 a8	  -25	  -45	  -62	  -64
+P->W:	 88		 a0	  -64	  -64	  -75	  -69
+P->W:	 27		 53	  -54	  -23	   24	   67
+P->W:	  0		  0	   71	   74	   77	   79
+P->W:	  0		  0	   80	   81	   80	   80
+P->W:	  0		  0	   79	   76	   74	   71
+P->W:	  0		  0	   69	   66	   64	   62
+P->W:	  0		  0	   60	   58	   56	   54
+P->W:	  0		  0	   53	   52	   50	   49
+P->W:	  0		  0	   48	   47	   46	   45
+P->W:	  0		  0	   44	   43	   42	   41
+P->W:	  0		  0	   40	   40	   39	   39
+P->W:	  0		  0	   38	   38	   37	   37
+
+gsCurWav:   37, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 1:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	 bc		  -14	  -26	  -41	  -59
+P->W:	 a8	 92		  -71	  -75	  -78	  -71
+P->W:	 98	 24		  -76	  -77	  -70	  -49
+P->W:	 74	 21		  -13	   33	   63	   78
+P->W:	  8	  8		   81	   83	   85	   78
+P->W:	 b9	 bb		   58	   47	   25	    6
+P->W:	 ea	 a0		  -25	  -45	  -62	  -64
+P->W:	 80	 a1		  -64	  -64	  -75	  -69
+P->W:	 37	 53		  -54	  -23	   24	   67
+P->W:	  0	 80		   71	   74	   77	   79
+P->W:	  0	 88		   80	   81	   80	   80
+P->W:	  9	 88		   79	   76	   74	   71
+P->W:	 88	 88		   69	   66	   64	   62
+P->W:	 88	 88		   60	   58	   56	   54
+P->W:	 88	 80		   53	   52	   50	   49
+P->W:	 88	 80		   48	   47	   46	   45
+P->W:	 88	 80		   44	   43	   42	   41
+P->W:	 88	  8		   40	   40	   39	   39
+P->W:	 80	 80		   38	   38	   37	   37
+
+gsCurWav:   39, sNxtSIx:    0
+
+Test 1: Initialize Idx/Off test 2:
+gsCurWav:   83  sNxtSIx:   11  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 2:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -56  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -66  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -58  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -62  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -31  sNxtSIx:    2  sResCnt:      0
+gsCurWav:   50  sNxtSIx:   12  sResCnt:      0
+gsCurWav:   96  sNxtSIx:   10  sResCnt:      0
+gsCurWav:   93  sNxtSIx:    8  sResCnt:      1
+gsCurWav:   90  sNxtSIx:    6  sResCnt:      2
+gsCurWav:   54  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   13  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -39  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  -52  sNxtSIx:    5  sResCnt:      0
+gsCurWav:  -50  sNxtSIx:    3  sResCnt:      1
+gsCurWav:  -54  sNxtSIx:    1  sResCnt:      0
+gsCurWav:   -7  sNxtSIx:    8  sResCnt:      0
+gsCurWav:   83  sNxtSIx:   11  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 2:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 2:
+Low:   -3  High:    1  Run total:       1
+Low:   -3  High:    5  Run total:       1
+Low:   -7  High:   17  Run total:       1
+Low:   -9  High:   23  Run total:       1
+Low:   -1  High:   13  Run total:       1
+Low:   -5  High:    5  Run total:       1
+Low:   -1  High:    7  Run total:       1
+Low:  -19  High:    9  Run total:       1
+Low:  -58  High:   23  Run total:       1
+Low:  -39  High:    9  Run total:       1
+Low:   -3  High:    2  Run total:       1
+Low:   -2  High:    2  Run total:       1
+Low:   -5  High:   29  Run total:       1
+Low:   -9  High:   30  Run total:       1
+Low:  -11  High:   41  Run total:       1
+Low:   -2  High:   18  Run total:       1
+Low:   -1  High:    2  Run total:       1
+Low:   -4  High:   10  Run total:       1
+Low:  -29  High:   16  Run total:       1
+Low:  -69  High:   22  Run total:       1
+
+Test 5: Repeated (sep calls) Osc Conv test 2:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -9  High:   23  Run total:       0
+Low:   -1  High:   13  Run total:       0
+Low:   -5  High:    5  Run total:       0
+Low:   -1  High:    7  Run total:       0
+Low:  -19  High:    9  Run total:       0
+Low:  -58  High:   23  Run total:       0
+Low:  -39  High:    9  Run total:       1
+Low:   -3  High:    2  Run total:       0
+Low:   -2  High:    2  Run total:       0
+Low:   -5  High:   29  Run total:      -1
+Low:   -9  High:   30  Run total:       0
+Low:  -11  High:   41  Run total:      -1
+Low:   -2  High:   18  Run total:      -1
+Low:   -1  High:    2  Run total:       0
+Low:   -4  High:   10  Run total:      -1
+Low:  -29  High:   16  Run total:       1
+Low:  -69  High:   22  Run total:       1
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 2:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 2:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		 bc	  -14	  -26	  -38	  -52
+P->W:	 a8		 92	  -61	  -59	  -61	  -48
+P->W:	 98		 24	  -50	  -49	  -37	  -17
+P->W:	 74		 21	   18	   62	   92	  106
+P->W:	  8		  8	  108	  101	  101	   94
+P->W:	 b9		 bb	   67	   55	   34	   14
+P->W:	 ea		 a0	  -17	  -37	  -55	  -49
+P->W:	 80		 a1	  -50	  -45	  -56	  -47
+P->W:	 37		 53	  -30	    0	   46	   89
+P->W:	  0		 80	   92	   95	   88	   89
+P->W:	  0		 88	   90	   90	   84	   77
+P->W:	  9		 88	   76	   66	   60	   54
+P->W:	 88		 88	   49	   44	   39	   35
+P->W:	 88		 88	   31	   27	   24	   20
+P->W:	 88		 80	   17	   14	   11	   13
+P->W:	 88		 80	   10	    7	    5	    7
+P->W:	 88		 80	    4	    2	    0	    2
+P->W:	 88		  8	    0	   -2	    0	   -2
+P->W:	 80		 80	   -4	   -2	   -4	   -2
+
+gsCurWav:   -2, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 2:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	 ab		  -14	  -26	  -38	  -52
+P->W:	 a0	 83		  -61	  -59	  -61	  -48
+P->W:	 80	 25		  -50	  -49	  -37	  -17
+P->W:	 55	 21		   18	   62	   92	  106
+P->W:	 88	  9		  108	  101	  101	   94
+P->W:	 ba	 bb		   67	   55	   34	   14
+P->W:	 ea	 a1		  -17	  -37	  -55	  -49
+P->W:	 81	 a1		  -50	  -45	  -56	  -47
+P->W:	 45	 62		  -30	    0	   46	   89
+P->W:	  0	 88		   92	   95	   88	   89
+P->W:	  8	 88		   90	   90	   84	   77
+P->W:	 8a	 89		   76	   66	   60	   54
+P->W:	 99	 98		   49	   44	   39	   35
+P->W:	 98	 89		   31	   27	   24	   20
+P->W:	 88	 91		   17	   14	   11	   13
+P->W:	 98	 80		   10	    7	    5	    7
+P->W:	 88	 80		    4	    2	    0	    2
+P->W:	 88	  8		    0	   -2	    0	   -2
+P->W:	 80	 80		   -4	   -2	   -4	   -2
+
+gsCurWav:   -1, sNxtSIx:    0
+
+Test 1: Initialize Idx/Off test 3:
+gsCurWav:   91  sNxtSIx:   12  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 3:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -49  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -53  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -38  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -35  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -3  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   75  sNxtSIx:   12  sResCnt:      0
+gsCurWav:  121  sNxtSIx:   10  sResCnt:      0
+gsCurWav:  108  sNxtSIx:    8  sResCnt:      1
+gsCurWav:   96  sNxtSIx:    6  sResCnt:      0
+gsCurWav:   52  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   12  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -40  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  -46  sNxtSIx:    5  sResCnt:      0
+gsCurWav:  -39  sNxtSIx:    3  sResCnt:      0
+gsCurWav:  -43  sNxtSIx:    1  sResCnt:      0
+gsCurWav:    6  sNxtSIx:    7  sResCnt:      0
+gsCurWav:   91  sNxtSIx:   12  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 3:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 3:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -1  High:    9  Run total:       0
+Low:   -7  High:    7  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -21  High:   11  Run total:       0
+Low:  -55  High:   24  Run total:       0
+Low:  -40  High:    8  Run total:       0
+Low:   -2  High:    8  Run total:       0
+Low:   -7  High:    5  Run total:       0
+Low:   -8  High:   33  Run total:       0
+Low:   -9  High:   30  Run total:       0
+Low:  -11  High:   41  Run total:       0
+Low:   -5  High:   15  Run total:       0
+Low:   -4  High:    5  Run total:       0
+Low:   -4  High:   10  Run total:       0
+Low:  -33  High:   15  Run total:       0
+Low:  -69  High:   17  Run total:       0
+
+Test 5: Repeated (sep calls) Osc Conv test 3:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -1  High:    9  Run total:       0
+Low:   -7  High:    7  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -21  High:   11  Run total:       0
+Low:  -55  High:   24  Run total:       1
+Low:  -40  High:    8  Run total:       0
+Low:   -2  High:    8  Run total:       1
+Low:   -7  High:    5  Run total:      -1
+Low:   -8  High:   33  Run total:      -1
+Low:   -9  High:   30  Run total:       0
+Low:  -11  High:   41  Run total:      -1
+Low:   -5  High:   15  Run total:       0
+Low:   -4  High:    5  Run total:       1
+Low:   -4  High:   10  Run total:       0
+Low:  -33  High:   15  Run total:       1
+Low:  -69  High:   17  Run total:       0
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 3:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 3:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		 ab	  -14	  -26	  -34	  -45
+P->W:	 a0		 83	  -51	  -46	  -45	  -29
+P->W:	 80		 25	  -29	  -26	  -15	    7
+P->W:	 55		 21	   38	   83	  112	  126
+P->W:	 88		  9	  118	  109	  110	   95
+P->W:	 ba		 bb	   67	   49	   28	    9
+P->W:	 ea		 a1	  -22	  -42	  -60	  -47
+P->W:	 81		 a1	  -48	  -38	  -49	  -40
+P->W:	 45		 62	  -19	   10	   59	   93
+P->W:	  0		 88	   97	  100	   93	   85
+P->W:	  8		 88	   87	   80	   73	   67
+P->W:	 8a		 89	   62	   45	   41	   33
+P->W:	 99		 98	   25	   18	   11	    9
+P->W:	 98		 89	    2	    0	   -2	   -8
+P->W:	 88		 91	   -9	  -11	  -15	   -9
+P->W:	 98		 80	  -14	  -15	  -16	  -13
+P->W:	 88		 80	  -14	  -15	  -16	  -13
+P->W:	 88		  8	  -14	  -15	  -12	  -14
+P->W:	 80		 80	  -15	  -12	  -13	  -10
+
+gsCurWav:  -10, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 3:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	 9a		  -14	  -26	  -34	  -45
+P->W:	 91	 84		  -51	  -46	  -45	  -29
+P->W:	 80	 35		  -29	  -26	  -15	    7
+P->W:	 55	 20		   38	   83	  112	  126
+P->W:	 89	  9		  118	  109	  110	   95
+P->W:	 c9	 ba		   67	   49	   28	    9
+P->W:	 ca	 a1		  -22	  -42	  -60	  -47
+P->W:	  1	 a2		  -48	  -38	  -49	  -40
+P->W:	 54	 72		  -19	   10	   59	   93
+P->W:	 80	 88		   97	  100	   93	   85
+P->W:	  9	 89		   87	   80	   73	   67
+P->W:	 8a	 8a		   62	   45	   41	   33
+P->W:	 99	 a0		   25	   18	   11	    9
+P->W:	 a8	 89		    2	    0	   -2	   -8
+P->W:	  9	 81		   -9	  -11	  -15	   -9
+P->W:	 90	 80		  -14	  -15	  -16	  -13
+P->W:	 80	 80		  -14	  -15	  -16	  -13
+P->W:	 80	  8		  -14	  -15	  -12	  -14
+P->W:	 80	  0		  -15	  -12	  -13	  -10
+
+gsCurWav:   -9, sNxtSIx:    0
+
+Test 1: Initialize Idx/Off test 4:
+gsCurWav:  102  sNxtSIx:   13  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 4:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -41  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -38  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -20  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -19  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   17  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   94  sNxtSIx:   12  sResCnt:      0
+gsCurWav:  129  sNxtSIx:   10  sResCnt:      0
+gsCurWav:  106  sNxtSIx:    8  sResCnt:      0
+gsCurWav:   95  sNxtSIx:    6  sResCnt:      0
+gsCurWav:   48  sNxtSIx:    7  sResCnt:      0
+gsCurWav:    3  sNxtSIx:    5  sResCnt:      0
+gsCurWav:  -45  sNxtSIx:    6  sResCnt:      0
+gsCurWav:  -52  sNxtSIx:    4  sResCnt:      0
+gsCurWav:  -38  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -36  sNxtSIx:    0  sResCnt:      0
+gsCurWav:   12  sNxtSIx:    6  sResCnt:      0
+gsCurWav:  102  sNxtSIx:   13  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 4:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 4:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -5  High:   11  Run total:       0
+Low:   -3  High:    3  Run total:       0
+Low:   -9  High:    9  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -25  High:   11  Run total:       0
+Low:  -55  High:   24  Run total:       0
+Low:  -34  High:    3  Run total:       0
+Low:   -8  High:   11  Run total:       0
+Low:   -6  High:    6  Run total:       0
+Low:   -6  High:   39  Run total:       0
+Low:   -9  High:   36  Run total:       0
+Low:  -10  High:   38  Run total:       0
+Low:   -5  High:   13  Run total:       0
+Low:   -6  High:    5  Run total:       0
+Low:   -6  High:    6  Run total:       0
+Low:  -35  High:   13  Run total:       0
+Low:  -72  High:   19  Run total:       0
+
+Test 5: Repeated (sep calls) Osc Conv test 4:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -5  High:   11  Run total:       0
+Low:   -3  High:    3  Run total:       0
+Low:   -9  High:    9  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -25  High:   11  Run total:       0
+Low:  -55  High:   24  Run total:       1
+Low:  -34  High:    3  Run total:       1
+Low:   -8  High:   11  Run total:      -1
+Low:   -6  High:    6  Run total:      -1
+Low:   -6  High:   39  Run total:       0
+Low:   -9  High:   36  Run total:       0
+Low:  -10  High:   38  Run total:       0
+Low:   -5  High:   13  Run total:      -1
+Low:   -6  High:    5  Run total:       1
+Low:   -6  High:    6  Run total:       0
+Low:  -35  High:   13  Run total:       0
+Low:  -72  High:   19  Run total:       0
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 4:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 4:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		 9a	  -14	  -26	  -30	  -38
+P->W:	 91		 84	  -41	  -33	  -32	  -14
+P->W:	 80		 35	  -15	  -12	    2	   23
+P->W:	 55		 20	   53	   97	  126	  129
+P->W:	 89		  9	  121	  104	  104	   89
+P->W:	 c9		 ba	   55	   41	   14	   -4
+P->W:	 ca		 a1	  -32	  -50	  -66	  -55
+P->W:	  1		 a2	  -49	  -39	  -49	  -35
+P->W:	 54		 72	  -13	   13	   64	  101
+P->W:	 80		 88	   92	   96	   88	   81
+P->W:	  9		 89	   83	   68	   62	   49
+P->W:	 8a		 8a	   44	   28	   24	   11
+P->W:	 99		 a0	    5	   -1	  -11	   -9
+P->W:	 a8		 89	  -18	  -18	  -19	  -24
+P->W:	  9		 81	  -20	  -25	  -25	  -18
+P->W:	 90		 80	  -22	  -19	  -20	  -17
+P->W:	 80		 80	  -17	  -14	  -15	  -13
+P->W:	 80		  8	  -14	  -11	   -8	  -10
+P->W:	 80		  0	  -11	   -8	   -6	   -4
+
+gsCurWav:   -4, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 4:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	 8a		  -14	  -26	  -30	  -38
+P->W:	 82	  4		  -41	  -33	  -32	  -14
+P->W:	 80	 35		  -15	  -12	    2	   23
+P->W:	 54	 38		   53	   97	  126	  129
+P->W:	 8a	  a		  121	  104	  104	   89
+P->W:	 d9	 bb		   55	   41	   14	   -4
+P->W:	 bb	 b2		  -32	  -50	  -66	  -55
+P->W:	 13	 b4		  -49	  -39	  -49	  -35
+P->W:	 44	 72		  -13	   13	   64	  101
+P->W:	 88	 88		   92	   96	   88	   81
+P->W:	  a	 89		   83	   68	   62	   49
+P->W:	 8b	 8a		   44	   28	   24	   11
+P->W:	 99	 a0		    5	   -1	  -11	   -9
+P->W:	 a0	 89		  -18	  -18	  -19	  -24
+P->W:	 19	 82		  -20	  -25	  -25	  -18
+P->W:	 90	  0		  -22	  -19	  -20	  -17
+P->W:	 81	 80		  -17	  -14	  -15	  -13
+P->W:	 80	 19		  -14	  -11	   -8	  -10
+P->W:	  0	  0		  -11	   -8	   -6	   -4
+
+gsCurWav:   -4, sNxtSIx:    0
+
+Test 1: Initialize Idx/Off test 5:
+gsCurWav:  106  sNxtSIx:   13  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 5:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -37  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:   -6  sNxtSIx:    2  sResCnt:      0
+gsCurWav:   -6  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   30  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   98  sNxtSIx:   10  sResCnt:      0
+gsCurWav:  125  sNxtSIx:    8  sResCnt:      0
+gsCurWav:   98  sNxtSIx:    6  sResCnt:      0
+gsCurWav:   82  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   36  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  -16  sNxtSIx:    5  sResCnt:      0
+gsCurWav:  -57  sNxtSIx:    3  sResCnt:      0
+gsCurWav:  -60  sNxtSIx:    1  sResCnt:      0
+gsCurWav:  -37  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -31  sNxtSIx:    2  sResCnt:      0
+gsCurWav:   16  sNxtSIx:    6  sResCnt:      0
+gsCurWav:  106  sNxtSIx:   13  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 5:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 5:
+Low:   -3  High:    1  Run total:       1
+Low:   -3  High:    5  Run total:       1
+Low:   -7  High:   17  Run total:       1
+Low:   -5  High:    7  Run total:       1
+Low:   -5  High:    5  Run total:       1
+Low:  -11  High:    9  Run total:       1
+Low:   -1  High:    1  Run total:       1
+Low:  -25  High:   11  Run total:       1
+Low:  -51  High:   19  Run total:       1
+Low:  -33  High:    3  Run total:       1
+Low:  -11  High:   13  Run total:       1
+Low:   -8  High:    8  Run total:       1
+Low:   -6  High:   39  Run total:       1
+Low:  -13  High:   39  Run total:       1
+Low:  -10  High:   32  Run total:       1
+Low:   -6  High:   13  Run total:       1
+Low:  -12  High:    8  Run total:       1
+Low:   -9  High:    9  Run total:       1
+Low:  -34  High:   13  Run total:       1
+Low:  -72  High:   19  Run total:       1
+
+Test 5: Repeated (sep calls) Osc Conv test 5:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -5  High:    7  Run total:       0
+Low:   -5  High:    5  Run total:       0
+Low:  -11  High:    9  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -25  High:   11  Run total:       0
+Low:  -51  High:   19  Run total:       0
+Low:  -33  High:    3  Run total:       1
+Low:  -11  High:   13  Run total:      -1
+Low:   -8  High:    8  Run total:      -1
+Low:   -6  High:   39  Run total:       0
+Low:  -13  High:   39  Run total:      -1
+Low:  -10  High:   32  Run total:      -1
+Low:   -6  High:   13  Run total:      -1
+Low:  -12  High:    8  Run total:       1
+Low:   -9  High:    9  Run total:       1
+Low:  -34  High:   13  Run total:       1
+Low:  -72  High:   19  Run total:       1
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 5:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 5:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		 8a	  -14	  -26	  -26	  -34
+P->W:	 82		  4	  -34	  -22	  -19	   -1
+P->W:	 80		 35	   -3	   -1	   13	   33
+P->W:	 54		 38	   62	   98	  130	  122
+P->W:	 8a		  a	  115	   91	   92	   73
+P->W:	 d9		 bb	   39	   25	   -2	  -27
+P->W:	 bb		 b2	  -46	  -64	  -79	  -63
+P->W:	 13		 b4	  -54	  -37	  -48	  -28
+P->W:	 44		 72	   -7	   19	   70	  106
+P->W:	 88		 88	   98	   90	   82	   75
+P->W:	  a		 89	   77	   55	   49	   37
+P->W:	 8b		 8a	   32	   12	    8	   -4
+P->W:	 99		 a0	  -10	  -15	  -23	  -20
+P->W:	 a0		 89	  -28	  -25	  -25	  -29
+P->W:	 19		 82	  -22	  -26	  -26	  -15
+P->W:	 90		  0	  -20	  -17	  -14	  -11
+P->W:	 81		 80	  -12	   -6	   -7	   -5
+P->W:	 80		 19	   -6	   -4	    2	   -4
+P->W:	  0		  0	   -2	    0	    2	    4
+
+gsCurWav:    4, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 5:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	  a		  -14	  -26	  -26	  -34
+P->W:	  3	  4		  -34	  -22	  -19	   -1
+P->W:	 80	 34		   -3	   -1	   13	   33
+P->W:	 64	 28		   62	   98	  130	  122
+P->W:	 8b	  b		  115	   91	   92	   73
+P->W:	 d9	 bc		   39	   25	   -2	  -27
+P->W:	 9a	 a3		  -46	  -64	  -79	  -63
+P->W:	 12	 a4		  -54	  -37	  -48	  -28
+P->W:	 44	 62		   -7	   19	   70	  106
+P->W:	 89	 88		   98	   90	   82	   75
+P->W:	  b	 89		   77	   55	   49	   37
+P->W:	 9b	 8b		   32	   12	    8	   -4
+P->W:	 98	 a1		  -10	  -15	  -23	  -20
+P->W:	 a0	  9		  -28	  -25	  -25	  -29
+P->W:	 29	  2		  -22	  -26	  -26	  -15
+P->W:	 90	 10		  -20	  -17	  -14	  -11
+P->W:	 81	 80		  -12	   -6	   -7	   -5
+P->W:	  0	 1a		   -6	   -4	    2	   -4
+P->W:	 10	  0		   -2	    0	    2	    4
+
+gsCurWav:    6, sNxtSIx:    0
+
+Test 1: Initialize Idx/Off test 6:
+gsCurWav:  108  sNxtSIx:   12  sResCnt:       0
+
+Test 2: Repeated (sep calls) Idx/Off test 6:
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   -4  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -27  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -33  sNxtSIx:    0  sResCnt:      0
+gsCurWav:  -16  sNxtSIx:    0  sResCnt:      0
+gsCurWav:    4  sNxtSIx:    2  sResCnt:      0
+gsCurWav:    4  sNxtSIx:    0  sResCnt:      1
+gsCurWav:   35  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  102  sNxtSIx:   10  sResCnt:      0
+gsCurWav:  120  sNxtSIx:    8  sResCnt:      0
+gsCurWav:   85  sNxtSIx:    6  sResCnt:      0
+gsCurWav:   64  sNxtSIx:    4  sResCnt:      0
+gsCurWav:   18  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  -41  sNxtSIx:    8  sResCnt:      0
+gsCurWav:  -72  sNxtSIx:    6  sResCnt:      0
+gsCurWav:  -64  sNxtSIx:    4  sResCnt:      0
+gsCurWav:  -39  sNxtSIx:    2  sResCnt:      0
+gsCurWav:  -29  sNxtSIx:    3  sResCnt:      0
+gsCurWav:   23  sNxtSIx:    7  sResCnt:      0
+gsCurWav:  108  sNxtSIx:   12  sResCnt:      0
+
+Test 3: Idx/Off timing (1 pass / 60 sec vox) 6:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 4: Oscillation Conversion test 6:
+Low:   -3  High:    1  Run total:       1
+Low:   -3  High:    5  Run total:       1
+Low:   -7  High:   17  Run total:       1
+Low:   -5  High:    5  Run total:       1
+Low:   -9  High:    7  Run total:       1
+Low:  -11  High:    9  Run total:       1
+Low:   -1  High:    1  Run total:       1
+Low:  -23  High:    9  Run total:       1
+Low:  -50  High:   19  Run total:       1
+Low:  -23  High:    3  Run total:       1
+Low:  -14  High:   17  Run total:       1
+Low:  -11  High:   11  Run total:       1
+Low:   -7  High:   38  Run total:       1
+Low:  -16  High:   43  Run total:       1
+Low:  -10  High:   23  Run total:       1
+Low:  -11  High:   11  Run total:       1
+Low:  -15  High:    8  Run total:       1
+Low:  -10  High:    9  Run total:       1
+Low:  -38  High:   14  Run total:       1
+Low:  -68  High:   18  Run total:       1
+
+Test 5: Repeated (sep calls) Osc Conv test 6:
+Low:   -3  High:    1  Run total:       0
+Low:   -3  High:    5  Run total:       0
+Low:   -7  High:   17  Run total:       0
+Low:   -5  High:    5  Run total:       0
+Low:   -9  High:    7  Run total:       0
+Low:  -11  High:    9  Run total:       0
+Low:   -1  High:    1  Run total:       0
+Low:  -23  High:    9  Run total:       0
+Low:  -50  High:   19  Run total:       0
+Low:  -23  High:    3  Run total:       1
+Low:  -14  High:   17  Run total:       0
+Low:  -11  High:   11  Run total:       0
+Low:   -7  High:   38  Run total:      -1
+Low:  -16  High:   43  Run total:      -1
+Low:  -10  High:   23  Run total:      -1
+Low:  -11  High:   11  Run total:      -1
+Low:  -15  High:    8  Run total:       1
+Low:  -10  High:    9  Run total:       0
+Low:  -38  High:   14  Run total:       0
+Low:  -68  High:   18  Run total:       1
+
+Test 6: Osc timing test (1 pass / 60 sec vox) 6:
+ 0  1  2  3  4  5  6  7  8  9 
+End timing test:
+
+Test 7: Wave conversion test 6:
+P->W:	  0		 89	    2	    4	    2	   -4
+P->W:	 ab		  a	  -14	  -26	  -23	  -31
+P->W:	  3		  4	  -27	  -12	   -9	    9
+P->W:	 80		 34	    7	    8	   21	   36
+P->W:	 64		 28	   64	   99	  122	  114
+P->W:	 8b		  b	  107	   77	   78	   54
+P->W:	 d9		 bc	   21	    8	  -19	  -50
+P->W:	 9a		 a3	  -61	  -78	  -93	  -68
+P->W:	 12		 a4	  -57	  -40	  -50	  -29
+P->W:	 44		 62	   -5	   23	   72	  105
+P->W:	 89		 88	   97	   78	   72	   65
+P->W:	  b		 89	   67	   38	   33	   23
+P->W:	 9b		 8b	   13	   -6	   -8	  -22
+P->W:	 98		 a1	  -26	  -26	  -34	  -26
+P->W:	 a0		  9	  -34	  -30	  -26	  -30
+P->W:	 29		  2	  -19	  -23	  -20	   -9
+P->W:	 90		 10	  -14	  -12	   -5	   -3
+P->W:	 81		 80	   -5	    1	   -1	    1
+P->W:	  0		 1a	    3	    5	   11	    1
+P->W:	 10		  0	    7	    8	    9	   11
+
+gsCurWav:   11, sNxtSIx:    0
+
+Test 8: ADPCM conversion test 6:
+P->W:	  0	 89		    2	    4	    2	   -4
+P->W:	 ab	 1a		  -14	  -26	  -23	  -31
+P->W:	 13	  4		  -27	  -12	   -9	    9
+P->W:	 80	 33		    7	    8	   21	   36
+P->W:	 73	 39		   64	   99	  122	  114
+P->W:	 8d	  b		  107	   77	   78	   54
+P->W:	 c9	 bc		   21	    8	  -19	  -50
+P->W:	 99	 a4		  -61	  -78	  -93	  -68
+P->W:	 11	 93		  -57	  -40	  -50	  -29
+P->W:	 44	 62		   -5	   23	   72	  105
+P->W:	 8a	  9		   97	   78	   72	   65
+P->W:	  b	 98		   67	   38	   33	   23
+P->W:	 ab	  b		   13	   -6	   -8	  -22
+P->W:	 90	 a2		  -26	  -26	  -34	  -26
+P->W:	 a1	  8		  -34	  -30	  -26	  -30
+P->W:	 29	 12		  -19	  -23	  -20	   -9
+P->W:	 90	 20		  -14	  -12	   -5	   -3
+P->W:	 92	 91		   -5	    1	   -1	    1
+P->W:	  0	 1b		    3	    5	   11	    1
+P->W:	 28	  0		    7	    8	    9	   11
+
+gsCurWav:   11, sNxtSIx:    0
+
+
